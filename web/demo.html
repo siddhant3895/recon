@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recon Demo — Keyboard-First CA Reconciliation Worklist</title>
+  <meta name="description" content="Live seeded sandbox running the real Recon matching cascade. Test keyboard shortcuts at 40 decisions a minute.">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body style="overflow: hidden;">
+  <!-- Header -->
+  <header class="site-header" style="position: relative;">
+    <div class="nav-container" style="padding: 0.6rem 1.25rem;">
+      <a href="/" class="brand-wrap">
+        <span class="brand-badge">RECON</span>
+        <div>
+          <div class="brand-title" style="font-size:1.05rem;">Recon Worklist Demo</div>
+        </div>
+      </a>
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <span class="watermark-banner">SAMPLE DATA · REAL ENGINE</span>
+        <button id="btn-open-shortcuts" class="btn btn-outline btn-sm">
+          <span class="kbd">?</span> Shortcuts
+        </button>
+        <div style="display:flex; gap:0.4rem;">
+          <a href="/api/export/xlsx" class="btn btn-outline btn-sm" title="Download Excel Reconciliation Schedule">
+            Download XLSX
+          </a>
+          <a href="/api/export/csv" class="btn btn-outline btn-sm" title="Download CSV Archive">
+            Download CSV
+          </a>
+        </div>
+        <button id="btn-reset-demo" class="btn btn-outline btn-sm" style="color:var(--danger);" title="Clear session decisions">
+          Reset
+        </button>
+        <a href="/shadow-month" class="btn btn-primary btn-sm">Start Shadow Month</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- App Workspace -->
+  <div class="app-container">
+    <!-- Toolbar Strip -->
+    <div class="app-toolbar">
+      <div class="app-metrics-strip">
+        <div class="stat-chip">
+          <span style="color:var(--slate-500);">Progress:</span>
+          <div class="progress-track">
+            <div id="app-progress-fill" class="progress-fill" style="width: 0%;"></div>
+          </div>
+          <strong id="app-progress-text">0/0 (0%)</strong>
+        </div>
+
+        <div class="stat-chip">
+          <span style="color:var(--slate-500);">Accepted:</span>
+          <strong id="stat-accepted" style="color:var(--success);">0</strong>
+        </div>
+
+        <div class="stat-chip">
+          <span style="color:var(--slate-500);">Rejected:</span>
+          <strong id="stat-rejected" style="color:var(--danger);">0</strong>
+        </div>
+
+        <div class="stat-chip">
+          <span style="color:var(--slate-500);">Unmatched:</span>
+          <strong id="stat-unmatched" style="color:var(--slate-600);">0</strong>
+        </div>
+
+        <div class="stat-chip" style="border-left:1px solid var(--slate-200); padding-left:1rem;">
+          <span style="color:var(--slate-500);">Rolling Pace:</span>
+          <strong id="stat-pace" style="color:var(--accent);">0 /min</strong>
+          <span style="font-size:0.75rem; color:var(--slate-400);">(target: 40/min)</span>
+        </div>
+
+        <div class="stat-chip">
+          <span style="color:var(--slate-500);">Est. Remaining:</span>
+          <strong id="stat-eta">--</strong>
+        </div>
+      </div>
+
+      <div style="font-size:0.8rem; color:var(--slate-500);">
+        Fast path: <span class="kbd">Enter</span> Accept · <span class="kbd">J</span>/<span class="kbd">K</span> Navigate · <span class="kbd">Tab</span> Cycle
+      </div>
+    </div>
+
+    <!-- Main 3-Column Grid -->
+    <div class="app-main-grid">
+      <!-- Left: Bank Statement Lines -->
+      <section class="panel">
+        <div class="panel-header">
+          <h3>Bank Statement</h3>
+          <span style="font-size:0.75rem; color:var(--slate-500);">180 Rows</span>
+        </div>
+        <div id="statement-list" class="panel-scroll">
+          <div style="padding:1rem; text-align:center; color:var(--slate-500);">Loading statement rows...</div>
+        </div>
+      </section>
+
+      <!-- Center: Worklist / Candidate Proposal -->
+      <main class="worklist-center" id="worklist-container">
+        <div style="padding:2rem; text-align:center; color:var(--slate-500);">Loading match cascade...</div>
+      </main>
+
+      <!-- Right: Client Ledger Lines -->
+      <section class="panel panel-right">
+        <div class="panel-header">
+          <h3>Client Ledger</h3>
+          <span style="font-size:0.75rem; color:var(--slate-500);">180 Rows</span>
+        </div>
+        <div id="ledger-list" class="panel-scroll">
+          <div style="padding:1rem; text-align:center; color:var(--slate-500);">Loading ledger lines...</div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Shortcuts Modal -->
+  <div class="modal-overlay" id="shortcuts-modal">
+    <div class="modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <h3 style="margin-bottom:0;">Keyboard Shortcuts</h3>
+        <button class="btn btn-outline btn-sm" id="btn-close-shortcuts">✕</button>
+      </div>
+      <table class="shortcuts-table">
+        <tbody>
+          <tr>
+            <td><span class="kbd">J</span> or <span class="kbd">↓</span></td>
+            <td>Move to next statement line</td>
+          </tr>
+          <tr>
+            <td><span class="kbd">K</span> or <span class="kbd">↑</span></td>
+            <td>Move to previous statement line</td>
+          </tr>
+          <tr>
+            <td><span class="kbd">Enter</span></td>
+            <td>Accept selected candidate match</td>
+          </tr>
+          <tr>
+            <td><span class="kbd">Tab</span></td>
+            <td>Cycle through candidates for current row</td>
+          </tr>
+          <tr>
+            <td><span class="kbd">R</span></td>
+            <td>Reject candidate (prompts for reason)</td>
+          </tr>
+          <tr>
+            <td><span class="kbd">U</span></td>
+            <td>Mark statement line as unmatched</td>
+          </tr>
+          <tr>
+            <td><span class="kbd">Ctrl+Z</span> / <span class="kbd">Cmd+Z</span></td>
+            <td>Undo last decision</td>
+          </tr>
+          <tr>
+            <td><span class="kbd">?</span></td>
+            <td>Toggle this shortcuts dialog</td>
+          </tr>
+          <tr>
+            <td><span class="kbd">Esc</span></td>
+            <td>Close active modal dialog</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-top:1.25rem; font-size:0.8rem; color:var(--slate-500);">
+        Tip: Auto-suggest items (score ≥95) are pre-focused. You can rapid-fire <span class="kbd">Enter</span> through obvious matches.
+      </div>
+    </div>
+  </div>
+
+  <!-- Reject Reason Modal -->
+  <div class="modal-overlay" id="reject-modal">
+    <div class="modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <h3 style="margin-bottom:0;">Select Rejection Reason</h3>
+        <button class="btn btn-outline btn-sm" id="btn-close-reject">✕</button>
+      </div>
+      <p style="font-size:0.88rem; color:var(--slate-600); margin-bottom:1.25rem;">
+        Every rejection requires an audit category to train firm-specific rules. Press 1–5 or click an option:
+      </p>
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <button class="btn btn-outline reject-reason-btn" data-reason="wrong amount" style="justify-content:flex-start;">
+          <span class="kbd">1</span> Wrong Amount
+        </button>
+        <button class="btn btn-outline reject-reason-btn" data-reason="wrong party" style="justify-content:flex-start;">
+          <span class="kbd">2</span> Wrong Party / Vendor
+        </button>
+        <button class="btn btn-outline reject-reason-btn" data-reason="wrong period" style="justify-content:flex-start;">
+          <span class="kbd">3</span> Wrong Accounting Period
+        </button>
+        <button class="btn btn-outline reject-reason-btn" data-reason="duplicate" style="justify-content:flex-start;">
+          <span class="kbd">4</span> Duplicate Entry
+        </button>
+        <button class="btn btn-outline reject-reason-btn" data-reason="other" style="justify-content:flex-start;">
+          <span class="kbd">5</span> Other
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/review-app.js"></script>
+</body>
+</html>

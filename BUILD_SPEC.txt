@@ -1,0 +1,378 @@
+# BUILD SPEC — "Recon" (working title)
+### CA reconciliation prep layer · handoff document
+**Version 1.0 · prepared for a downstream build agent · 10 Nov 2026**
+
+---
+
+## 0. How to use this document
+
+This is a complete build brief: product definition, matching engine spec, website information architecture, security model, pricing, GTM, and acceptance criteria. Sections 1–4 are context and must be read before building. Sections 5–9 are the engine and must be built in the stated order. Sections 10–12 are the website. Section 15 is the build sequence.
+
+**Where this document says REAL, it must be genuinely computed. Where it says SEEDED, it may use fixture data. Never fake a REAL.**
+
+---
+
+## 1. Context
+
+**Builder:** a Class 10 student in Nagpur, India. Strong Python and MATLAB, published computational physics preprint, small GitHub footprint, no commercial track record, no audience. Available roughly 15–20 hrs/week.
+
+**Product:** a reconciliation *prep layer* for small Indian CA firms. Ingests a bank statement and a ledger, proposes matches with confidence scores, routes anything uncertain to a human review worklist, exports clean data into the firm's existing software.
+
+**Why this one:** firms bill hourly and are capacity-constrained inside statutory deadlines. Hours saved convert directly to billable throughput, so willingness to pay is real. Monthly statutory cycles force repeat usage. Highest revenue ceiling of the ideas considered.
+
+**Why it is hard:** scanned PDFs, fuzzy narration, unforgiving accuracy expectations, 3–6 week sales cycles with conservative buyers.
+
+---
+
+## 2. Positioning
+
+**Do not compete with Tally, ClearTax, or Zoho.** They file. This runs before them and feeds them.
+
+Positioning line: **"You review. It does the typing."**
+
+Never use: "automatic," "autopilot," "AI files your returns," "replaces your accountant."
+
+| We are | We are not |
+|---|---|
+| A prep layer | A filing tool |
+| Human-in-the-loop | Autonomous |
+| A throughput multiplier | A bookkeeping replacement |
+| Bank + ledger recon | GST filing |
+
+---
+
+## 3. Non-goals (v1)
+
+- No filing, no GSTN integration, no e-signing
+- No multi-client management beyond a flat client list
+- No scanned-PDF OCR (flag-gated, Phase 3)
+- No mobile app
+- No roles beyond owner / reviewer
+- No auto-accept path, ever
+- No LLM in the matching path in v1 (deterministic only, so results are explainable and reproducible)
+
+---
+
+## 4. Personas
+
+**P1 — Firm owner (buyer).** 35–55, 2–6 staff, 40–120 clients, does 15–25 hrs/week of recon himself. Cares about: deadline risk, staff cost, whether he looks competent to clients. Reads nothing, decides on a demo.
+
+**P2 — Article/junior (daily user).** 20–25, does the actual matching, hates it, will adopt anything that reduces typing. Cares about: speed, keyboard shortcuts, not being blamed for errors. **Win P2 and P1 follows. Lose P2 and the tool dies at renewal.**
+
+**P3 — Firm IT/office admin.** Often a relative. Cares about: data location, backups, who has access. Kill-switch on the deal; also a potential champion.
+
+---
+
+## 5. Matching engine
+
+### 5.1 Normalization pipeline
+
+Applied identically to both sides. Deterministic, unit-tested, versioned (`normalizer_v1`) so old runs stay reproducible.
+
+```
+1. Unicode NFKC, trim, collapse internal whitespace
+2. Lowercase
+3. Strip bank boilerplate prefixes: NEFT/ RTGS/ IMPS/ UPI/ CHQ/ CLG/ ATM/ POS/ ACH/ "TO " "FROM " "BY " "REF " "TRF "
+4. Extract and store long digit runs (>=8) as `ref_token`, then remove from the text field
+5. Strip punctuation except digits, letters, and '.'
+6. OCR confusion repair, numeric contexts only: O->0 l->1 I->1 S->5 B->8 Z->2 G->6
+7. Amount -> integer paise. Date -> ISO 8601; assume DD/MM/YYYY, flag rows where DD<=12 and MM<=12 as ambiguous
+8. Derive `direction` = debit | credit
+```
+
+Steps 1–5 and 7–8 are mandatory. Step 6 only runs on rows whose `source` is `ocr`. Ambiguous dates widen that row's date window to the full ±30 days rather than guessing.
+
+### 5.2 Hard gates
+
+A candidate pair is discarded before scoring if any gate fails:
+
+- `direction` mismatch
+- `|Δamount|` outside the tier band
+- `|Δdate|` outside the tier window
+
+### 5.3 Cascade tiers
+
+Run in order; a row leaves the cascade at the first tier that produces candidates.
+
+| Tier | Condition | Max candidates |
+|---|---|---|
+| 1 | Amount exact + same date + `ref_token` exact | all |
+| 2 | Amount exact + date ±3d + ref Jaro-Winkler ≥ 0.85 | 5 |
+| 3 | Amount ±2% + date ±30d + narration token-set ratio ≥ 0.6 | 3 |
+| 4 | Subset-sum: 1 statement line vs 2–4 ledger lines, total within ±₹1 or ±0.5%, date ±10d | 3 sets |
+
+Tier 4 uses bounded DFS with amount pruning and a candidate-set cap of 3. Hard ceiling of 5,000 nodes expanded per statement line; on breach, abandon and leave unmatched rather than hang.
+
+### 5.4 Scoring
+
+Weighted composite, 0–100, integer.
+
+| Component | Weight | Curve |
+|---|---|---|
+| Amount | 45 | 45 if exact; linear decay to 0 at band edge |
+| Date proximity | 25 | 25 at 0 days, linear decay to 0 at window edge |
+| Reference similarity | 20 | 20 × Jaro-Winkler, 0 if no `ref_token` on either side |
+| Narration similarity | 10 | 10 × token-set ratio |
+
+Bands: **≥95 → auto-suggest** (still requires accept). **60–94 → review.** **<60 → unmatched.**
+
+Auto-suggest precision target: **≥97%** on the golden set. Below that, raise the threshold rather than defend the number.
+
+### 5.5 Explainability
+
+Every candidate exposes its component scores and a one-line human reason ("exact amount, 1 day apart, reference matches"). P2 must be able to see *why* before accepting. Non-negotiable — this is what earns trust in the shadow month.
+
+### 5.6 Determinism
+
+Same inputs + same normalizer version = same output, byte-identical. Seed any randomness. This makes the accuracy report defensible and lets a reviewer re-run a disputed month.
+
+---
+
+## 6. Data model
+
+Tenant root is `firm`. Every table carries `firm_id`; Postgres RLS on all of it.
+
+```
+firm(id, name, city, plan, created_at)
+user(id, firm_id, email, role[owner|reviewer], last_seen_at)
+client_entity(id, firm_id, name, gstin?)          -- the firm's client
+upload(id, firm_id, client_entity_id, kind[statement|ledger],
+       source[pdf_digital|csv|ocr], storage_key, pages, sha256, uploaded_at, purge_after)
+run(id, firm_id, upload_pair, status, normalizer_version,
+    started_at, finished_at, counts_json)
+line(id, run_id, side[stmt|ledger], raw_json, amount_paise, direction,
+     date_iso, date_ambiguous, ref_token, text_norm, match_state)
+candidate(id, run_id, stmt_line_id, ledger_line_id[], score, comp_json, reason, tier)
+decision(id, candidate_id, user_id, action[accept|reject], decided_at)
+audit_event(id, firm_id, actor, verb, object, meta_json, at)   -- append-only
+export_job(id, run_id, format, storage_key, created_at)
+```
+
+Constraints: `decision` is insert-only (re-decide = new row). `audit_event` has no UPDATE/DELETE grant. `candidate.ledger_line_id` is an array to carry tier-4 sets.
+
+---
+
+## 7. System architecture
+
+```mermaid
+flowchart TB
+    subgraph Web["Next.js (Vercel) — site + app"]
+      M["Marketing site"]
+      A["Review app (P2)"]
+    end
+    subgraph India["India region — AWS ap-south-1"]
+      API["FastAPI"]
+      W["Worker (queue consumer)"]
+      PG[("Postgres + RLS")]
+      S3[("Object storage, encrypted")]
+      Q[["Job queue"]]
+      OCR["OCR adapter (flag-gated)"]
+    end
+    M -->|"shadow-month form"| API
+    A -->|"signed upload"| S3
+    A --> API
+    API --> PG
+    API --> Q
+    Q --> W
+    W --> S3
+    W --> PG
+    W -.->|"Phase 3"| OCR
+    W -->|"parse + normalize + match"| PG
+```
+
+Split is deliberate: Vercel for the UI it is good at, everything touching financial data in `ap-south-1`. Never let a document transit a US region. Postgres from Supabase Mumbai or RDS; storage on S3 `ap-south-1`; worker on ECS or Fly `bom`.
+
+Stack: Next.js App Router + TypeScript + Tailwind. FastAPI + Pydantic. `pdfplumber` for digital PDFs, `csv` streaming for CSV. Queue: SQS or BullMQ. Auth: email magic link, no passwords. No LLM in v1.
+
+---
+
+## 8. Ingestion
+
+- CSV: stream, cap 5,000 rows/file, reject on schema mismatch with a readable error.
+- Digital PDF: `pdfplumber`, extract table geometry, cap 50 pages.
+- Detect scan: if extracted chars/page < 100, mark `needs_ocr` and refuse in v1 with a clear message.
+- `sha256` dedupe per firm — re-uploading the same file returns the prior run.
+- Row-level parse failures go to a visible `unparsed` bucket, never silently dropped. Unparsed rows must appear in the export and in the run summary.
+
+---
+
+## 9. Review UX (P2 is the user)
+
+Layout: statement lines left, ledger lines right, worklist centre. All keyboard-driven.
+
+- `J`/`K` move, `Enter` accept top candidate, `Tab` cycle candidates, `R` reject, `U` mark unmatched, `?` shortcuts.
+- Accept/reject must be reachable without the mouse. Target: **40 decisions/minute** sustained.
+- Auto-suggest band is visually distinct and pre-focused, so the fast path is Enter-Enter-Enter.
+- Rejection records a reason from a fixed list (wrong amount / wrong party / wrong period / duplicate / other).
+- Progress bar, running accept/reject tally, and a live "estimated minutes remaining" derived from current pace.
+- Undo: `Cmd+Z` reverses the last decision (writes a compensating row).
+- Nothing auto-advances on scroll. Manual control only.
+
+Export: matched pairs, unmatched, unparsed, decisions with timestamps, and a summary sheet. Formats: XLSX and CSV. Every export carries `normalizer_version` and `run_id`.
+
+---
+
+## 10. Marketing site — information architecture
+
+Single-scope site. Every page serves the shadow-month offer. No blog at launch.
+
+| Route | Purpose |
+|---|---|
+| `/` | Offer, proof, CTA |
+| `/how-it-works` | The cascade, in plain language |
+| `/accuracy` | Precision numbers, methodology, what it does *not* catch |
+| `/security` | Data handling, residency, deletion |
+| `/pricing` | Per-return tiers |
+| `/demo` | Live seeded demo |
+| `/shadow-month` | The offer + form |
+| `/about` | Builder credibility |
+| `/legal/{terms,privacy,dpa}` | Contracts |
+
+### 10.1 Home, section by section
+
+1. **Hero.** H1: *"You review. It does the typing."* Sub: *"Bank reconciliation, matched in minutes instead of evenings. Every match scored, every decision yours."* Two CTAs: `Start a free shadow month` / `Try the demo`.
+2. **The 11th and the 20th.** Deadline framing. Concrete: hours per client per month, multiplied by client count.
+3. **Split before/after.** Ledger chaos → clean worklist. Same visual grammar as the outreach asset.
+4. **How it works, three steps.** Upload, review the scored worklist, export.
+5. **The confidence bar, shown large.** Explain 95 / 60–94 / below 60 bands honestly. **Say plainly what it misses.**
+6. **Savings calculator** (see 10.2).
+7. **Security strip.** India region, NDA, 30-day deletion, audit log. Link to `/security`.
+8. **Who it's for / not for.** Filter out bad fits early.
+9. **Builder card.** Physics preprint, the matching logic, a face. Directly addresses "you're 15."
+10. **FAQ.** Objections from §13, answered flatly.
+11. **Final CTA.** Shadow-month form, three fields.
+
+Copy rules: short sentences. Numbers over adjectives. No "revolutionary," "AI-powered," "seamless." British/Indian English. Rupees, not dollars.
+
+### 10.2 Calculator
+
+Inputs: reconciliations per month, avg rows per reconciliation, minutes per row by hand, blended hourly cost.
+
+Outputs: hours/month, ₹/month, ₹/year, hours saved at 70% assist rate, payback period in weeks.
+
+Formula is visible on-page. Defaults pre-filled from the shadow-month data. Persist inputs to `localStorage`.
+
+### 10.3 Demo
+
+Seeded 180-row statement / 180-row ledger pair from a synthetic company. Runs the **real** engine against fixtures in a sandbox firm. Show the worklist, the scores, and one deliberate tier-4 set. Watermark `SAMPLE DATA`, cap at one run per session, no signup. Reset button.
+
+---
+
+## 11. Pricing
+
+Per-return pricing, aligned to how firms bill.
+
+| Tier | Rows/month | Price |
+|---|---|---|
+| Trial | 500 | ₹0, 30 days |
+| Solo | 2,000 | ₹2,500/mo |
+| Firm | 10,000 | ₹6,000/mo |
+| Practice | 30,000 | ₹12,000/mo |
+
+One-time onboarding + mapping: ₹15,000–35,000, charged from month two, waived if they convert inside the trial. OCR pages: ₹1.50/page above 500/mo. Annual: two months free. No per-seat charge — seats are free, rows are the meter.
+
+---
+
+## 12. Security & compliance
+
+- TLS 1.3 everywhere, AES-256 at rest, per-firm KMS key.
+- Signed URLs, 15-minute expiry, never public buckets.
+- Raw uploads purged 30 days after run completion by a daily job; purge is logged and surfaced to the firm.
+- Append-only audit log; exports and downloads logged with actor and IP.
+- RLS on every table; a firm cannot see another firm's rows even via a crafted ID.
+- DPA + NDA template on `/legal/dpa`. Guardian co-signs — builder is a minor.
+- `/security` states plainly: what is stored, where, for how long, who can access, what happens on deletion, and whether anything leaves India (it doesn't in v1).
+- Incident path: named contact, 72-hour disclosure, one-page runbook.
+
+---
+
+## 13. Objections and answers
+
+| Objection | Answer |
+|---|---|
+| "How do I know it's accurate?" | Shadow month, run beside their manual process, measured report at the end |
+| "What if it breaks on the 19th?" | Read-only fallback, export always available, deadline-week support SLA |
+| "Where's my data?" | India region, NDA, 30-day purge, audit log |
+| "You're 15." | Shadow month costs them nothing, plus a walkthrough of the scoring logic |
+| "Tally already does this." | It files. This feeds it. |
+| "Staff won't use it." | Keyboard-first, 40 decisions/minute, and their junior will ask for it |
+
+---
+
+## 14. Metrics
+
+North star: **matches accepted per reviewer-hour.**
+
+Supporting: shadow→paid conversion (target ≥30%), auto-suggest precision (≥97%), median minutes per 100 rows (target <12), unparsed rate (<3%), 90-day logo retention (≥85%), deadline-week incident count (0).
+
+Instrument from day one. A shadow month with no measurement is a free trial.
+
+---
+
+## 15. Build sequence
+
+1. **Golden dataset.** 300 hand-labelled pairs, including 40 deliberately nasty ones. Build this first — nothing can be validated without it.
+2. **Normalizer + scorer, CLI only.** No UI. Hit precision/recall targets on the golden set.
+3. **Tier 4 subset-sum**, bounded, with the node cap and abandonment path.
+4. **Data model + RLS + audit log.**
+5. **Upload → parse → run pipeline**, unparsed bucket included.
+6. **Review app**, keyboard-first.
+7. **Export.**
+8. **Marketing site + demo + calculator.**
+9. **Security page, DPA, purge job.**
+10. **Shadow-month intake and the accuracy-report generator.**
+
+Ship the CLI accuracy numbers to the site's `/accuracy` page before building the marketing layer. If the numbers don't clear the bar, the site is decoration.
+
+---
+
+## 16. Acceptance criteria
+
+- Golden set: precision ≥0.97 in the auto-suggest band, recall ≥0.85 overall, zero gate violations.
+- Determinism: identical output across 100 repeat runs.
+- 5,000-row statement completes in <90s; no tier-4 hang.
+- 40 decisions/minute achievable by a practised user on seeded data.
+- Unparsed rows always present in export.
+- Cross-firm ID access returns 404, verified by test.
+- Purge job removes raw objects and writes an audit row.
+- Lighthouse ≥95 on `/`, `/pricing`, `/demo`.
+- Zero JS on `/security` required to read it.
+
+---
+
+## 17. Risks
+
+| Risk | Mitigation |
+|---|---|
+| Scanned PDFs | Refuse in v1, flag-gate OCR, price per page |
+| Deadline-week failure | Read-only fallback, export independence, support SLA |
+| Auto-suggest precision below bar | Raise threshold, shrink band, never loosen to look good |
+| Buyer won't trust a minor | Shadow month, guardian co-signature, builder credibility card |
+| P2 rejects the tool | Keyboard-first design, involve P2 in shadow setup |
+| Scope creep from firms | Row caps are contractual, custom work is a separate quote |
+| Silent accuracy drift | Versioned normalizer, golden-set regression on every deploy |
+
+---
+
+## 18. Open questions for the buyer of this document
+
+1. Is `pdfplumber` sufficient for the target banks' digital statements, or does geometry extraction need a paid library?
+2. Who owns the golden dataset, and how is it kept current as banks change formats?
+3. What is the deadline-week support SLA the builder can actually honour at 15–20 hrs/week?
+4. Does the builder have a guardian able to hold the bank account and co-sign the DPA?
+5. Is a Nagpur-only initial market acceptable, or does the plan assume national reach?
+
+---
+
+## 19. Notes for the building agent
+
+- Build §15 in order. Do not start the marketing site before §2 clears its numbers.
+- Deterministic matching only. Resist adding an LLM to v1 — explainability beats cleverness at this accuracy bar.
+- Never add an auto-accept path. The human decision is the product.
+- Every REAL element must be REAL: the demo runs the actual engine, the accuracy page shows actual measured numbers, the calculator computes from actual inputs.
+- Keep every user-facing string in Indian English and rupees.
+- Test the unparsed bucket and the cross-firm boundary on every deploy; both fail silently otherwise.
+- The keyboard map is a requirement, not a polish item.
+
+---
+

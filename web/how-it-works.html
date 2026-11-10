@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — Recon Matching Cascade Architecture</title>
+  <meta name="description" content="Detailed breakdown of the Recon 4-tier deterministic reconciliation cascade, reference tokenization, and bounded subset-sum engine.">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="brand-wrap">
+        <span class="brand-badge">RECON</span>
+        <div>
+          <div class="brand-title">Recon</div>
+          <div class="brand-sub">CA reconciliation prep layer</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/how-it-works" class="active">How It Works</a></li>
+        <li><a href="/accuracy">Accuracy</a></li>
+        <li><a href="/security">Security</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/demo">Demo</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Start Shadow Month</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container-narrow">
+    <div style="margin-bottom: 2.5rem;">
+      <span class="hero-pill">Engine Specification</span>
+      <h1 style="font-size: 2.4rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.75rem;">
+        The 4-Tier Matching Cascade
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--slate-600); line-height: 1.6;">
+        Recon matches financial records deterministically without opaque generative models. Both sides pass through an identical normalization pipeline before entering an ordered cascade.
+      </p>
+    </div>
+
+    <!-- Section 1: Normalizer -->
+    <section class="card" style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">1. Deterministic Normalizer (<code style="font-family:var(--font-mono); font-size:1rem; color:var(--accent);">normalizer_v1</code>)</h2>
+      <p style="color: var(--slate-600); font-size: 0.95rem; margin-bottom: 1rem;">
+        Bank statements and client ledgers write the same transaction in wildly different formats. The normalizer applies eight mathematical transformation steps:
+      </p>
+      <ol style="padding-left: 1.25rem; font-size: 0.92rem; color: var(--slate-700); line-height: 1.7;">
+        <li><strong>Unicode NFKC & Whitespace Collapse:</strong> Standardizes character encodings and removes erratic bank spacing.</li>
+        <li><strong>Case Normalization:</strong> Lowercase transformation across all text fields.</li>
+        <li><strong>Indian Banking Boilerplate Stripping:</strong> Removes repetitive bank prefixes: <code class="kbd">NEFT/</code>, <code class="kbd">RTGS/</code>, <code class="kbd">IMPS/</code>, <code class="kbd">UPI/</code>, <code class="kbd">CHQ/</code>, <code class="kbd">CLG/</code>, <code class="kbd">ATM/</code>, <code class="kbd">POS/</code>, <code class="kbd">ACH/</code>, <code class="kbd">TO </code>, <code class="kbd">FROM </code>, <code class="kbd">BY </code>, <code class="kbd">REF </code>, <code class="kbd">TRF </code>.</li>
+        <li><strong>Reference Token Extraction:</strong> Long digit sequences (≥8 digits like UTRs and cheque numbers) are extracted and indexed as <code class="kbd">ref_token</code>, leaving only meaningful party names in the narration text.</li>
+        <li><strong>Punctuation Sanitization:</strong> Removes non-alphanumeric noise while strictly preserving decimal points and currency amounts.</li>
+        <li><strong>Integer Paise Conversion:</strong> Eliminates floating-point rounding bugs by storing every rupee as an integer number of paise (₹1,500.50 → 150050 paise).</li>
+        <li><strong>Ambiguous Date Widening:</strong> When day and month are both ≤12 (e.g. 05/06/2026), Recon flags the row as date-ambiguous and widens the search window to ±30 days rather than guessing.</li>
+        <li><strong>Direction Verification:</strong> Identifies debit vs credit to prevent improper offsetting.</li>
+      </ol>
+    </section>
+
+    <!-- Section 2: Hard Gates -->
+    <section class="card" style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">2. Non-Negotiable Hard Gates</h2>
+      <p style="color: var(--slate-600); font-size: 0.95rem; margin-bottom: 1rem;">
+        Before any candidate pair is scored, it must clear three hard mathematical gates. If any gate fails, the candidate is discarded immediately:
+      </p>
+      <ul style="padding-left: 1.25rem; font-size: 0.92rem; color: var(--slate-700); line-height: 1.7;">
+        <li><strong>Direction Gate:</strong> Debits only match debits; credits only match credits. Cross-direction pairing is strictly forbidden.</li>
+        <li><strong>Amount Tolerance Gate:</strong> Delta must fall within the tier's strict threshold (exact in Tiers 1–2; ±2% in Tier 3; ±₹1 or ±0.5% in Tier 4).</li>
+        <li><strong>Date Window Gate:</strong> Transaction dates must be within the tier's calendar boundary (same day for Tier 1; ±3d for Tier 2; ±30d for Tier 3; ±10d for Tier 4).</li>
+      </ul>
+    </section>
+
+    <!-- Section 3: The 4 Tiers -->
+    <section class="card" style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.35rem; margin-bottom: 1rem;">3. The 4-Tier Matching Cascade</h2>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Criteria & Search Conditions</th>
+            <th>Max Candidates</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tier 1: Exact</strong></td>
+            <td>Identical amount (paise) + identical date + exact <code class="kbd">ref_token</code> (UTR/IMPS/Cheque).</td>
+            <td>All exact matches</td>
+          </tr>
+          <tr>
+            <td><strong>Tier 2: Fuzzy Reference</strong></td>
+            <td>Identical amount + date within ±3 days + Jaro-Winkler reference similarity ≥ 0.85 (handles single-digit OCR/typo errors in UTRs).</td>
+            <td>Up to 5</td>
+          </tr>
+          <tr>
+            <td><strong>Tier 3: Narration Band</strong></td>
+            <td>Amount within ±2% + date within ±30 days + narration token-set ratio ≥ 0.60 (handles bank fees, TDS deduction, or missing UTRs).</td>
+            <td>Up to 3</td>
+          </tr>
+          <tr>
+            <td><strong>Tier 4: Subset-Sum</strong></td>
+            <td><strong>Many-to-one:</strong> 1 bank statement line vs 2–4 ledger entries. Total sum within ±₹1 or ±0.5%, date within ±10 days. Bounded DFS with 5,000 node ceiling and deterministic abandonment path.</td>
+            <td>Up to 3 sets</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section 4: Scoring & Explainability -->
+    <section class="card" style="margin-bottom: 2.5rem;">
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">4. Scoring Weights & Plain-English Explainability</h2>
+      <p style="color: var(--slate-600); font-size: 0.95rem; margin-bottom: 1rem;">
+        Every candidate receives a composite score from 0 to 100 based on four transparent weights:
+      </p>
+      <div class="grid-4" style="margin-bottom: 1.5rem;">
+        <div style="background:var(--slate-50); padding:1rem; border-radius:6px; text-align:center;">
+          <strong style="font-size:1.4rem; color:var(--primary);">45 pts</strong>
+          <div style="font-size:0.8rem; color:var(--slate-500);">Amount Fit</div>
+        </div>
+        <div style="background:var(--slate-50); padding:1rem; border-radius:6px; text-align:center;">
+          <strong style="font-size:1.4rem; color:var(--primary);">25 pts</strong>
+          <div style="font-size:0.8rem; color:var(--slate-500);">Date Proximity</div>
+        </div>
+        <div style="background:var(--slate-50); padding:1rem; border-radius:6px; text-align:center;">
+          <strong style="font-size:1.4rem; color:var(--primary);">20 pts</strong>
+          <div style="font-size:0.8rem; color:var(--slate-500);">Ref Similarity</div>
+        </div>
+        <div style="background:var(--slate-50); padding:1rem; border-radius:6px; text-align:center;">
+          <strong style="font-size:1.4rem; color:var(--primary);">10 pts</strong>
+          <div style="font-size:0.8rem; color:var(--slate-500);">Narration Token</div>
+        </div>
+      </div>
+      <p style="color: var(--slate-700); font-size: 0.92rem; line-height: 1.6;">
+        Every proposed candidate card in the review app displays the exact point contribution and a human-readable explanation (e.g. <em>"Exact amount (₹45,000), 1 day apart, UTR 99182371 matched exactly"</em>). P2 reviewers never have to guess why a match was proposed.
+      </p>
+    </section>
+
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <a href="/demo" class="btn btn-primary" style="padding: 0.75rem 1.75rem;">Test the Cascade in the Live Demo →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <div class="brand-title">Recon</div>
+        <div class="brand-sub">Deterministic reconciliation prep layer for Indian CAs</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/accuracy">Accuracy</a></li>
+        <li><a href="/security">Security</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/demo">Demo</a></li>
+        <li><a href="/legal/terms">Terms</a></li>
+        <li><a href="/legal/privacy">Privacy</a></li>
+        <li><a href="/legal/dpa">DPA</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "categories": {
+    "nasty_ambiguous": 10,
+    "nasty_decoy": 10,
+    "nasty_multiref": 10,
+    "nasty_ocr": 10,
+    "tier1": 90,
+    "tier2": 70,
+    "tier3": 60,
+    "tier4": 40
+  },
+  "counts": {
+    "auto_suggest": 119,
+    "candidates": 353,
+    "ledger_lines": 449,
+    "review": 172,
+    "statement_lines": 300,
+    "tier4_abandoned": 9,
+    "tier4_nodes": 154531,
+    "unmatched": 9
+  },
+  "dataset": {
+    "auto_suggest_lines": 119,
+    "gate_violations": 0,
+    "labelled_pairs": 300,
+    "ledger_lines": 449,
+    "statement_lines": 300
+  },
+  "gate_violations": [],
+  "metrics": {
+    "auto_suggest_rate": 0.3967,
+    "precision_auto_suggest": 1.0,
+    "recall_overall": 0.97,
+    "recall_top1": 0.9567,
+    "review_rate": 0.5733,
+    "unmatched_rate": 0.03
+  },
+  "missing_pairs": [
+    "S0223",
+    "S0224",
+    "S0233",
+    "S0239",
+    "S0240",
+    "S0244",
+    "S0246",
+    "S0249",
+    "S0252"
+  ],
+  "normalizer_version": "normalizer_v1",
+  "tiers": {
+    "1": 123,
+    "2": 70,
+    "3": 67,
+    "4": 93
+  },
+  "wrong_auto_suggests": []
+}

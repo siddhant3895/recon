@@ -1,0 +1,7287 @@
+{
+  "categories": {
+    "S0001": "tier1",
+    "S0002": "tier1",
+    "S0003": "tier1",
+    "S0004": "tier1",
+    "S0005": "tier1",
+    "S0006": "tier1",
+    "S0007": "tier1",
+    "S0008": "tier1",
+    "S0009": "tier1",
+    "S0010": "tier1",
+    "S0011": "tier1",
+    "S0012": "tier1",
+    "S0013": "tier1",
+    "S0014": "tier1",
+    "S0015": "tier1",
+    "S0016": "tier1",
+    "S0017": "tier1",
+    "S0018": "tier1",
+    "S0019": "tier1",
+    "S0020": "tier1",
+    "S0021": "tier1",
+    "S0022": "tier1",
+    "S0023": "tier1",
+    "S0024": "tier1",
+    "S0025": "tier1",
+    "S0026": "tier1",
+    "S0027": "tier1",
+    "S0028": "tier1",
+    "S0029": "tier1",
+    "S0030": "tier1",
+    "S0031": "tier1",
+    "S0032": "tier1",
+    "S0033": "tier1",
+    "S0034": "tier1",
+    "S0035": "tier1",
+    "S0036": "tier1",
+    "S0037": "tier1",
+    "S0038": "tier1",
+    "S0039": "tier1",
+    "S0040": "tier1",
+    "S0041": "tier1",
+    "S0042": "tier1",
+    "S0043": "tier1",
+    "S0044": "tier1",
+    "S0045": "tier1",
+    "S0046": "tier1",
+    "S0047": "tier1",
+    "S0048": "tier1",
+    "S0049": "tier1",
+    "S0050": "tier1",
+    "S0051": "tier1",
+    "S0052": "tier1",
+    "S0053": "tier1",
+    "S0054": "tier1",
+    "S0055": "tier1",
+    "S0056": "tier1",
+    "S0057": "tier1",
+    "S0058": "tier1",
+    "S0059": "tier1",
+    "S0060": "tier1",
+    "S0061": "tier1",
+    "S0062": "tier1",
+    "S0063": "tier1",
+    "S0064": "tier1",
+    "S0065": "tier1",
+    "S0066": "tier1",
+    "S0067": "tier1",
+    "S0068": "tier1",
+    "S0069": "tier1",
+    "S0070": "tier1",
+    "S0071": "tier1",
+    "S0072": "tier1",
+    "S0073": "tier1",
+    "S0074": "tier1",
+    "S0075": "tier1",
+    "S0076": "tier1",
+    "S0077": "tier1",
+    "S0078": "tier1",
+    "S0079": "tier1",
+    "S0080": "tier1",
+    "S0081": "tier1",
+    "S0082": "tier1",
+    "S0083": "tier1",
+    "S0084": "tier1",
+    "S0085": "tier1",
+    "S0086": "tier1",
+    "S0087": "tier1",
+    "S0088": "tier1",
+    "S0089": "tier1",
+    "S0090": "tier1",
+    "S0091": "tier2",
+    "S0092": "tier2",
+    "S0093": "tier2",
+    "S0094": "tier2",
+    "S0095": "tier2",
+    "S0096": "tier2",
+    "S0097": "tier2",
+    "S0098": "tier2",
+    "S0099": "tier2",
+    "S0100": "tier2",
+    "S0101": "tier2",
+    "S0102": "tier2",
+    "S0103": "tier2",
+    "S0104": "tier2",
+    "S0105": "tier2",
+    "S0106": "tier2",
+    "S0107": "tier2",
+    "S0108": "tier2",
+    "S0109": "tier2",
+    "S0110": "tier2",
+    "S0111": "tier2",
+    "S0112": "tier2",
+    "S0113": "tier2",
+    "S0114": "tier2",
+    "S0115": "tier2",
+    "S0116": "tier2",
+    "S0117": "tier2",
+    "S0118": "tier2",
+    "S0119": "tier2",
+    "S0120": "tier2",
+    "S0121": "tier2",
+    "S0122": "tier2",
+    "S0123": "tier2",
+    "S0124": "tier2",
+    "S0125": "tier2",
+    "S0126": "tier2",
+    "S0127": "tier2",
+    "S0128": "tier2",
+    "S0129": "tier2",
+    "S0130": "tier2",
+    "S0131": "tier2",
+    "S0132": "tier2",
+    "S0133": "tier2",
+    "S0134": "tier2",
+    "S0135": "tier2",
+    "S0136": "tier2",
+    "S0137": "tier2",
+    "S0138": "tier2",
+    "S0139": "tier2",
+    "S0140": "tier2",
+    "S0141": "tier2",
+    "S0142": "tier2",
+    "S0143": "tier2",
+    "S0144": "tier2",
+    "S0145": "tier2",
+    "S0146": "tier2",
+    "S0147": "tier2",
+    "S0148": "tier2",
+    "S0149": "tier2",
+    "S0150": "tier2",
+    "S0151": "tier2",
+    "S0152": "tier2",
+    "S0153": "tier2",
+    "S0154": "tier2",
+    "S0155": "tier2",
+    "S0156": "tier2",
+    "S0157": "tier2",
+    "S0158": "tier2",
+    "S0159": "tier2",
+    "S0160": "tier2",
+    "S0161": "tier3",
+    "S0162": "tier3",
+    "S0163": "tier3",
+    "S0164": "tier3",
+    "S0165": "tier3",
+    "S0166": "tier3",
+    "S0167": "tier3",
+    "S0168": "tier3",
+    "S0169": "tier3",
+    "S0170": "tier3",
+    "S0171": "tier3",
+    "S0172": "tier3",
+    "S0173": "tier3",
+    "S0174": "tier3",
+    "S0175": "tier3",
+    "S0176": "tier3",
+    "S0177": "tier3",
+    "S0178": "tier3",
+    "S0179": "tier3",
+    "S0180": "tier3",
+    "S0181": "tier3",
+    "S0182": "tier3",
+    "S0183": "tier3",
+    "S0184": "tier3",
+    "S0185": "tier3",
+    "S0186": "tier3",
+    "S0187": "tier3",
+    "S0188": "tier3",
+    "S0189": "tier3",
+    "S0190": "tier3",
+    "S0191": "tier3",
+    "S0192": "tier3",
+    "S0193": "tier3",
+    "S0194": "tier3",
+    "S0195": "tier3",
+    "S0196": "tier3",
+    "S0197": "tier3",
+    "S0198": "tier3",
+    "S0199": "tier3",
+    "S0200": "tier3",
+    "S0201": "tier3",
+    "S0202": "tier3",
+    "S0203": "tier3",
+    "S0204": "tier3",
+    "S0205": "tier3",
+    "S0206": "tier3",
+    "S0207": "tier3",
+    "S0208": "tier3",
+    "S0209": "tier3",
+    "S0210": "tier3",
+    "S0211": "tier3",
+    "S0212": "tier3",
+    "S0213": "tier3",
+    "S0214": "tier3",
+    "S0215": "tier3",
+    "S0216": "tier3",
+    "S0217": "tier3",
+    "S0218": "tier3",
+    "S0219": "tier3",
+    "S0220": "tier3",
+    "S0221": "tier4",
+    "S0222": "tier4",
+    "S0223": "tier4",
+    "S0224": "tier4",
+    "S0225": "tier4",
+    "S0226": "tier4",
+    "S0227": "tier4",
+    "S0228": "tier4",
+    "S0229": "tier4",
+    "S0230": "tier4",
+    "S0231": "tier4",
+    "S0232": "tier4",
+    "S0233": "tier4",
+    "S0234": "tier4",
+    "S0235": "tier4",
+    "S0236": "tier4",
+    "S0237": "tier4",
+    "S0238": "tier4",
+    "S0239": "tier4",
+    "S0240": "tier4",
+    "S0241": "tier4",
+    "S0242": "tier4",
+    "S0243": "tier4",
+    "S0244": "tier4",
+    "S0245": "tier4",
+    "S0246": "tier4",
+    "S0247": "tier4",
+    "S0248": "tier4",
+    "S0249": "tier4",
+    "S0250": "tier4",
+    "S0251": "tier4",
+    "S0252": "tier4",
+    "S0253": "tier4",
+    "S0254": "tier4",
+    "S0255": "tier4",
+    "S0256": "tier4",
+    "S0257": "tier4",
+    "S0258": "tier4",
+    "S0259": "tier4",
+    "S0260": "tier4",
+    "S0261": "nasty_ocr",
+    "S0262": "nasty_ambiguous",
+    "S0263": "nasty_multiref",
+    "S0264": "nasty_decoy",
+    "S0265": "nasty_ocr",
+    "S0266": "nasty_ambiguous",
+    "S0267": "nasty_multiref",
+    "S0268": "nasty_decoy",
+    "S0269": "nasty_ocr",
+    "S0270": "nasty_ambiguous",
+    "S0271": "nasty_multiref",
+    "S0272": "nasty_decoy",
+    "S0273": "nasty_ocr",
+    "S0274": "nasty_ambiguous",
+    "S0275": "nasty_multiref",
+    "S0276": "nasty_decoy",
+    "S0277": "nasty_ocr",
+    "S0278": "nasty_ambiguous",
+    "S0279": "nasty_multiref",
+    "S0280": "nasty_decoy",
+    "S0281": "nasty_ocr",
+    "S0282": "nasty_ambiguous",
+    "S0283": "nasty_multiref",
+    "S0284": "nasty_decoy",
+    "S0285": "nasty_ocr",
+    "S0286": "nasty_ambiguous",
+    "S0287": "nasty_multiref",
+    "S0288": "nasty_decoy",
+    "S0289": "nasty_ocr",
+    "S0290": "nasty_ambiguous",
+    "S0291": "nasty_multiref",
+    "S0292": "nasty_decoy",
+    "S0293": "nasty_ocr",
+    "S0294": "nasty_ambiguous",
+    "S0295": "nasty_multiref",
+    "S0296": "nasty_decoy",
+    "S0297": "nasty_ocr",
+    "S0298": "nasty_ambiguous",
+    "S0299": "nasty_multiref",
+    "S0300": "nasty_decoy"
+  },
+  "labels": {
+    "S0001": [
+      "L0001"
+    ],
+    "S0002": [
+      "L0002"
+    ],
+    "S0003": [
+      "L0003"
+    ],
+    "S0004": [
+      "L0004"
+    ],
+    "S0005": [
+      "L0005"
+    ],
+    "S0006": [
+      "L0007"
+    ],
+    "S0007": [
+      "L0008"
+    ],
+    "S0008": [
+      "L0009"
+    ],
+    "S0009": [
+      "L0010"
+    ],
+    "S0010": [
+      "L0011"
+    ],
+    "S0011": [
+      "L0013"
+    ],
+    "S0012": [
+      "L0014"
+    ],
+    "S0013": [
+      "L0015"
+    ],
+    "S0014": [
+      "L0016"
+    ],
+    "S0015": [
+      "L0017"
+    ],
+    "S0016": [
+      "L0019"
+    ],
+    "S0017": [
+      "L0020"
+    ],
+    "S0018": [
+      "L0021"
+    ],
+    "S0019": [
+      "L0022"
+    ],
+    "S0020": [
+      "L0023"
+    ],
+    "S0021": [
+      "L0025"
+    ],
+    "S0022": [
+      "L0026"
+    ],
+    "S0023": [
+      "L0027"
+    ],
+    "S0024": [
+      "L0028"
+    ],
+    "S0025": [
+      "L0029"
+    ],
+    "S0026": [
+      "L0031"
+    ],
+    "S0027": [
+      "L0032"
+    ],
+    "S0028": [
+      "L0033"
+    ],
+    "S0029": [
+      "L0034"
+    ],
+    "S0030": [
+      "L0035"
+    ],
+    "S0031": [
+      "L0037"
+    ],
+    "S0032": [
+      "L0038"
+    ],
+    "S0033": [
+      "L0039"
+    ],
+    "S0034": [
+      "L0040"
+    ],
+    "S0035": [
+      "L0041"
+    ],
+    "S0036": [
+      "L0043"
+    ],
+    "S0037": [
+      "L0044"
+    ],
+    "S0038": [
+      "L0045"
+    ],
+    "S0039": [
+      "L0046"
+    ],
+    "S0040": [
+      "L0047"
+    ],
+    "S0041": [
+      "L0049"
+    ],
+    "S0042": [
+      "L0050"
+    ],
+    "S0043": [
+      "L0051"
+    ],
+    "S0044": [
+      "L0052"
+    ],
+    "S0045": [
+      "L0053"
+    ],
+    "S0046": [
+      "L0055"
+    ],
+    "S0047": [
+      "L0056"
+    ],
+    "S0048": [
+      "L0057"
+    ],
+    "S0049": [
+      "L0058"
+    ],
+    "S0050": [
+      "L0059"
+    ],
+    "S0051": [
+      "L0061"
+    ],
+    "S0052": [
+      "L0062"
+    ],
+    "S0053": [
+      "L0063"
+    ],
+    "S0054": [
+      "L0064"
+    ],
+    "S0055": [
+      "L0065"
+    ],
+    "S0056": [
+      "L0067"
+    ],
+    "S0057": [
+      "L0068"
+    ],
+    "S0058": [
+      "L0069"
+    ],
+    "S0059": [
+      "L0070"
+    ],
+    "S0060": [
+      "L0071"
+    ],
+    "S0061": [
+      "L0073"
+    ],
+    "S0062": [
+      "L0074"
+    ],
+    "S0063": [
+      "L0075"
+    ],
+    "S0064": [
+      "L0076"
+    ],
+    "S0065": [
+      "L0077"
+    ],
+    "S0066": [
+      "L0079"
+    ],
+    "S0067": [
+      "L0080"
+    ],
+    "S0068": [
+      "L0081"
+    ],
+    "S0069": [
+      "L0082"
+    ],
+    "S0070": [
+      "L0083"
+    ],
+    "S0071": [
+      "L0085"
+    ],
+    "S0072": [
+      "L0086"
+    ],
+    "S0073": [
+      "L0087"
+    ],
+    "S0074": [
+      "L0088"
+    ],
+    "S0075": [
+      "L0089"
+    ],
+    "S0076": [
+      "L0091"
+    ],
+    "S0077": [
+      "L0092"
+    ],
+    "S0078": [
+      "L0093"
+    ],
+    "S0079": [
+      "L0094"
+    ],
+    "S0080": [
+      "L0095"
+    ],
+    "S0081": [
+      "L0097"
+    ],
+    "S0082": [
+      "L0098"
+    ],
+    "S0083": [
+      "L0099"
+    ],
+    "S0084": [
+      "L0100"
+    ],
+    "S0085": [
+      "L0101"
+    ],
+    "S0086": [
+      "L0103"
+    ],
+    "S0087": [
+      "L0104"
+    ],
+    "S0088": [
+      "L0105"
+    ],
+    "S0089": [
+      "L0106"
+    ],
+    "S0090": [
+      "L0107"
+    ],
+    "S0091": [
+      "L0109"
+    ],
+    "S0092": [
+      "L0110"
+    ],
+    "S0093": [
+      "L0111"
+    ],
+    "S0094": [
+      "L0112"
+    ],
+    "S0095": [
+      "L0113"
+    ],
+    "S0096": [
+      "L0114"
+    ],
+    "S0097": [
+      "L0115"
+    ],
+    "S0098": [
+      "L0116"
+    ],
+    "S0099": [
+      "L0117"
+    ],
+    "S0100": [
+      "L0118"
+    ],
+    "S0101": [
+      "L0119"
+    ],
+    "S0102": [
+      "L0120"
+    ],
+    "S0103": [
+      "L0121"
+    ],
+    "S0104": [
+      "L0122"
+    ],
+    "S0105": [
+      "L0123"
+    ],
+    "S0106": [
+      "L0124"
+    ],
+    "S0107": [
+      "L0125"
+    ],
+    "S0108": [
+      "L0126"
+    ],
+    "S0109": [
+      "L0127"
+    ],
+    "S0110": [
+      "L0128"
+    ],
+    "S0111": [
+      "L0129"
+    ],
+    "S0112": [
+      "L0130"
+    ],
+    "S0113": [
+      "L0131"
+    ],
+    "S0114": [
+      "L0132"
+    ],
+    "S0115": [
+      "L0133"
+    ],
+    "S0116": [
+      "L0134"
+    ],
+    "S0117": [
+      "L0135"
+    ],
+    "S0118": [
+      "L0136"
+    ],
+    "S0119": [
+      "L0137"
+    ],
+    "S0120": [
+      "L0138"
+    ],
+    "S0121": [
+      "L0139"
+    ],
+    "S0122": [
+      "L0140"
+    ],
+    "S0123": [
+      "L0141"
+    ],
+    "S0124": [
+      "L0142"
+    ],
+    "S0125": [
+      "L0143"
+    ],
+    "S0126": [
+      "L0144"
+    ],
+    "S0127": [
+      "L0145"
+    ],
+    "S0128": [
+      "L0146"
+    ],
+    "S0129": [
+      "L0147"
+    ],
+    "S0130": [
+      "L0148"
+    ],
+    "S0131": [
+      "L0149"
+    ],
+    "S0132": [
+      "L0150"
+    ],
+    "S0133": [
+      "L0151"
+    ],
+    "S0134": [
+      "L0152"
+    ],
+    "S0135": [
+      "L0153"
+    ],
+    "S0136": [
+      "L0154"
+    ],
+    "S0137": [
+      "L0155"
+    ],
+    "S0138": [
+      "L0156"
+    ],
+    "S0139": [
+      "L0157"
+    ],
+    "S0140": [
+      "L0158"
+    ],
+    "S0141": [
+      "L0159"
+    ],
+    "S0142": [
+      "L0160"
+    ],
+    "S0143": [
+      "L0161"
+    ],
+    "S0144": [
+      "L0162"
+    ],
+    "S0145": [
+      "L0163"
+    ],
+    "S0146": [
+      "L0164"
+    ],
+    "S0147": [
+      "L0165"
+    ],
+    "S0148": [
+      "L0166"
+    ],
+    "S0149": [
+      "L0167"
+    ],
+    "S0150": [
+      "L0168"
+    ],
+    "S0151": [
+      "L0169"
+    ],
+    "S0152": [
+      "L0170"
+    ],
+    "S0153": [
+      "L0171"
+    ],
+    "S0154": [
+      "L0172"
+    ],
+    "S0155": [
+      "L0173"
+    ],
+    "S0156": [
+      "L0174"
+    ],
+    "S0157": [
+      "L0175"
+    ],
+    "S0158": [
+      "L0176"
+    ],
+    "S0159": [
+      "L0177"
+    ],
+    "S0160": [
+      "L0178"
+    ],
+    "S0161": [
+      "L0179"
+    ],
+    "S0162": [
+      "L0180"
+    ],
+    "S0163": [
+      "L0181"
+    ],
+    "S0164": [
+      "L0182"
+    ],
+    "S0165": [
+      "L0183"
+    ],
+    "S0166": [
+      "L0184"
+    ],
+    "S0167": [
+      "L0185"
+    ],
+    "S0168": [
+      "L0186"
+    ],
+    "S0169": [
+      "L0187"
+    ],
+    "S0170": [
+      "L0188"
+    ],
+    "S0171": [
+      "L0189"
+    ],
+    "S0172": [
+      "L0190"
+    ],
+    "S0173": [
+      "L0191"
+    ],
+    "S0174": [
+      "L0192"
+    ],
+    "S0175": [
+      "L0193"
+    ],
+    "S0176": [
+      "L0194"
+    ],
+    "S0177": [
+      "L0195"
+    ],
+    "S0178": [
+      "L0196"
+    ],
+    "S0179": [
+      "L0197"
+    ],
+    "S0180": [
+      "L0198"
+    ],
+    "S0181": [
+      "L0199"
+    ],
+    "S0182": [
+      "L0200"
+    ],
+    "S0183": [
+      "L0201"
+    ],
+    "S0184": [
+      "L0202"
+    ],
+    "S0185": [
+      "L0203"
+    ],
+    "S0186": [
+      "L0204"
+    ],
+    "S0187": [
+      "L0205"
+    ],
+    "S0188": [
+      "L0206"
+    ],
+    "S0189": [
+      "L0207"
+    ],
+    "S0190": [
+      "L0208"
+    ],
+    "S0191": [
+      "L0209"
+    ],
+    "S0192": [
+      "L0210"
+    ],
+    "S0193": [
+      "L0211"
+    ],
+    "S0194": [
+      "L0212"
+    ],
+    "S0195": [
+      "L0213"
+    ],
+    "S0196": [
+      "L0214"
+    ],
+    "S0197": [
+      "L0215"
+    ],
+    "S0198": [
+      "L0216"
+    ],
+    "S0199": [
+      "L0217"
+    ],
+    "S0200": [
+      "L0218"
+    ],
+    "S0201": [
+      "L0219"
+    ],
+    "S0202": [
+      "L0220"
+    ],
+    "S0203": [
+      "L0221"
+    ],
+    "S0204": [
+      "L0222"
+    ],
+    "S0205": [
+      "L0223"
+    ],
+    "S0206": [
+      "L0224"
+    ],
+    "S0207": [
+      "L0225"
+    ],
+    "S0208": [
+      "L0226"
+    ],
+    "S0209": [
+      "L0227"
+    ],
+    "S0210": [
+      "L0228"
+    ],
+    "S0211": [
+      "L0229"
+    ],
+    "S0212": [
+      "L0230"
+    ],
+    "S0213": [
+      "L0231"
+    ],
+    "S0214": [
+      "L0232"
+    ],
+    "S0215": [
+      "L0233"
+    ],
+    "S0216": [
+      "L0234"
+    ],
+    "S0217": [
+      "L0235"
+    ],
+    "S0218": [
+      "L0236"
+    ],
+    "S0219": [
+      "L0237"
+    ],
+    "S0220": [
+      "L0238"
+    ],
+    "S0221": [
+      "L0239",
+      "L0240",
+      "L0241"
+    ],
+    "S0222": [
+      "L0242",
+      "L0243",
+      "L0244",
+      "L0245"
+    ],
+    "S0223": [
+      "L0246",
+      "L0247"
+    ],
+    "S0224": [
+      "L0248",
+      "L0249"
+    ],
+    "S0225": [
+      "L0250",
+      "L0251",
+      "L0252",
+      "L0253"
+    ],
+    "S0226": [
+      "L0254",
+      "L0255",
+      "L0256"
+    ],
+    "S0227": [
+      "L0257",
+      "L0258",
+      "L0259",
+      "L0260"
+    ],
+    "S0228": [
+      "L0261",
+      "L0262",
+      "L0263"
+    ],
+    "S0229": [
+      "L0264",
+      "L0265",
+      "L0266",
+      "L0267"
+    ],
+    "S0230": [
+      "L0268",
+      "L0269",
+      "L0270",
+      "L0271"
+    ],
+    "S0231": [
+      "L0272",
+      "L0273",
+      "L0274",
+      "L0275"
+    ],
+    "S0232": [
+      "L0276",
+      "L0277",
+      "L0278",
+      "L0279"
+    ],
+    "S0233": [
+      "L0280",
+      "L0281",
+      "L0282"
+    ],
+    "S0234": [
+      "L0283",
+      "L0284",
+      "L0285"
+    ],
+    "S0235": [
+      "L0286",
+      "L0287",
+      "L0288"
+    ],
+    "S0236": [
+      "L0289",
+      "L0290",
+      "L0291",
+      "L0292"
+    ],
+    "S0237": [
+      "L0293",
+      "L0294",
+      "L0295"
+    ],
+    "S0238": [
+      "L0296",
+      "L0297"
+    ],
+    "S0239": [
+      "L0298",
+      "L0299"
+    ],
+    "S0240": [
+      "L0300",
+      "L0301"
+    ],
+    "S0241": [
+      "L0302",
+      "L0303",
+      "L0304"
+    ],
+    "S0242": [
+      "L0305",
+      "L0306",
+      "L0307",
+      "L0308"
+    ],
+    "S0243": [
+      "L0309",
+      "L0310"
+    ],
+    "S0244": [
+      "L0311",
+      "L0312"
+    ],
+    "S0245": [
+      "L0313",
+      "L0314",
+      "L0315",
+      "L0316"
+    ],
+    "S0246": [
+      "L0317",
+      "L0318"
+    ],
+    "S0247": [
+      "L0319",
+      "L0320",
+      "L0321",
+      "L0322"
+    ],
+    "S0248": [
+      "L0323",
+      "L0324",
+      "L0325",
+      "L0326"
+    ],
+    "S0249": [
+      "L0327",
+      "L0328"
+    ],
+    "S0250": [
+      "L0329",
+      "L0330",
+      "L0331"
+    ],
+    "S0251": [
+      "L0332",
+      "L0333",
+      "L0334"
+    ],
+    "S0252": [
+      "L0335",
+      "L0336"
+    ],
+    "S0253": [
+      "L0337",
+      "L0338",
+      "L0339"
+    ],
+    "S0254": [
+      "L0340",
+      "L0341"
+    ],
+    "S0255": [
+      "L0342",
+      "L0343",
+      "L0344",
+      "L0345"
+    ],
+    "S0256": [
+      "L0346",
+      "L0347",
+      "L0348"
+    ],
+    "S0257": [
+      "L0349",
+      "L0350"
+    ],
+    "S0258": [
+      "L0351",
+      "L0352",
+      "L0353",
+      "L0354"
+    ],
+    "S0259": [
+      "L0355",
+      "L0356"
+    ],
+    "S0260": [
+      "L0357",
+      "L0358",
+      "L0359"
+    ],
+    "S0261": [
+      "L0360"
+    ],
+    "S0262": [
+      "L0361"
+    ],
+    "S0263": [
+      "L0362"
+    ],
+    "S0264": [
+      "L0365"
+    ],
+    "S0265": [
+      "L0369"
+    ],
+    "S0266": [
+      "L0370"
+    ],
+    "S0267": [
+      "L0371"
+    ],
+    "S0268": [
+      "L0374"
+    ],
+    "S0269": [
+      "L0378"
+    ],
+    "S0270": [
+      "L0379"
+    ],
+    "S0271": [
+      "L0380"
+    ],
+    "S0272": [
+      "L0383"
+    ],
+    "S0273": [
+      "L0387"
+    ],
+    "S0274": [
+      "L0388"
+    ],
+    "S0275": [
+      "L0389"
+    ],
+    "S0276": [
+      "L0392"
+    ],
+    "S0277": [
+      "L0396"
+    ],
+    "S0278": [
+      "L0397"
+    ],
+    "S0279": [
+      "L0398"
+    ],
+    "S0280": [
+      "L0401"
+    ],
+    "S0281": [
+      "L0405"
+    ],
+    "S0282": [
+      "L0406"
+    ],
+    "S0283": [
+      "L0407"
+    ],
+    "S0284": [
+      "L0410"
+    ],
+    "S0285": [
+      "L0414"
+    ],
+    "S0286": [
+      "L0415"
+    ],
+    "S0287": [
+      "L0416"
+    ],
+    "S0288": [
+      "L0419"
+    ],
+    "S0289": [
+      "L0423"
+    ],
+    "S0290": [
+      "L0424"
+    ],
+    "S0291": [
+      "L0425"
+    ],
+    "S0292": [
+      "L0428"
+    ],
+    "S0293": [
+      "L0432"
+    ],
+    "S0294": [
+      "L0433"
+    ],
+    "S0295": [
+      "L0434"
+    ],
+    "S0296": [
+      "L0437"
+    ],
+    "S0297": [
+      "L0441"
+    ],
+    "S0298": [
+      "L0442"
+    ],
+    "S0299": [
+      "L0443"
+    ],
+    "S0300": [
+      "L0446"
+    ]
+  },
+  "ledger": [
+    {
+      "amount_paise": 213337,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0001",
+      "source": "csv",
+      "text": "NEFT 10000137 Sharma Traders INV 1001"
+    },
+    {
+      "amount_paise": 226674,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "L0002",
+      "source": "csv",
+      "text": "NEFT 10000274 Deshmukh Electricals INV 1002"
+    },
+    {
+      "amount_paise": 240011,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "L0003",
+      "source": "csv",
+      "text": "NEFT 10000411 Nagpur Steel Co INV 1003"
+    },
+    {
+      "amount_paise": 253348,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0004",
+      "source": "csv",
+      "text": "NEFT 10000548 Vidarbha Logistics INV 1004"
+    },
+    {
+      "amount_paise": 266685,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0005",
+      "source": "csv",
+      "text": "NEFT 10000685 Orange City Packaging INV 1005"
+    },
+    {
+      "amount_paise": 280022,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "L0007",
+      "source": "csv",
+      "text": "NEFT 10000822 Sitabuldi Hardware INV 1006"
+    },
+    {
+      "amount_paise": 293359,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0008",
+      "source": "csv",
+      "text": "NEFT 10000959 Kamptee Cotton Mills INV 1007"
+    },
+    {
+      "amount_paise": 306696,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0009",
+      "source": "csv",
+      "text": "NEFT 10001096 Wardha Road Agencies INV 1008"
+    },
+    {
+      "amount_paise": 320033,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "L0010",
+      "source": "csv",
+      "text": "NEFT 10001233 Dharampeth Stationers INV 1009"
+    },
+    {
+      "amount_paise": 333370,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0011",
+      "source": "csv",
+      "text": "NEFT 10001370 Itwari Wholesale INV 1010"
+    },
+    {
+      "amount_paise": 346707,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0013",
+      "source": "csv",
+      "text": "NEFT 10001507 Amravati Auto Parts INV 1011"
+    },
+    {
+      "amount_paise": 360044,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "L0014",
+      "source": "csv",
+      "text": "NEFT 10001644 Hingna Industrial Supply INV 1012"
+    },
+    {
+      "amount_paise": 373381,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "L0015",
+      "source": "csv",
+      "text": "NEFT 10001781 Sharma Traders INV 1013"
+    },
+    {
+      "amount_paise": 386718,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0016",
+      "source": "csv",
+      "text": "NEFT 10001918 Deshmukh Electricals INV 1014"
+    },
+    {
+      "amount_paise": 400055,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "L0017",
+      "source": "csv",
+      "text": "NEFT 10002055 Nagpur Steel Co INV 1015"
+    },
+    {
+      "amount_paise": 413392,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0019",
+      "source": "csv",
+      "text": "NEFT 10002192 Vidarbha Logistics INV 1016"
+    },
+    {
+      "amount_paise": 426729,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0020",
+      "source": "csv",
+      "text": "NEFT 10002329 Orange City Packaging INV 1017"
+    },
+    {
+      "amount_paise": 440066,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "L0021",
+      "source": "csv",
+      "text": "NEFT 10002466 Sitabuldi Hardware INV 1018"
+    },
+    {
+      "amount_paise": 453403,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0022",
+      "source": "csv",
+      "text": "NEFT 10002603 Kamptee Cotton Mills INV 1019"
+    },
+    {
+      "amount_paise": 466740,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "L0023",
+      "source": "csv",
+      "text": "NEFT 10002740 Wardha Road Agencies INV 1020"
+    },
+    {
+      "amount_paise": 480077,
+      "date": "2026-10-22",
+      "direction": "credit",
+      "id": "L0025",
+      "source": "csv",
+      "text": "NEFT 10002877 Dharampeth Stationers INV 1021"
+    },
+    {
+      "amount_paise": 493414,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0026",
+      "source": "csv",
+      "text": "NEFT 10003014 Itwari Wholesale INV 1022"
+    },
+    {
+      "amount_paise": 506751,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0027",
+      "source": "csv",
+      "text": "NEFT 10003151 Amravati Auto Parts INV 1023"
+    },
+    {
+      "amount_paise": 520088,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0028",
+      "source": "csv",
+      "text": "NEFT 10003288 Hingna Industrial Supply INV 1024"
+    },
+    {
+      "amount_paise": 533425,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0029",
+      "source": "csv",
+      "text": "NEFT 10003425 Sharma Traders INV 1025"
+    },
+    {
+      "amount_paise": 546762,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0031",
+      "source": "csv",
+      "text": "NEFT 10003562 Deshmukh Electricals INV 1026"
+    },
+    {
+      "amount_paise": 560099,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "L0032",
+      "source": "csv",
+      "text": "NEFT 10003699 Nagpur Steel Co INV 1027"
+    },
+    {
+      "amount_paise": 573436,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0033",
+      "source": "csv",
+      "text": "NEFT 10003836 Vidarbha Logistics INV 1028"
+    },
+    {
+      "amount_paise": 586773,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0034",
+      "source": "csv",
+      "text": "NEFT 10003973 Orange City Packaging INV 1029"
+    },
+    {
+      "amount_paise": 600110,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "L0035",
+      "source": "csv",
+      "text": "NEFT 10004110 Sitabuldi Hardware INV 1030"
+    },
+    {
+      "amount_paise": 613447,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0037",
+      "source": "csv",
+      "text": "NEFT 10004247 Kamptee Cotton Mills INV 1031"
+    },
+    {
+      "amount_paise": 626784,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "L0038",
+      "source": "csv",
+      "text": "NEFT 10004384 Wardha Road Agencies INV 1032"
+    },
+    {
+      "amount_paise": 640121,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "L0039",
+      "source": "csv",
+      "text": "NEFT 10004521 Dharampeth Stationers INV 1033"
+    },
+    {
+      "amount_paise": 653458,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0040",
+      "source": "csv",
+      "text": "NEFT 10004658 Itwari Wholesale INV 1034"
+    },
+    {
+      "amount_paise": 666795,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0041",
+      "source": "csv",
+      "text": "NEFT 10004795 Amravati Auto Parts INV 1035"
+    },
+    {
+      "amount_paise": 680132,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "L0043",
+      "source": "csv",
+      "text": "NEFT 10004932 Hingna Industrial Supply INV 1036"
+    },
+    {
+      "amount_paise": 693469,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0044",
+      "source": "csv",
+      "text": "NEFT 10005069 Sharma Traders INV 1037"
+    },
+    {
+      "amount_paise": 706806,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0045",
+      "source": "csv",
+      "text": "NEFT 10005206 Deshmukh Electricals INV 1038"
+    },
+    {
+      "amount_paise": 720143,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "L0046",
+      "source": "csv",
+      "text": "NEFT 10005343 Nagpur Steel Co INV 1039"
+    },
+    {
+      "amount_paise": 733480,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0047",
+      "source": "csv",
+      "text": "NEFT 10005480 Vidarbha Logistics INV 1040"
+    },
+    {
+      "amount_paise": 746817,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0049",
+      "source": "csv",
+      "text": "NEFT 10005617 Orange City Packaging INV 1041"
+    },
+    {
+      "amount_paise": 760154,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "L0050",
+      "source": "csv",
+      "text": "NEFT 10005754 Sitabuldi Hardware INV 1042"
+    },
+    {
+      "amount_paise": 773491,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0051",
+      "source": "csv",
+      "text": "NEFT 10005891 Kamptee Cotton Mills INV 1043"
+    },
+    {
+      "amount_paise": 786828,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0052",
+      "source": "csv",
+      "text": "NEFT 10006028 Wardha Road Agencies INV 1044"
+    },
+    {
+      "amount_paise": 800165,
+      "date": "2026-10-08",
+      "direction": "credit",
+      "id": "L0053",
+      "source": "csv",
+      "text": "NEFT 10006165 Dharampeth Stationers INV 1045"
+    },
+    {
+      "amount_paise": 813502,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0055",
+      "source": "csv",
+      "text": "NEFT 10006302 Itwari Wholesale INV 1046"
+    },
+    {
+      "amount_paise": 826839,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0056",
+      "source": "csv",
+      "text": "NEFT 10006439 Amravati Auto Parts INV 1047"
+    },
+    {
+      "amount_paise": 840176,
+      "date": "2026-10-22",
+      "direction": "credit",
+      "id": "L0057",
+      "source": "csv",
+      "text": "NEFT 10006576 Hingna Industrial Supply INV 1048"
+    },
+    {
+      "amount_paise": 853513,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "L0058",
+      "source": "csv",
+      "text": "NEFT 10006713 Sharma Traders INV 1049"
+    },
+    {
+      "amount_paise": 866850,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0059",
+      "source": "csv",
+      "text": "NEFT 10006850 Deshmukh Electricals INV 1050"
+    },
+    {
+      "amount_paise": 880187,
+      "date": "2026-10-23",
+      "direction": "credit",
+      "id": "L0061",
+      "source": "csv",
+      "text": "NEFT 10006987 Nagpur Steel Co INV 1051"
+    },
+    {
+      "amount_paise": 893524,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "L0062",
+      "source": "csv",
+      "text": "NEFT 10007124 Vidarbha Logistics INV 1052"
+    },
+    {
+      "amount_paise": 906861,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0063",
+      "source": "csv",
+      "text": "NEFT 10007261 Orange City Packaging INV 1053"
+    },
+    {
+      "amount_paise": 920198,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "L0064",
+      "source": "csv",
+      "text": "NEFT 10007398 Sitabuldi Hardware INV 1054"
+    },
+    {
+      "amount_paise": 933535,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0065",
+      "source": "csv",
+      "text": "NEFT 10007535 Kamptee Cotton Mills INV 1055"
+    },
+    {
+      "amount_paise": 946872,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "L0067",
+      "source": "csv",
+      "text": "NEFT 10007672 Wardha Road Agencies INV 1056"
+    },
+    {
+      "amount_paise": 960209,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "L0068",
+      "source": "csv",
+      "text": "NEFT 10007809 Dharampeth Stationers INV 1057"
+    },
+    {
+      "amount_paise": 973546,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0069",
+      "source": "csv",
+      "text": "NEFT 10007946 Itwari Wholesale INV 1058"
+    },
+    {
+      "amount_paise": 986883,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0070",
+      "source": "csv",
+      "text": "NEFT 10008083 Amravati Auto Parts INV 1059"
+    },
+    {
+      "amount_paise": 1000220,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0071",
+      "source": "csv",
+      "text": "NEFT 10008220 Hingna Industrial Supply INV 1060"
+    },
+    {
+      "amount_paise": 1013557,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0073",
+      "source": "csv",
+      "text": "NEFT 10008357 Sharma Traders INV 1061"
+    },
+    {
+      "amount_paise": 1026894,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0074",
+      "source": "csv",
+      "text": "NEFT 10008494 Deshmukh Electricals INV 1062"
+    },
+    {
+      "amount_paise": 1040231,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "L0075",
+      "source": "csv",
+      "text": "NEFT 10008631 Nagpur Steel Co INV 1063"
+    },
+    {
+      "amount_paise": 1053568,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0076",
+      "source": "csv",
+      "text": "NEFT 10008768 Vidarbha Logistics INV 1064"
+    },
+    {
+      "amount_paise": 1066905,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0077",
+      "source": "csv",
+      "text": "NEFT 10008905 Orange City Packaging INV 1065"
+    },
+    {
+      "amount_paise": 1080242,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "L0079",
+      "source": "csv",
+      "text": "NEFT 10009042 Sitabuldi Hardware INV 1066"
+    },
+    {
+      "amount_paise": 1093579,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "L0080",
+      "source": "csv",
+      "text": "NEFT 10009179 Kamptee Cotton Mills INV 1067"
+    },
+    {
+      "amount_paise": 1106916,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0081",
+      "source": "csv",
+      "text": "NEFT 10009316 Wardha Road Agencies INV 1068"
+    },
+    {
+      "amount_paise": 1120253,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "L0082",
+      "source": "csv",
+      "text": "NEFT 10009453 Dharampeth Stationers INV 1069"
+    },
+    {
+      "amount_paise": 1133590,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0083",
+      "source": "csv",
+      "text": "NEFT 10009590 Itwari Wholesale INV 1070"
+    },
+    {
+      "amount_paise": 1146927,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0085",
+      "source": "csv",
+      "text": "NEFT 10009727 Amravati Auto Parts INV 1071"
+    },
+    {
+      "amount_paise": 1160264,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "L0086",
+      "source": "csv",
+      "text": "NEFT 10009864 Hingna Industrial Supply INV 1072"
+    },
+    {
+      "amount_paise": 1173601,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0087",
+      "source": "csv",
+      "text": "NEFT 10010001 Sharma Traders INV 1073"
+    },
+    {
+      "amount_paise": 1186938,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0088",
+      "source": "csv",
+      "text": "NEFT 10010138 Deshmukh Electricals INV 1074"
+    },
+    {
+      "amount_paise": 1200275,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0089",
+      "source": "csv",
+      "text": "NEFT 10010275 Nagpur Steel Co INV 1075"
+    },
+    {
+      "amount_paise": 1213612,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0091",
+      "source": "csv",
+      "text": "NEFT 10010412 Vidarbha Logistics INV 1076"
+    },
+    {
+      "amount_paise": 1226949,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0092",
+      "source": "csv",
+      "text": "NEFT 10010549 Orange City Packaging INV 1077"
+    },
+    {
+      "amount_paise": 1240286,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "L0093",
+      "source": "csv",
+      "text": "NEFT 10010686 Sitabuldi Hardware INV 1078"
+    },
+    {
+      "amount_paise": 1253623,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0094",
+      "source": "csv",
+      "text": "NEFT 10010823 Kamptee Cotton Mills INV 1079"
+    },
+    {
+      "amount_paise": 1266960,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "L0095",
+      "source": "csv",
+      "text": "NEFT 10010960 Wardha Road Agencies INV 1080"
+    },
+    {
+      "amount_paise": 1280297,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "L0097",
+      "source": "csv",
+      "text": "NEFT 10011097 Dharampeth Stationers INV 1081"
+    },
+    {
+      "amount_paise": 1293634,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "L0098",
+      "source": "csv",
+      "text": "NEFT 10011234 Itwari Wholesale INV 1082"
+    },
+    {
+      "amount_paise": 1306971,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0099",
+      "source": "csv",
+      "text": "NEFT 10011371 Amravati Auto Parts INV 1083"
+    },
+    {
+      "amount_paise": 1320308,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0100",
+      "source": "csv",
+      "text": "NEFT 10011508 Hingna Industrial Supply INV 1084"
+    },
+    {
+      "amount_paise": 1333645,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0101",
+      "source": "csv",
+      "text": "NEFT 10011645 Sharma Traders INV 1085"
+    },
+    {
+      "amount_paise": 1346982,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0103",
+      "source": "csv",
+      "text": "NEFT 10011782 Deshmukh Electricals INV 1086"
+    },
+    {
+      "amount_paise": 1360319,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "L0104",
+      "source": "csv",
+      "text": "NEFT 10011919 Nagpur Steel Co INV 1087"
+    },
+    {
+      "amount_paise": 1373656,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0105",
+      "source": "csv",
+      "text": "NEFT 10012056 Vidarbha Logistics INV 1088"
+    },
+    {
+      "amount_paise": 1386993,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0106",
+      "source": "csv",
+      "text": "NEFT 10012193 Orange City Packaging INV 1089"
+    },
+    {
+      "amount_paise": 1400330,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "L0107",
+      "source": "csv",
+      "text": "NEFT 10012330 Sitabuldi Hardware INV 1090"
+    },
+    {
+      "amount_paise": 1413667,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0109",
+      "source": "csv",
+      "text": "RTGS 10012464 Kamptee Cotton Mills INV 1091"
+    },
+    {
+      "amount_paise": 1427004,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0110",
+      "source": "csv",
+      "text": "RTGS 10012607 Wardha Road Agencies INV 1092"
+    },
+    {
+      "amount_paise": 1440341,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "L0111",
+      "source": "csv",
+      "text": "RTGS 10012745 Dharampeth Stationers INV 1093"
+    },
+    {
+      "amount_paise": 1453678,
+      "date": "2026-10-25",
+      "direction": "debit",
+      "id": "L0112",
+      "source": "csv",
+      "text": "RTGS 10012873 Itwari Wholesale INV 1094"
+    },
+    {
+      "amount_paise": 1467015,
+      "date": "2026-10-26",
+      "direction": "debit",
+      "id": "L0113",
+      "source": "csv",
+      "text": "RTGS 10013012 Amravati Auto Parts INV 1095"
+    },
+    {
+      "amount_paise": 1480352,
+      "date": "2026-10-18",
+      "direction": "credit",
+      "id": "L0114",
+      "source": "csv",
+      "text": "RTGS 10013158 Hingna Industrial Supply INV 1096"
+    },
+    {
+      "amount_paise": 1493689,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0115",
+      "source": "csv",
+      "text": "RTGS 10013287 Sharma Traders INV 1097"
+    },
+    {
+      "amount_paise": 1507026,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0116",
+      "source": "csv",
+      "text": "RTGS 10013428 Deshmukh Electricals INV 1098"
+    },
+    {
+      "amount_paise": 1520363,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "L0117",
+      "source": "csv",
+      "text": "RTGS 10013560 Nagpur Steel Co INV 1099"
+    },
+    {
+      "amount_paise": 1533700,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "L0118",
+      "source": "csv",
+      "text": "RTGS 10013707 Vidarbha Logistics INV 1100"
+    },
+    {
+      "amount_paise": 1547037,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0119",
+      "source": "csv",
+      "text": "RTGS 10013832 Orange City Packaging INV 1101"
+    },
+    {
+      "amount_paise": 1560374,
+      "date": "2026-10-08",
+      "direction": "credit",
+      "id": "L0120",
+      "source": "csv",
+      "text": "RTGS 10013976 Sitabuldi Hardware INV 1102"
+    },
+    {
+      "amount_paise": 1573711,
+      "date": "2026-10-25",
+      "direction": "debit",
+      "id": "L0121",
+      "source": "csv",
+      "text": "RTGS 10014116 Kamptee Cotton Mills INV 1103"
+    },
+    {
+      "amount_paise": 1587048,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0122",
+      "source": "csv",
+      "text": "RTGS 10014240 Wardha Road Agencies INV 1104"
+    },
+    {
+      "amount_paise": 1600385,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "L0123",
+      "source": "csv",
+      "text": "RTGS 10014388 Dharampeth Stationers INV 1105"
+    },
+    {
+      "amount_paise": 1613722,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0124",
+      "source": "csv",
+      "text": "RTGS 10014527 Itwari Wholesale INV 1106"
+    },
+    {
+      "amount_paise": 1627059,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0125",
+      "source": "csv",
+      "text": "RTGS 10014651 Amravati Auto Parts INV 1107"
+    },
+    {
+      "amount_paise": 1640396,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "L0126",
+      "source": "csv",
+      "text": "RTGS 10014790 Hingna Industrial Supply INV 1108"
+    },
+    {
+      "amount_paise": 1653733,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0127",
+      "source": "csv",
+      "text": "RTGS 10014936 Sharma Traders INV 1109"
+    },
+    {
+      "amount_paise": 1667070,
+      "date": "2026-10-24",
+      "direction": "debit",
+      "id": "L0128",
+      "source": "csv",
+      "text": "RTGS 10015071 Deshmukh Electricals INV 1110"
+    },
+    {
+      "amount_paise": 1680407,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "L0129",
+      "source": "csv",
+      "text": "RTGS 10015205 Nagpur Steel Co INV 1111"
+    },
+    {
+      "amount_paise": 1693744,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0130",
+      "source": "csv",
+      "text": "RTGS 10015340 Vidarbha Logistics INV 1112"
+    },
+    {
+      "amount_paise": 1707081,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0131",
+      "source": "csv",
+      "text": "RTGS 10015482 Orange City Packaging INV 1113"
+    },
+    {
+      "amount_paise": 1720418,
+      "date": "2026-10-24",
+      "direction": "credit",
+      "id": "L0132",
+      "source": "csv",
+      "text": "RTGS 10015610 Sitabuldi Hardware INV 1114"
+    },
+    {
+      "amount_paise": 1733755,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0133",
+      "source": "csv",
+      "text": "RTGS 10015757 Kamptee Cotton Mills INV 1115"
+    },
+    {
+      "amount_paise": 1747092,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0134",
+      "source": "csv",
+      "text": "RTGS 10015895 Wardha Road Agencies INV 1116"
+    },
+    {
+      "amount_paise": 1760429,
+      "date": "2026-10-22",
+      "direction": "credit",
+      "id": "L0135",
+      "source": "csv",
+      "text": "RTGS 10016022 Dharampeth Stationers INV 1117"
+    },
+    {
+      "amount_paise": 1773766,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0136",
+      "source": "csv",
+      "text": "RTGS 10016163 Itwari Wholesale INV 1118"
+    },
+    {
+      "amount_paise": 1787103,
+      "date": "2026-10-25",
+      "direction": "debit",
+      "id": "L0137",
+      "source": "csv",
+      "text": "RTGS 10016307 Amravati Auto Parts INV 1119"
+    },
+    {
+      "amount_paise": 1800440,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0138",
+      "source": "csv",
+      "text": "RTGS 10016447 Hingna Industrial Supply INV 1120"
+    },
+    {
+      "amount_paise": 1813777,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0139",
+      "source": "csv",
+      "text": "RTGS 10016575 Sharma Traders INV 1121"
+    },
+    {
+      "amount_paise": 1827114,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0140",
+      "source": "csv",
+      "text": "RTGS 10016716 Deshmukh Electricals INV 1122"
+    },
+    {
+      "amount_paise": 1840451,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "L0141",
+      "source": "csv",
+      "text": "RTGS 10016853 Nagpur Steel Co INV 1123"
+    },
+    {
+      "amount_paise": 1853788,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0142",
+      "source": "csv",
+      "text": "RTGS 10016982 Vidarbha Logistics INV 1124"
+    },
+    {
+      "amount_paise": 1867125,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0143",
+      "source": "csv",
+      "text": "RTGS 10017126 Orange City Packaging INV 1125"
+    },
+    {
+      "amount_paise": 1880462,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "L0144",
+      "source": "csv",
+      "text": "RTGS 10017266 Sitabuldi Hardware INV 1126"
+    },
+    {
+      "amount_paise": 1893799,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0145",
+      "source": "csv",
+      "text": "RTGS 10017395 Kamptee Cotton Mills INV 1127"
+    },
+    {
+      "amount_paise": 1907136,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0146",
+      "source": "csv",
+      "text": "RTGS 10017530 Wardha Road Agencies INV 1128"
+    },
+    {
+      "amount_paise": 1920473,
+      "date": "2026-10-23",
+      "direction": "credit",
+      "id": "L0147",
+      "source": "csv",
+      "text": "RTGS 10017677 Dharampeth Stationers INV 1129"
+    },
+    {
+      "amount_paise": 1933810,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0148",
+      "source": "csv",
+      "text": "RTGS 10017818 Itwari Wholesale INV 1130"
+    },
+    {
+      "amount_paise": 1947147,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0149",
+      "source": "csv",
+      "text": "RTGS 10017944 Amravati Auto Parts INV 1131"
+    },
+    {
+      "amount_paise": 1960484,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "L0150",
+      "source": "csv",
+      "text": "RTGS 10018086 Hingna Industrial Supply INV 1132"
+    },
+    {
+      "amount_paise": 1973821,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0151",
+      "source": "csv",
+      "text": "RTGS 10018227 Sharma Traders INV 1133"
+    },
+    {
+      "amount_paise": 1987158,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0152",
+      "source": "csv",
+      "text": "RTGS 10018356 Deshmukh Electricals INV 1134"
+    },
+    {
+      "amount_paise": 2000495,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "L0153",
+      "source": "csv",
+      "text": "RTGS 10018497 Nagpur Steel Co INV 1135"
+    },
+    {
+      "amount_paise": 2013832,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0154",
+      "source": "csv",
+      "text": "RTGS 10018638 Vidarbha Logistics INV 1136"
+    },
+    {
+      "amount_paise": 2027169,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0155",
+      "source": "csv",
+      "text": "RTGS 10018763 Orange City Packaging INV 1137"
+    },
+    {
+      "amount_paise": 2040506,
+      "date": "2026-10-23",
+      "direction": "credit",
+      "id": "L0156",
+      "source": "csv",
+      "text": "RTGS 10018904 Sitabuldi Hardware INV 1138"
+    },
+    {
+      "amount_paise": 2053843,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0157",
+      "source": "csv",
+      "text": "RTGS 10019046 Kamptee Cotton Mills INV 1139"
+    },
+    {
+      "amount_paise": 2067180,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0158",
+      "source": "csv",
+      "text": "RTGS 10019184 Wardha Road Agencies INV 1140"
+    },
+    {
+      "amount_paise": 2080517,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "L0159",
+      "source": "csv",
+      "text": "RTGS 10019319 Dharampeth Stationers INV 1141"
+    },
+    {
+      "amount_paise": 2093854,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0160",
+      "source": "csv",
+      "text": "RTGS 10019455 Itwari Wholesale INV 1142"
+    },
+    {
+      "amount_paise": 2107191,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "L0161",
+      "source": "csv",
+      "text": "RTGS 10019594 Amravati Auto Parts INV 1143"
+    },
+    {
+      "amount_paise": 2120528,
+      "date": "2026-10-21",
+      "direction": "credit",
+      "id": "L0162",
+      "source": "csv",
+      "text": "RTGS 10019726 Hingna Industrial Supply INV 1144"
+    },
+    {
+      "amount_paise": 2133865,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0163",
+      "source": "csv",
+      "text": "RTGS 10019866 Sharma Traders INV 1145"
+    },
+    {
+      "amount_paise": 2147202,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0164",
+      "source": "csv",
+      "text": "RTGS 10020003 Deshmukh Electricals INV 1146"
+    },
+    {
+      "amount_paise": 2160539,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "L0165",
+      "source": "csv",
+      "text": "RTGS 10020137 Nagpur Steel Co INV 1147"
+    },
+    {
+      "amount_paise": 2173876,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0166",
+      "source": "csv",
+      "text": "RTGS 10020274 Vidarbha Logistics INV 1148"
+    },
+    {
+      "amount_paise": 2187213,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0167",
+      "source": "csv",
+      "text": "RTGS 10020418 Orange City Packaging INV 1149"
+    },
+    {
+      "amount_paise": 2200550,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "L0168",
+      "source": "csv",
+      "text": "RTGS 10020551 Sitabuldi Hardware INV 1150"
+    },
+    {
+      "amount_paise": 2213887,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0169",
+      "source": "csv",
+      "text": "RTGS 10020688 Kamptee Cotton Mills INV 1151"
+    },
+    {
+      "amount_paise": 2227224,
+      "date": "2026-10-26",
+      "direction": "debit",
+      "id": "L0170",
+      "source": "csv",
+      "text": "RTGS 10020822 Wardha Road Agencies INV 1152"
+    },
+    {
+      "amount_paise": 2240561,
+      "date": "2026-10-22",
+      "direction": "credit",
+      "id": "L0171",
+      "source": "csv",
+      "text": "RTGS 10020964 Dharampeth Stationers INV 1153"
+    },
+    {
+      "amount_paise": 2253898,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0172",
+      "source": "csv",
+      "text": "RTGS 10021090 Itwari Wholesale INV 1154"
+    },
+    {
+      "amount_paise": 2267235,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0173",
+      "source": "csv",
+      "text": "RTGS 10021237 Amravati Auto Parts INV 1155"
+    },
+    {
+      "amount_paise": 2280572,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "L0174",
+      "source": "csv",
+      "text": "RTGS 10021379 Hingna Industrial Supply INV 1156"
+    },
+    {
+      "amount_paise": 2293909,
+      "date": "2026-10-26",
+      "direction": "debit",
+      "id": "L0175",
+      "source": "csv",
+      "text": "RTGS 10021503 Sharma Traders INV 1157"
+    },
+    {
+      "amount_paise": 2307246,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0176",
+      "source": "csv",
+      "text": "RTGS 10021648 Deshmukh Electricals INV 1158"
+    },
+    {
+      "amount_paise": 2320583,
+      "date": "2026-10-25",
+      "direction": "credit",
+      "id": "L0177",
+      "source": "csv",
+      "text": "RTGS 10021789 Nagpur Steel Co INV 1159"
+    },
+    {
+      "amount_paise": 2333920,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0178",
+      "source": "csv",
+      "text": "RTGS 10021926 Vidarbha Logistics INV 1160"
+    },
+    {
+      "amount_paise": 2354299,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0179",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INV 1161 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2367676,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "L0180",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INV 1162 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2381053,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0181",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INV 1163 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2394430,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0182",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INV 1164 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2407807,
+      "date": "2026-10-10",
+      "direction": "credit",
+      "id": "L0183",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INV 1165 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2421184,
+      "date": "2026-10-27",
+      "direction": "debit",
+      "id": "L0184",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INV 1166 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2434561,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0185",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INV 1167 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2447938,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0186",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INV 1168 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2461315,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0187",
+      "source": "csv",
+      "text": "UPI Sharma Traders INV 1169 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2474692,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0188",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INV 1170 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2488069,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0189",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INV 1171 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2501446,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0190",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INV 1172 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2514823,
+      "date": "2026-10-25",
+      "direction": "debit",
+      "id": "L0191",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INV 1173 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2528200,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "L0192",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INV 1174 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2541577,
+      "date": "2026-10-25",
+      "direction": "debit",
+      "id": "L0193",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INV 1175 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2554954,
+      "date": "2026-10-27",
+      "direction": "debit",
+      "id": "L0194",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INV 1176 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2568331,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "L0195",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INV 1177 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2581708,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0196",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INV 1178 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2595085,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "L0197",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INV 1179 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2608462,
+      "date": "2026-10-26",
+      "direction": "credit",
+      "id": "L0198",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INV 1180 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2621839,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0199",
+      "source": "csv",
+      "text": "UPI Sharma Traders INV 1181 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2635216,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0200",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INV 1182 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2648593,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0201",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INV 1183 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2661970,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0202",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INV 1184 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2675347,
+      "date": "2026-10-25",
+      "direction": "debit",
+      "id": "L0203",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INV 1185 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2688724,
+      "date": "2026-10-10",
+      "direction": "credit",
+      "id": "L0204",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INV 1186 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2702101,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0205",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INV 1187 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2715478,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0206",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INV 1188 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2728855,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0207",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INV 1189 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2742232,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0208",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INV 1190 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2755609,
+      "date": "2026-10-25",
+      "direction": "debit",
+      "id": "L0209",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INV 1191 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2768986,
+      "date": "2026-10-24",
+      "direction": "credit",
+      "id": "L0210",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INV 1192 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2782363,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "L0211",
+      "source": "csv",
+      "text": "UPI Sharma Traders INV 1193 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2795740,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0212",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INV 1194 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2809117,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "L0213",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INV 1195 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2822494,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "L0214",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INV 1196 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2835871,
+      "date": "2026-10-29",
+      "direction": "debit",
+      "id": "L0215",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INV 1197 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2849248,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "L0216",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INV 1198 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2862625,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0217",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INV 1199 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2876002,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0218",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INV 1200 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2889379,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "L0219",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INV 1201 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2902756,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0220",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INV 1202 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2916133,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0221",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INV 1203 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2929510,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "L0222",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INV 1204 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2942887,
+      "date": "2026-10-27",
+      "direction": "debit",
+      "id": "L0223",
+      "source": "csv",
+      "text": "UPI Sharma Traders INV 1205 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2956264,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0224",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INV 1206 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2969641,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "L0225",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INV 1207 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2983018,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0226",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INV 1208 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 2996395,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0227",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INV 1209 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3009772,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "L0228",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INV 1210 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3023149,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0229",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INV 1211 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3036526,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0230",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INV 1212 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3049903,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "L0231",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INV 1213 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3063280,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "L0232",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INV 1214 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3076657,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0233",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INV 1215 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3090034,
+      "date": "2026-10-24",
+      "direction": "credit",
+      "id": "L0234",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INV 1216 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3103411,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0235",
+      "source": "csv",
+      "text": "UPI Sharma Traders INV 1217 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3116788,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0236",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INV 1218 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3130165,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "L0237",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INV 1219 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 3143542,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0238",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INV 1220 SETTLEMENT RECEIVED"
+    },
+    {
+      "amount_paise": 660970,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0239",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1221 PART 1"
+    },
+    {
+      "amount_paise": 1038667,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "L0240",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1221 PART 2"
+    },
+    {
+      "amount_paise": 1447840,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "L0241",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1221 PART 3"
+    },
+    {
+      "amount_paise": 410905,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0242",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1222 PART 1"
+    },
+    {
+      "amount_paise": 663770,
+      "date": "2026-10-18",
+      "direction": "credit",
+      "id": "L0243",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1222 PART 2"
+    },
+    {
+      "amount_paise": 853419,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0244",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1222 PART 3"
+    },
+    {
+      "amount_paise": 1232720,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0245",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1222 PART 4"
+    },
+    {
+      "amount_paise": 1174435,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0246",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1223 PART 1"
+    },
+    {
+      "amount_paise": 1999716,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "L0247",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1223 PART 2"
+    },
+    {
+      "amount_paise": 1179370,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0248",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1224 PART 1"
+    },
+    {
+      "amount_paise": 2008118,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0249",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1224 PART 2"
+    },
+    {
+      "amount_paise": 416107,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0250",
+      "source": "csv",
+      "text": "Dharampeth Stationers INVOICE 1225 PART 1"
+    },
+    {
+      "amount_paise": 672173,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0251",
+      "source": "csv",
+      "text": "Dharampeth Stationers INVOICE 1225 PART 2"
+    },
+    {
+      "amount_paise": 864222,
+      "date": "2026-10-18",
+      "direction": "credit",
+      "id": "L0252",
+      "source": "csv",
+      "text": "Dharampeth Stationers INVOICE 1225 PART 3"
+    },
+    {
+      "amount_paise": 1248323,
+      "date": "2026-10-18",
+      "direction": "credit",
+      "id": "L0253",
+      "source": "csv",
+      "text": "Dharampeth Stationers INVOICE 1225 PART 4"
+    },
+    {
+      "amount_paise": 674974,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0254",
+      "source": "csv",
+      "text": "Itwari Wholesale INVOICE 1226 PART 1"
+    },
+    {
+      "amount_paise": 1060673,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0255",
+      "source": "csv",
+      "text": "Itwari Wholesale INVOICE 1226 PART 2"
+    },
+    {
+      "amount_paise": 1478515,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "L0256",
+      "source": "csv",
+      "text": "Itwari Wholesale INVOICE 1226 PART 3"
+    },
+    {
+      "amount_paise": 419574,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0257",
+      "source": "csv",
+      "text": "Amravati Auto Parts INVOICE 1227 PART 1"
+    },
+    {
+      "amount_paise": 677774,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "L0258",
+      "source": "csv",
+      "text": "Amravati Auto Parts INVOICE 1227 PART 2"
+    },
+    {
+      "amount_paise": 871424,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0259",
+      "source": "csv",
+      "text": "Amravati Auto Parts INVOICE 1227 PART 3"
+    },
+    {
+      "amount_paise": 1258727,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0260",
+      "source": "csv",
+      "text": "Amravati Auto Parts INVOICE 1227 PART 4"
+    },
+    {
+      "amount_paise": 680575,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "L0261",
+      "source": "csv",
+      "text": "Hingna Industrial Supply INVOICE 1228 PART 1"
+    },
+    {
+      "amount_paise": 1069475,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "L0262",
+      "source": "csv",
+      "text": "Hingna Industrial Supply INVOICE 1228 PART 2"
+    },
+    {
+      "amount_paise": 1490786,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "L0263",
+      "source": "csv",
+      "text": "Hingna Industrial Supply INVOICE 1228 PART 3"
+    },
+    {
+      "amount_paise": 423042,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0264",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1229 PART 1"
+    },
+    {
+      "amount_paise": 683376,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0265",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1229 PART 2"
+    },
+    {
+      "amount_paise": 878626,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0266",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1229 PART 3"
+    },
+    {
+      "amount_paise": 1269129,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0267",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1229 PART 4"
+    },
+    {
+      "amount_paise": 424776,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0268",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1230 PART 1"
+    },
+    {
+      "amount_paise": 686177,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0269",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1230 PART 2"
+    },
+    {
+      "amount_paise": 882227,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0270",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1230 PART 3"
+    },
+    {
+      "amount_paise": 1274330,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0271",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1230 PART 4"
+    },
+    {
+      "amount_paise": 426510,
+      "date": "2026-10-18",
+      "direction": "credit",
+      "id": "L0272",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1231 PART 1"
+    },
+    {
+      "amount_paise": 688977,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0273",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1231 PART 2"
+    },
+    {
+      "amount_paise": 885828,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0274",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1231 PART 3"
+    },
+    {
+      "amount_paise": 1279532,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0275",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1231 PART 4"
+    },
+    {
+      "amount_paise": 428243,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0276",
+      "source": "csv",
+      "text": "Vidarbha Logistics INVOICE 1232 PART 1"
+    },
+    {
+      "amount_paise": 691778,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0277",
+      "source": "csv",
+      "text": "Vidarbha Logistics INVOICE 1232 PART 2"
+    },
+    {
+      "amount_paise": 889429,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0278",
+      "source": "csv",
+      "text": "Vidarbha Logistics INVOICE 1232 PART 3"
+    },
+    {
+      "amount_paise": 1284734,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0279",
+      "source": "csv",
+      "text": "Vidarbha Logistics INVOICE 1232 PART 4"
+    },
+    {
+      "amount_paise": 694579,
+      "date": "2026-10-24",
+      "direction": "debit",
+      "id": "L0280",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1233 PART 1"
+    },
+    {
+      "amount_paise": 1091481,
+      "date": "2026-10-25",
+      "direction": "debit",
+      "id": "L0281",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1233 PART 2"
+    },
+    {
+      "amount_paise": 1521461,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0282",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1233 PART 3"
+    },
+    {
+      "amount_paise": 697380,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "L0283",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1234 PART 1"
+    },
+    {
+      "amount_paise": 1095883,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "L0284",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1234 PART 2"
+    },
+    {
+      "amount_paise": 1527595,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "L0285",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1234 PART 3"
+    },
+    {
+      "amount_paise": 700180,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0286",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1235 PART 1"
+    },
+    {
+      "amount_paise": 1100284,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "L0287",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1235 PART 2"
+    },
+    {
+      "amount_paise": 1533731,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0288",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1235 PART 3"
+    },
+    {
+      "amount_paise": 435179,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0289",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1236 PART 1"
+    },
+    {
+      "amount_paise": 702981,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0290",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1236 PART 2"
+    },
+    {
+      "amount_paise": 903833,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "L0291",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1236 PART 3"
+    },
+    {
+      "amount_paise": 1305539,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0292",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1236 PART 4"
+    },
+    {
+      "amount_paise": 705782,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "L0293",
+      "source": "csv",
+      "text": "Dharampeth Stationers INVOICE 1237 PART 1"
+    },
+    {
+      "amount_paise": 1109086,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "L0294",
+      "source": "csv",
+      "text": "Dharampeth Stationers INVOICE 1237 PART 2"
+    },
+    {
+      "amount_paise": 1546001,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "L0295",
+      "source": "csv",
+      "text": "Dharampeth Stationers INVOICE 1237 PART 3"
+    },
+    {
+      "amount_paise": 1248456,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0296",
+      "source": "csv",
+      "text": "Itwari Wholesale INVOICE 1238 PART 1"
+    },
+    {
+      "amount_paise": 2125750,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0297",
+      "source": "csv",
+      "text": "Itwari Wholesale INVOICE 1238 PART 2"
+    },
+    {
+      "amount_paise": 1253390,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "L0298",
+      "source": "csv",
+      "text": "Amravati Auto Parts INVOICE 1239 PART 1"
+    },
+    {
+      "amount_paise": 2134153,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "L0299",
+      "source": "csv",
+      "text": "Amravati Auto Parts INVOICE 1239 PART 2"
+    },
+    {
+      "amount_paise": 1258325,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "L0300",
+      "source": "csv",
+      "text": "Hingna Industrial Supply INVOICE 1240 PART 1"
+    },
+    {
+      "amount_paise": 2142555,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "L0301",
+      "source": "csv",
+      "text": "Hingna Industrial Supply INVOICE 1240 PART 2"
+    },
+    {
+      "amount_paise": 716985,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "L0302",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1241 PART 1"
+    },
+    {
+      "amount_paise": 1126691,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "L0303",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1241 PART 2"
+    },
+    {
+      "amount_paise": 1570541,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "L0304",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1241 PART 3"
+    },
+    {
+      "amount_paise": 445582,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0305",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1242 PART 1"
+    },
+    {
+      "amount_paise": 719786,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0306",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1242 PART 2"
+    },
+    {
+      "amount_paise": 925439,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0307",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1242 PART 3"
+    },
+    {
+      "amount_paise": 1336747,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0308",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1242 PART 4"
+    },
+    {
+      "amount_paise": 1273129,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "L0309",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1243 PART 1"
+    },
+    {
+      "amount_paise": 2167762,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "L0310",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1243 PART 2"
+    },
+    {
+      "amount_paise": 1278064,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "L0311",
+      "source": "csv",
+      "text": "Vidarbha Logistics INVOICE 1244 PART 1"
+    },
+    {
+      "amount_paise": 2176164,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "L0312",
+      "source": "csv",
+      "text": "Vidarbha Logistics INVOICE 1244 PART 2"
+    },
+    {
+      "amount_paise": 450783,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0313",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1245 PART 1"
+    },
+    {
+      "amount_paise": 728188,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "L0314",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1245 PART 2"
+    },
+    {
+      "amount_paise": 936242,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0315",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1245 PART 3"
+    },
+    {
+      "amount_paise": 1352352,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0316",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1245 PART 4"
+    },
+    {
+      "amount_paise": 1287933,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "L0317",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1246 PART 1"
+    },
+    {
+      "amount_paise": 2192969,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "L0318",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1246 PART 2"
+    },
+    {
+      "amount_paise": 454251,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0319",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1247 PART 1"
+    },
+    {
+      "amount_paise": 733790,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0320",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1247 PART 2"
+    },
+    {
+      "amount_paise": 943444,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0321",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1247 PART 3"
+    },
+    {
+      "amount_paise": 1362754,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0322",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1247 PART 4"
+    },
+    {
+      "amount_paise": 455984,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0323",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1248 PART 1"
+    },
+    {
+      "amount_paise": 736590,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0324",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1248 PART 2"
+    },
+    {
+      "amount_paise": 947045,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0325",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1248 PART 3"
+    },
+    {
+      "amount_paise": 1367957,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0326",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1248 PART 4"
+    },
+    {
+      "amount_paise": 1302737,
+      "date": "2026-10-21",
+      "direction": "credit",
+      "id": "L0327",
+      "source": "csv",
+      "text": "Dharampeth Stationers INVOICE 1249 PART 1"
+    },
+    {
+      "amount_paise": 2218176,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "L0328",
+      "source": "csv",
+      "text": "Dharampeth Stationers INVOICE 1249 PART 2"
+    },
+    {
+      "amount_paise": 742192,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0329",
+      "source": "csv",
+      "text": "Itwari Wholesale INVOICE 1250 PART 1"
+    },
+    {
+      "amount_paise": 1166302,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0330",
+      "source": "csv",
+      "text": "Itwari Wholesale INVOICE 1250 PART 2"
+    },
+    {
+      "amount_paise": 1625756,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0331",
+      "source": "csv",
+      "text": "Itwari Wholesale INVOICE 1250 PART 3"
+    },
+    {
+      "amount_paise": 744993,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0332",
+      "source": "csv",
+      "text": "Amravati Auto Parts INVOICE 1251 PART 1"
+    },
+    {
+      "amount_paise": 1170703,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0333",
+      "source": "csv",
+      "text": "Amravati Auto Parts INVOICE 1251 PART 2"
+    },
+    {
+      "amount_paise": 1631891,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0334",
+      "source": "csv",
+      "text": "Amravati Auto Parts INVOICE 1251 PART 3"
+    },
+    {
+      "amount_paise": 1317541,
+      "date": "2026-10-21",
+      "direction": "credit",
+      "id": "L0335",
+      "source": "csv",
+      "text": "Hingna Industrial Supply INVOICE 1252 PART 1"
+    },
+    {
+      "amount_paise": 2243383,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "L0336",
+      "source": "csv",
+      "text": "Hingna Industrial Supply INVOICE 1252 PART 2"
+    },
+    {
+      "amount_paise": 750594,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0337",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1253 PART 1"
+    },
+    {
+      "amount_paise": 1179506,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "L0338",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1253 PART 2"
+    },
+    {
+      "amount_paise": 1644161,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "L0339",
+      "source": "csv",
+      "text": "Sharma Traders INVOICE 1253 PART 3"
+    },
+    {
+      "amount_paise": 1327411,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0340",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1254 PART 1"
+    },
+    {
+      "amount_paise": 2260187,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0341",
+      "source": "csv",
+      "text": "Deshmukh Electricals INVOICE 1254 PART 2"
+    },
+    {
+      "amount_paise": 468121,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0342",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1255 PART 1"
+    },
+    {
+      "amount_paise": 756196,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0343",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1255 PART 2"
+    },
+    {
+      "amount_paise": 972252,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0344",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1255 PART 3"
+    },
+    {
+      "amount_paise": 1404366,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0345",
+      "source": "csv",
+      "text": "Nagpur Steel Co INVOICE 1255 PART 4"
+    },
+    {
+      "amount_paise": 758997,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0346",
+      "source": "csv",
+      "text": "Vidarbha Logistics INVOICE 1256 PART 1"
+    },
+    {
+      "amount_paise": 1192709,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "L0347",
+      "source": "csv",
+      "text": "Vidarbha Logistics INVOICE 1256 PART 2"
+    },
+    {
+      "amount_paise": 1662566,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0348",
+      "source": "csv",
+      "text": "Vidarbha Logistics INVOICE 1256 PART 3"
+    },
+    {
+      "amount_paise": 1342215,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0349",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1257 PART 1"
+    },
+    {
+      "amount_paise": 2285394,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0350",
+      "source": "csv",
+      "text": "Orange City Packaging INVOICE 1257 PART 2"
+    },
+    {
+      "amount_paise": 473322,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0351",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1258 PART 1"
+    },
+    {
+      "amount_paise": 764598,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0352",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1258 PART 2"
+    },
+    {
+      "amount_paise": 983055,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0353",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1258 PART 3"
+    },
+    {
+      "amount_paise": 1419971,
+      "date": "2026-10-18",
+      "direction": "credit",
+      "id": "L0354",
+      "source": "csv",
+      "text": "Sitabuldi Hardware INVOICE 1258 PART 4"
+    },
+    {
+      "amount_paise": 1352084,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0355",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1259 PART 1"
+    },
+    {
+      "amount_paise": 2302199,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0356",
+      "source": "csv",
+      "text": "Kamptee Cotton Mills INVOICE 1259 PART 2"
+    },
+    {
+      "amount_paise": 770200,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0357",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1260 PART 1"
+    },
+    {
+      "amount_paise": 1210314,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0358",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1260 PART 2"
+    },
+    {
+      "amount_paise": 1687106,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "L0359",
+      "source": "csv",
+      "text": "Wardha Road Agencies INVOICE 1260 PART 3"
+    },
+    {
+      "amount_paise": 3680957,
+      "date": "2026-10-22",
+      "direction": "credit",
+      "id": "L0360",
+      "source": "csv",
+      "text": "NEFT 10035757 Dharampeth Stationers INV 1261"
+    },
+    {
+      "amount_paise": 3694294,
+      "date": "2026-10-30",
+      "direction": "debit",
+      "id": "L0361",
+      "source": "csv",
+      "text": "NEFT 10035894 Itwari Wholesale INV 1262"
+    },
+    {
+      "amount_paise": 3707631,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0362",
+      "source": "csv",
+      "text": "NEFT 10036031 Amravati Auto Parts INV 1263"
+    },
+    {
+      "amount_paise": 3720968,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "L0365",
+      "source": "csv",
+      "text": "NEFT 10036168 Hingna Industrial Supply INV 1264"
+    },
+    {
+      "amount_paise": 3734305,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0369",
+      "source": "csv",
+      "text": "NEFT 10036305 Sharma Traders INV 1265"
+    },
+    {
+      "amount_paise": 3747642,
+      "date": "2026-11-04",
+      "direction": "debit",
+      "id": "L0370",
+      "source": "csv",
+      "text": "NEFT 10036442 Deshmukh Electricals INV 1266"
+    },
+    {
+      "amount_paise": 3760979,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "L0371",
+      "source": "csv",
+      "text": "NEFT 10036579 Nagpur Steel Co INV 1267"
+    },
+    {
+      "amount_paise": 3774316,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0374",
+      "source": "csv",
+      "text": "NEFT 10036716 Vidarbha Logistics INV 1268"
+    },
+    {
+      "amount_paise": 3787653,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0378",
+      "source": "csv",
+      "text": "NEFT 10036853 Orange City Packaging INV 1269"
+    },
+    {
+      "amount_paise": 3800990,
+      "date": "2026-10-28",
+      "direction": "credit",
+      "id": "L0379",
+      "source": "csv",
+      "text": "NEFT 10036990 Sitabuldi Hardware INV 1270"
+    },
+    {
+      "amount_paise": 3814327,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "L0380",
+      "source": "csv",
+      "text": "NEFT 10037127 Kamptee Cotton Mills INV 1271"
+    },
+    {
+      "amount_paise": 3827664,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0383",
+      "source": "csv",
+      "text": "NEFT 10037264 Wardha Road Agencies INV 1272"
+    },
+    {
+      "amount_paise": 3841001,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "L0387",
+      "source": "csv",
+      "text": "NEFT 10037401 Dharampeth Stationers INV 1273"
+    },
+    {
+      "amount_paise": 3854338,
+      "date": "2026-11-05",
+      "direction": "debit",
+      "id": "L0388",
+      "source": "csv",
+      "text": "NEFT 10037538 Itwari Wholesale INV 1274"
+    },
+    {
+      "amount_paise": 3867675,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "L0389",
+      "source": "csv",
+      "text": "NEFT 10037675 Amravati Auto Parts INV 1275"
+    },
+    {
+      "amount_paise": 3881012,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "L0392",
+      "source": "csv",
+      "text": "NEFT 10037812 Hingna Industrial Supply INV 1276"
+    },
+    {
+      "amount_paise": 3894349,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0396",
+      "source": "csv",
+      "text": "NEFT 10037949 Sharma Traders INV 1277"
+    },
+    {
+      "amount_paise": 3907686,
+      "date": "2026-11-03",
+      "direction": "debit",
+      "id": "L0397",
+      "source": "csv",
+      "text": "NEFT 10038086 Deshmukh Electricals INV 1278"
+    },
+    {
+      "amount_paise": 3921023,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0398",
+      "source": "csv",
+      "text": "NEFT 10038223 Nagpur Steel Co INV 1279"
+    },
+    {
+      "amount_paise": 3934360,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "L0401",
+      "source": "csv",
+      "text": "NEFT 10038360 Vidarbha Logistics INV 1280"
+    },
+    {
+      "amount_paise": 3947697,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "L0405",
+      "source": "csv",
+      "text": "NEFT 10038497 Orange City Packaging INV 1281"
+    },
+    {
+      "amount_paise": 3961034,
+      "date": "2026-10-31",
+      "direction": "credit",
+      "id": "L0406",
+      "source": "csv",
+      "text": "NEFT 10038634 Sitabuldi Hardware INV 1282"
+    },
+    {
+      "amount_paise": 3974371,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "L0407",
+      "source": "csv",
+      "text": "NEFT 10038771 Kamptee Cotton Mills INV 1283"
+    },
+    {
+      "amount_paise": 3987708,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "L0410",
+      "source": "csv",
+      "text": "NEFT 10038908 Wardha Road Agencies INV 1284"
+    },
+    {
+      "amount_paise": 4001045,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "L0414",
+      "source": "csv",
+      "text": "NEFT 10039045 Dharampeth Stationers INV 1285"
+    },
+    {
+      "amount_paise": 4014382,
+      "date": "2026-11-01",
+      "direction": "debit",
+      "id": "L0415",
+      "source": "csv",
+      "text": "NEFT 10039182 Itwari Wholesale INV 1286"
+    },
+    {
+      "amount_paise": 4027719,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "L0416",
+      "source": "csv",
+      "text": "NEFT 10039319 Amravati Auto Parts INV 1287"
+    },
+    {
+      "amount_paise": 4041056,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "L0419",
+      "source": "csv",
+      "text": "NEFT 10039456 Hingna Industrial Supply INV 1288"
+    },
+    {
+      "amount_paise": 4054393,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "L0423",
+      "source": "csv",
+      "text": "NEFT 10039593 Sharma Traders INV 1289"
+    },
+    {
+      "amount_paise": 4067730,
+      "date": "2026-10-28",
+      "direction": "debit",
+      "id": "L0424",
+      "source": "csv",
+      "text": "NEFT 10039730 Deshmukh Electricals INV 1290"
+    },
+    {
+      "amount_paise": 4081067,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "L0425",
+      "source": "csv",
+      "text": "NEFT 10039867 Nagpur Steel Co INV 1291"
+    },
+    {
+      "amount_paise": 4094404,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "L0428",
+      "source": "csv",
+      "text": "NEFT 10040004 Vidarbha Logistics INV 1292"
+    },
+    {
+      "amount_paise": 4107741,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "L0432",
+      "source": "csv",
+      "text": "NEFT 10040141 Orange City Packaging INV 1293"
+    },
+    {
+      "amount_paise": 4121078,
+      "date": "2026-10-23",
+      "direction": "credit",
+      "id": "L0433",
+      "source": "csv",
+      "text": "NEFT 10040278 Sitabuldi Hardware INV 1294"
+    },
+    {
+      "amount_paise": 4134415,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "L0434",
+      "source": "csv",
+      "text": "NEFT 10040415 Kamptee Cotton Mills INV 1295"
+    },
+    {
+      "amount_paise": 4147752,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "L0437",
+      "source": "csv",
+      "text": "NEFT 10040552 Wardha Road Agencies INV 1296"
+    },
+    {
+      "amount_paise": 4161089,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "L0441",
+      "source": "csv",
+      "text": "NEFT 10040689 Dharampeth Stationers INV 1297"
+    },
+    {
+      "amount_paise": 4174426,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "L0442",
+      "source": "csv",
+      "text": "NEFT 10040826 Itwari Wholesale INV 1298"
+    },
+    {
+      "amount_paise": 4187763,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "L0443",
+      "source": "csv",
+      "text": "NEFT 10040963 Amravati Auto Parts INV 1299"
+    },
+    {
+      "amount_paise": 4201100,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "L0446",
+      "source": "csv",
+      "text": "NEFT 10041100 Hingna Industrial Supply INV 1300"
+    },
+    {
+      "amount_paise": 266685,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "LX000601",
+      "source": "csv",
+      "text": "NEFT 90000733 Gondia Tools INVOICE 9001"
+    },
+    {
+      "amount_paise": 333370,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "LX001202",
+      "source": "csv",
+      "text": "NEFT 90001466 Bhandara Fabrics INVOICE 9002"
+    },
+    {
+      "amount_paise": 400055,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "LX001803",
+      "source": "csv",
+      "text": "NEFT 90002199 Ridhpur Papers INVOICE 9003"
+    },
+    {
+      "amount_paise": 466740,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "LX002404",
+      "source": "csv",
+      "text": "NEFT 90002932 Gondia Tools INVOICE 9004"
+    },
+    {
+      "amount_paise": 533425,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "LX003005",
+      "source": "csv",
+      "text": "NEFT 90003665 Bhandara Fabrics INVOICE 9005"
+    },
+    {
+      "amount_paise": 600110,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "LX003606",
+      "source": "csv",
+      "text": "NEFT 90004398 Ridhpur Papers INVOICE 9006"
+    },
+    {
+      "amount_paise": 666795,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "LX004207",
+      "source": "csv",
+      "text": "NEFT 90005131 Gondia Tools INVOICE 9007"
+    },
+    {
+      "amount_paise": 733480,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "LX004808",
+      "source": "csv",
+      "text": "NEFT 90005864 Bhandara Fabrics INVOICE 9008"
+    },
+    {
+      "amount_paise": 800165,
+      "date": "2026-10-08",
+      "direction": "credit",
+      "id": "LX005409",
+      "source": "csv",
+      "text": "NEFT 90006597 Ridhpur Papers INVOICE 9009"
+    },
+    {
+      "amount_paise": 866850,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "LX006010",
+      "source": "csv",
+      "text": "NEFT 90007330 Gondia Tools INVOICE 9010"
+    },
+    {
+      "amount_paise": 933535,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "LX006611",
+      "source": "csv",
+      "text": "NEFT 90008063 Bhandara Fabrics INVOICE 9011"
+    },
+    {
+      "amount_paise": 1000220,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "LX007212",
+      "source": "csv",
+      "text": "NEFT 90008796 Ridhpur Papers INVOICE 9012"
+    },
+    {
+      "amount_paise": 1066905,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "LX007813",
+      "source": "csv",
+      "text": "NEFT 90009529 Gondia Tools INVOICE 9013"
+    },
+    {
+      "amount_paise": 1133590,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "LX008414",
+      "source": "csv",
+      "text": "NEFT 90010262 Bhandara Fabrics INVOICE 9014"
+    },
+    {
+      "amount_paise": 1200275,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "LX009015",
+      "source": "csv",
+      "text": "NEFT 90010995 Ridhpur Papers INVOICE 9015"
+    },
+    {
+      "amount_paise": 1266960,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "LX009616",
+      "source": "csv",
+      "text": "NEFT 90011728 Gondia Tools INVOICE 9016"
+    },
+    {
+      "amount_paise": 1333645,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "LX010217",
+      "source": "csv",
+      "text": "NEFT 90012461 Bhandara Fabrics INVOICE 9017"
+    },
+    {
+      "amount_paise": 1400330,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "LX010818",
+      "source": "csv",
+      "text": "NEFT 90013194 Ridhpur Papers INVOICE 9018"
+    },
+    {
+      "amount_paise": 3707631,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "LX036319",
+      "source": "csv",
+      "text": "NEFT 90013927 Gondia Tools INVOICE 9019"
+    },
+    {
+      "amount_paise": 3707631,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "LX036420",
+      "source": "csv",
+      "text": "NEFT 90014660 Bhandara Fabrics INVOICE 9020"
+    },
+    {
+      "amount_paise": 3720968,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "LX036621",
+      "source": "csv",
+      "text": "NEFT 90015393 Ridhpur Papers INVOICE 9021"
+    },
+    {
+      "amount_paise": 3720968,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "LX036722",
+      "source": "csv",
+      "text": "NEFT 90016126 Gondia Tools INVOICE 9022"
+    },
+    {
+      "amount_paise": 3720968,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "LX036823",
+      "source": "csv",
+      "text": "NEFT 90016859 Bhandara Fabrics INVOICE 9023"
+    },
+    {
+      "amount_paise": 3760979,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "LX037224",
+      "source": "csv",
+      "text": "NEFT 90017592 Ridhpur Papers INVOICE 9024"
+    },
+    {
+      "amount_paise": 3760979,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "LX037325",
+      "source": "csv",
+      "text": "NEFT 90018325 Gondia Tools INVOICE 9025"
+    },
+    {
+      "amount_paise": 3774316,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "LX037526",
+      "source": "csv",
+      "text": "NEFT 90019058 Bhandara Fabrics INVOICE 9026"
+    },
+    {
+      "amount_paise": 3774316,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "LX037627",
+      "source": "csv",
+      "text": "NEFT 90019791 Ridhpur Papers INVOICE 9027"
+    },
+    {
+      "amount_paise": 3774316,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "LX037728",
+      "source": "csv",
+      "text": "NEFT 90020524 Gondia Tools INVOICE 9028"
+    },
+    {
+      "amount_paise": 3814327,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "LX038129",
+      "source": "csv",
+      "text": "NEFT 90021257 Bhandara Fabrics INVOICE 9029"
+    },
+    {
+      "amount_paise": 3814327,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "LX038230",
+      "source": "csv",
+      "text": "NEFT 90021990 Ridhpur Papers INVOICE 9030"
+    },
+    {
+      "amount_paise": 3827664,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "LX038431",
+      "source": "csv",
+      "text": "NEFT 90022723 Gondia Tools INVOICE 9031"
+    },
+    {
+      "amount_paise": 3827664,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "LX038532",
+      "source": "csv",
+      "text": "NEFT 90023456 Bhandara Fabrics INVOICE 9032"
+    },
+    {
+      "amount_paise": 3827664,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "LX038633",
+      "source": "csv",
+      "text": "NEFT 90024189 Ridhpur Papers INVOICE 9033"
+    },
+    {
+      "amount_paise": 3867675,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "LX039034",
+      "source": "csv",
+      "text": "NEFT 90024922 Gondia Tools INVOICE 9034"
+    },
+    {
+      "amount_paise": 3867675,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "LX039135",
+      "source": "csv",
+      "text": "NEFT 90025655 Bhandara Fabrics INVOICE 9035"
+    },
+    {
+      "amount_paise": 3881012,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "LX039336",
+      "source": "csv",
+      "text": "NEFT 90026388 Ridhpur Papers INVOICE 9036"
+    },
+    {
+      "amount_paise": 3881012,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "LX039437",
+      "source": "csv",
+      "text": "NEFT 90027121 Gondia Tools INVOICE 9037"
+    },
+    {
+      "amount_paise": 3881012,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "LX039538",
+      "source": "csv",
+      "text": "NEFT 90027854 Bhandara Fabrics INVOICE 9038"
+    },
+    {
+      "amount_paise": 3921023,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "LX039939",
+      "source": "csv",
+      "text": "NEFT 90028587 Ridhpur Papers INVOICE 9039"
+    },
+    {
+      "amount_paise": 3921023,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "LX040040",
+      "source": "csv",
+      "text": "NEFT 90029320 Gondia Tools INVOICE 9040"
+    },
+    {
+      "amount_paise": 3934360,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "LX040241",
+      "source": "csv",
+      "text": "NEFT 90030053 Bhandara Fabrics INVOICE 9041"
+    },
+    {
+      "amount_paise": 3934360,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "LX040342",
+      "source": "csv",
+      "text": "NEFT 90030786 Ridhpur Papers INVOICE 9042"
+    },
+    {
+      "amount_paise": 3934360,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "LX040443",
+      "source": "csv",
+      "text": "NEFT 90031519 Gondia Tools INVOICE 9043"
+    },
+    {
+      "amount_paise": 3974371,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "LX040844",
+      "source": "csv",
+      "text": "NEFT 90032252 Bhandara Fabrics INVOICE 9044"
+    },
+    {
+      "amount_paise": 3974371,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "LX040945",
+      "source": "csv",
+      "text": "NEFT 90032985 Ridhpur Papers INVOICE 9045"
+    },
+    {
+      "amount_paise": 3987708,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "LX041146",
+      "source": "csv",
+      "text": "NEFT 90033718 Gondia Tools INVOICE 9046"
+    },
+    {
+      "amount_paise": 3987708,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "LX041247",
+      "source": "csv",
+      "text": "NEFT 90034451 Bhandara Fabrics INVOICE 9047"
+    },
+    {
+      "amount_paise": 3987708,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "LX041348",
+      "source": "csv",
+      "text": "NEFT 90035184 Ridhpur Papers INVOICE 9048"
+    },
+    {
+      "amount_paise": 4027719,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "LX041749",
+      "source": "csv",
+      "text": "NEFT 90035917 Gondia Tools INVOICE 9049"
+    },
+    {
+      "amount_paise": 4027719,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "LX041850",
+      "source": "csv",
+      "text": "NEFT 90036650 Bhandara Fabrics INVOICE 9050"
+    },
+    {
+      "amount_paise": 4041056,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "LX042051",
+      "source": "csv",
+      "text": "NEFT 90037383 Ridhpur Papers INVOICE 9051"
+    },
+    {
+      "amount_paise": 4041056,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "LX042152",
+      "source": "csv",
+      "text": "NEFT 90038116 Gondia Tools INVOICE 9052"
+    },
+    {
+      "amount_paise": 4041056,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "LX042253",
+      "source": "csv",
+      "text": "NEFT 90038849 Bhandara Fabrics INVOICE 9053"
+    },
+    {
+      "amount_paise": 4081067,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "LX042654",
+      "source": "csv",
+      "text": "NEFT 90039582 Ridhpur Papers INVOICE 9054"
+    },
+    {
+      "amount_paise": 4081067,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "LX042755",
+      "source": "csv",
+      "text": "NEFT 90040315 Gondia Tools INVOICE 9055"
+    },
+    {
+      "amount_paise": 4094404,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "LX042956",
+      "source": "csv",
+      "text": "NEFT 90041048 Bhandara Fabrics INVOICE 9056"
+    },
+    {
+      "amount_paise": 4094404,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "LX043057",
+      "source": "csv",
+      "text": "NEFT 90041781 Ridhpur Papers INVOICE 9057"
+    },
+    {
+      "amount_paise": 4094404,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "LX043158",
+      "source": "csv",
+      "text": "NEFT 90042514 Gondia Tools INVOICE 9058"
+    },
+    {
+      "amount_paise": 4134415,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "LX043559",
+      "source": "csv",
+      "text": "NEFT 90043247 Bhandara Fabrics INVOICE 9059"
+    },
+    {
+      "amount_paise": 4134415,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "LX043660",
+      "source": "csv",
+      "text": "NEFT 90043980 Ridhpur Papers INVOICE 9060"
+    },
+    {
+      "amount_paise": 4147752,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "LX043861",
+      "source": "csv",
+      "text": "NEFT 90044713 Gondia Tools INVOICE 9061"
+    },
+    {
+      "amount_paise": 4147752,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "LX043962",
+      "source": "csv",
+      "text": "NEFT 90045446 Bhandara Fabrics INVOICE 9062"
+    },
+    {
+      "amount_paise": 4147752,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "LX044063",
+      "source": "csv",
+      "text": "NEFT 90046179 Ridhpur Papers INVOICE 9063"
+    },
+    {
+      "amount_paise": 4187763,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "LX044464",
+      "source": "csv",
+      "text": "NEFT 90046912 Gondia Tools INVOICE 9064"
+    },
+    {
+      "amount_paise": 4187763,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "LX044565",
+      "source": "csv",
+      "text": "NEFT 90047645 Bhandara Fabrics INVOICE 9065"
+    },
+    {
+      "amount_paise": 4201100,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "LX044766",
+      "source": "csv",
+      "text": "NEFT 90048378 Ridhpur Papers INVOICE 9066"
+    },
+    {
+      "amount_paise": 4201100,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "LX044867",
+      "source": "csv",
+      "text": "NEFT 90049111 Gondia Tools INVOICE 9067"
+    },
+    {
+      "amount_paise": 4201100,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "LX044968",
+      "source": "csv",
+      "text": "NEFT 90049844 Bhandara Fabrics INVOICE 9068"
+    }
+  ],
+  "normalizer_version": "normalizer_v1",
+  "pairs": 300,
+  "seed": 42,
+  "statement": [
+    {
+      "amount_paise": 213337,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "S0001",
+      "source": "csv",
+      "text": "NEFT/10000137 Sharma Traders INVOICE 1001"
+    },
+    {
+      "amount_paise": 226674,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "S0002",
+      "source": "csv",
+      "text": "NEFT/10000274 Deshmukh Electricals INVOICE 1002"
+    },
+    {
+      "amount_paise": 240011,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "S0003",
+      "source": "csv",
+      "text": "NEFT/10000411 Nagpur Steel Co INVOICE 1003"
+    },
+    {
+      "amount_paise": 253348,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0004",
+      "source": "csv",
+      "text": "NEFT/10000548 Vidarbha Logistics INVOICE 1004"
+    },
+    {
+      "amount_paise": 266685,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0005",
+      "source": "csv",
+      "text": "NEFT/10000685 Orange City Packaging INVOICE 1005"
+    },
+    {
+      "amount_paise": 280022,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "S0006",
+      "source": "csv",
+      "text": "NEFT/10000822 Sitabuldi Hardware INVOICE 1006"
+    },
+    {
+      "amount_paise": 293359,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "S0007",
+      "source": "csv",
+      "text": "NEFT/10000959 Kamptee Cotton Mills INVOICE 1007"
+    },
+    {
+      "amount_paise": 306696,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0008",
+      "source": "csv",
+      "text": "NEFT/10001096 Wardha Road Agencies INVOICE 1008"
+    },
+    {
+      "amount_paise": 320033,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "S0009",
+      "source": "csv",
+      "text": "NEFT/10001233 Dharampeth Stationers INVOICE 1009"
+    },
+    {
+      "amount_paise": 333370,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0010",
+      "source": "csv",
+      "text": "NEFT/10001370 Itwari Wholesale INVOICE 1010"
+    },
+    {
+      "amount_paise": 346707,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0011",
+      "source": "csv",
+      "text": "NEFT/10001507 Amravati Auto Parts INVOICE 1011"
+    },
+    {
+      "amount_paise": 360044,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "S0012",
+      "source": "csv",
+      "text": "NEFT/10001644 Hingna Industrial Supply INVOICE 1012"
+    },
+    {
+      "amount_paise": 373381,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "S0013",
+      "source": "csv",
+      "text": "NEFT/10001781 Sharma Traders INVOICE 1013"
+    },
+    {
+      "amount_paise": 386718,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0014",
+      "source": "csv",
+      "text": "NEFT/10001918 Deshmukh Electricals INVOICE 1014"
+    },
+    {
+      "amount_paise": 400055,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "S0015",
+      "source": "csv",
+      "text": "NEFT/10002055 Nagpur Steel Co INVOICE 1015"
+    },
+    {
+      "amount_paise": 413392,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0016",
+      "source": "csv",
+      "text": "NEFT/10002192 Vidarbha Logistics INVOICE 1016"
+    },
+    {
+      "amount_paise": 426729,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "S0017",
+      "source": "csv",
+      "text": "NEFT/10002329 Orange City Packaging INVOICE 1017"
+    },
+    {
+      "amount_paise": 440066,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "S0018",
+      "source": "csv",
+      "text": "NEFT/10002466 Sitabuldi Hardware INVOICE 1018"
+    },
+    {
+      "amount_paise": 453403,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0019",
+      "source": "csv",
+      "text": "NEFT/10002603 Kamptee Cotton Mills INVOICE 1019"
+    },
+    {
+      "amount_paise": 466740,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0020",
+      "source": "csv",
+      "text": "NEFT/10002740 Wardha Road Agencies INVOICE 1020"
+    },
+    {
+      "amount_paise": 480077,
+      "date": "2026-10-22",
+      "direction": "credit",
+      "id": "S0021",
+      "source": "csv",
+      "text": "NEFT/10002877 Dharampeth Stationers INVOICE 1021"
+    },
+    {
+      "amount_paise": 493414,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0022",
+      "source": "csv",
+      "text": "NEFT/10003014 Itwari Wholesale INVOICE 1022"
+    },
+    {
+      "amount_paise": 506751,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0023",
+      "source": "csv",
+      "text": "NEFT/10003151 Amravati Auto Parts INVOICE 1023"
+    },
+    {
+      "amount_paise": 520088,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "S0024",
+      "source": "csv",
+      "text": "NEFT/10003288 Hingna Industrial Supply INVOICE 1024"
+    },
+    {
+      "amount_paise": 533425,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0025",
+      "source": "csv",
+      "text": "NEFT/10003425 Sharma Traders INVOICE 1025"
+    },
+    {
+      "amount_paise": 546762,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0026",
+      "source": "csv",
+      "text": "NEFT/10003562 Deshmukh Electricals INVOICE 1026"
+    },
+    {
+      "amount_paise": 560099,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "S0027",
+      "source": "csv",
+      "text": "NEFT/10003699 Nagpur Steel Co INVOICE 1027"
+    },
+    {
+      "amount_paise": 573436,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "S0028",
+      "source": "csv",
+      "text": "NEFT/10003836 Vidarbha Logistics INVOICE 1028"
+    },
+    {
+      "amount_paise": 586773,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0029",
+      "source": "csv",
+      "text": "NEFT/10003973 Orange City Packaging INVOICE 1029"
+    },
+    {
+      "amount_paise": 600110,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "S0030",
+      "source": "csv",
+      "text": "NEFT/10004110 Sitabuldi Hardware INVOICE 1030"
+    },
+    {
+      "amount_paise": 613447,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0031",
+      "source": "csv",
+      "text": "NEFT/10004247 Kamptee Cotton Mills INVOICE 1031"
+    },
+    {
+      "amount_paise": 626784,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "S0032",
+      "source": "csv",
+      "text": "NEFT/10004384 Wardha Road Agencies INVOICE 1032"
+    },
+    {
+      "amount_paise": 640121,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "S0033",
+      "source": "csv",
+      "text": "NEFT/10004521 Dharampeth Stationers INVOICE 1033"
+    },
+    {
+      "amount_paise": 653458,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0034",
+      "source": "csv",
+      "text": "NEFT/10004658 Itwari Wholesale INVOICE 1034"
+    },
+    {
+      "amount_paise": 666795,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "S0035",
+      "source": "csv",
+      "text": "NEFT/10004795 Amravati Auto Parts INVOICE 1035"
+    },
+    {
+      "amount_paise": 680132,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "S0036",
+      "source": "csv",
+      "text": "NEFT/10004932 Hingna Industrial Supply INVOICE 1036"
+    },
+    {
+      "amount_paise": 693469,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "S0037",
+      "source": "csv",
+      "text": "NEFT/10005069 Sharma Traders INVOICE 1037"
+    },
+    {
+      "amount_paise": 706806,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "S0038",
+      "source": "csv",
+      "text": "NEFT/10005206 Deshmukh Electricals INVOICE 1038"
+    },
+    {
+      "amount_paise": 720143,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "S0039",
+      "source": "csv",
+      "text": "NEFT/10005343 Nagpur Steel Co INVOICE 1039"
+    },
+    {
+      "amount_paise": 733480,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "S0040",
+      "source": "csv",
+      "text": "NEFT/10005480 Vidarbha Logistics INVOICE 1040"
+    },
+    {
+      "amount_paise": 746817,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0041",
+      "source": "csv",
+      "text": "NEFT/10005617 Orange City Packaging INVOICE 1041"
+    },
+    {
+      "amount_paise": 760154,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "S0042",
+      "source": "csv",
+      "text": "NEFT/10005754 Sitabuldi Hardware INVOICE 1042"
+    },
+    {
+      "amount_paise": 773491,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0043",
+      "source": "csv",
+      "text": "NEFT/10005891 Kamptee Cotton Mills INVOICE 1043"
+    },
+    {
+      "amount_paise": 786828,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0044",
+      "source": "csv",
+      "text": "NEFT/10006028 Wardha Road Agencies INVOICE 1044"
+    },
+    {
+      "amount_paise": 800165,
+      "date": "2026-10-08",
+      "direction": "credit",
+      "id": "S0045",
+      "source": "csv",
+      "text": "NEFT/10006165 Dharampeth Stationers INVOICE 1045"
+    },
+    {
+      "amount_paise": 813502,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "S0046",
+      "source": "csv",
+      "text": "NEFT/10006302 Itwari Wholesale INVOICE 1046"
+    },
+    {
+      "amount_paise": 826839,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0047",
+      "source": "csv",
+      "text": "NEFT/10006439 Amravati Auto Parts INVOICE 1047"
+    },
+    {
+      "amount_paise": 840176,
+      "date": "2026-10-22",
+      "direction": "credit",
+      "id": "S0048",
+      "source": "csv",
+      "text": "NEFT/10006576 Hingna Industrial Supply INVOICE 1048"
+    },
+    {
+      "amount_paise": 853513,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "S0049",
+      "source": "csv",
+      "text": "NEFT/10006713 Sharma Traders INVOICE 1049"
+    },
+    {
+      "amount_paise": 866850,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "S0050",
+      "source": "csv",
+      "text": "NEFT/10006850 Deshmukh Electricals INVOICE 1050"
+    },
+    {
+      "amount_paise": 880187,
+      "date": "2026-10-23",
+      "direction": "credit",
+      "id": "S0051",
+      "source": "csv",
+      "text": "NEFT/10006987 Nagpur Steel Co INVOICE 1051"
+    },
+    {
+      "amount_paise": 893524,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0052",
+      "source": "csv",
+      "text": "NEFT/10007124 Vidarbha Logistics INVOICE 1052"
+    },
+    {
+      "amount_paise": 906861,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0053",
+      "source": "csv",
+      "text": "NEFT/10007261 Orange City Packaging INVOICE 1053"
+    },
+    {
+      "amount_paise": 920198,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "S0054",
+      "source": "csv",
+      "text": "NEFT/10007398 Sitabuldi Hardware INVOICE 1054"
+    },
+    {
+      "amount_paise": 933535,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0055",
+      "source": "csv",
+      "text": "NEFT/10007535 Kamptee Cotton Mills INVOICE 1055"
+    },
+    {
+      "amount_paise": 946872,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "S0056",
+      "source": "csv",
+      "text": "NEFT/10007672 Wardha Road Agencies INVOICE 1056"
+    },
+    {
+      "amount_paise": 960209,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "S0057",
+      "source": "csv",
+      "text": "NEFT/10007809 Dharampeth Stationers INVOICE 1057"
+    },
+    {
+      "amount_paise": 973546,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0058",
+      "source": "csv",
+      "text": "NEFT/10007946 Itwari Wholesale INVOICE 1058"
+    },
+    {
+      "amount_paise": 986883,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "S0059",
+      "source": "csv",
+      "text": "NEFT/10008083 Amravati Auto Parts INVOICE 1059"
+    },
+    {
+      "amount_paise": 1000220,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "S0060",
+      "source": "csv",
+      "text": "NEFT/10008220 Hingna Industrial Supply INVOICE 1060"
+    },
+    {
+      "amount_paise": 1013557,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0061",
+      "source": "csv",
+      "text": "NEFT/10008357 Sharma Traders INVOICE 1061"
+    },
+    {
+      "amount_paise": 1026894,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0062",
+      "source": "csv",
+      "text": "NEFT/10008494 Deshmukh Electricals INVOICE 1062"
+    },
+    {
+      "amount_paise": 1040231,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "S0063",
+      "source": "csv",
+      "text": "NEFT/10008631 Nagpur Steel Co INVOICE 1063"
+    },
+    {
+      "amount_paise": 1053568,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "S0064",
+      "source": "csv",
+      "text": "NEFT/10008768 Vidarbha Logistics INVOICE 1064"
+    },
+    {
+      "amount_paise": 1066905,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "S0065",
+      "source": "csv",
+      "text": "NEFT/10008905 Orange City Packaging INVOICE 1065"
+    },
+    {
+      "amount_paise": 1080242,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "S0066",
+      "source": "csv",
+      "text": "NEFT/10009042 Sitabuldi Hardware INVOICE 1066"
+    },
+    {
+      "amount_paise": 1093579,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0067",
+      "source": "csv",
+      "text": "NEFT/10009179 Kamptee Cotton Mills INVOICE 1067"
+    },
+    {
+      "amount_paise": 1106916,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0068",
+      "source": "csv",
+      "text": "NEFT/10009316 Wardha Road Agencies INVOICE 1068"
+    },
+    {
+      "amount_paise": 1120253,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "S0069",
+      "source": "csv",
+      "text": "NEFT/10009453 Dharampeth Stationers INVOICE 1069"
+    },
+    {
+      "amount_paise": 1133590,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "S0070",
+      "source": "csv",
+      "text": "NEFT/10009590 Itwari Wholesale INVOICE 1070"
+    },
+    {
+      "amount_paise": 1146927,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0071",
+      "source": "csv",
+      "text": "NEFT/10009727 Amravati Auto Parts INVOICE 1071"
+    },
+    {
+      "amount_paise": 1160264,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "S0072",
+      "source": "csv",
+      "text": "NEFT/10009864 Hingna Industrial Supply INVOICE 1072"
+    },
+    {
+      "amount_paise": 1173601,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "S0073",
+      "source": "csv",
+      "text": "NEFT/10010001 Sharma Traders INVOICE 1073"
+    },
+    {
+      "amount_paise": 1186938,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0074",
+      "source": "csv",
+      "text": "NEFT/10010138 Deshmukh Electricals INVOICE 1074"
+    },
+    {
+      "amount_paise": 1200275,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "S0075",
+      "source": "csv",
+      "text": "NEFT/10010275 Nagpur Steel Co INVOICE 1075"
+    },
+    {
+      "amount_paise": 1213612,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0076",
+      "source": "csv",
+      "text": "NEFT/10010412 Vidarbha Logistics INVOICE 1076"
+    },
+    {
+      "amount_paise": 1226949,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0077",
+      "source": "csv",
+      "text": "NEFT/10010549 Orange City Packaging INVOICE 1077"
+    },
+    {
+      "amount_paise": 1240286,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "S0078",
+      "source": "csv",
+      "text": "NEFT/10010686 Sitabuldi Hardware INVOICE 1078"
+    },
+    {
+      "amount_paise": 1253623,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0079",
+      "source": "csv",
+      "text": "NEFT/10010823 Kamptee Cotton Mills INVOICE 1079"
+    },
+    {
+      "amount_paise": 1266960,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0080",
+      "source": "csv",
+      "text": "NEFT/10010960 Wardha Road Agencies INVOICE 1080"
+    },
+    {
+      "amount_paise": 1280297,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "S0081",
+      "source": "csv",
+      "text": "NEFT/10011097 Dharampeth Stationers INVOICE 1081"
+    },
+    {
+      "amount_paise": 1293634,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0082",
+      "source": "csv",
+      "text": "NEFT/10011234 Itwari Wholesale INVOICE 1082"
+    },
+    {
+      "amount_paise": 1306971,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0083",
+      "source": "csv",
+      "text": "NEFT/10011371 Amravati Auto Parts INVOICE 1083"
+    },
+    {
+      "amount_paise": 1320308,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "S0084",
+      "source": "csv",
+      "text": "NEFT/10011508 Hingna Industrial Supply INVOICE 1084"
+    },
+    {
+      "amount_paise": 1333645,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0085",
+      "source": "csv",
+      "text": "NEFT/10011645 Sharma Traders INVOICE 1085"
+    },
+    {
+      "amount_paise": 1346982,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0086",
+      "source": "csv",
+      "text": "NEFT/10011782 Deshmukh Electricals INVOICE 1086"
+    },
+    {
+      "amount_paise": 1360319,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "S0087",
+      "source": "csv",
+      "text": "NEFT/10011919 Nagpur Steel Co INVOICE 1087"
+    },
+    {
+      "amount_paise": 1373656,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0088",
+      "source": "csv",
+      "text": "NEFT/10012056 Vidarbha Logistics INVOICE 1088"
+    },
+    {
+      "amount_paise": 1386993,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0089",
+      "source": "csv",
+      "text": "NEFT/10012193 Orange City Packaging INVOICE 1089"
+    },
+    {
+      "amount_paise": 1400330,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "S0090",
+      "source": "csv",
+      "text": "NEFT/10012330 Sitabuldi Hardware INVOICE 1090"
+    },
+    {
+      "amount_paise": 1413667,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "S0091",
+      "source": "csv",
+      "text": "RTGS 10012467 Kamptee Cotton Mills INVOICE 1091"
+    },
+    {
+      "amount_paise": 1427004,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0092",
+      "source": "csv",
+      "text": "RTGS 10012604 Wardha Road Agencies INVOICE 1092"
+    },
+    {
+      "amount_paise": 1440341,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "S0093",
+      "source": "csv",
+      "text": "RTGS 10012741 Dharampeth Stationers INVOICE 1093"
+    },
+    {
+      "amount_paise": 1453678,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0094",
+      "source": "csv",
+      "text": "RTGS 10012878 Itwari Wholesale INVOICE 1094"
+    },
+    {
+      "amount_paise": 1467015,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0095",
+      "source": "csv",
+      "text": "RTGS 10013015 Amravati Auto Parts INVOICE 1095"
+    },
+    {
+      "amount_paise": 1480352,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "S0096",
+      "source": "csv",
+      "text": "RTGS 10013152 Hingna Industrial Supply INVOICE 1096"
+    },
+    {
+      "amount_paise": 1493689,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "S0097",
+      "source": "csv",
+      "text": "RTGS 10013289 Sharma Traders INVOICE 1097"
+    },
+    {
+      "amount_paise": 1507026,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0098",
+      "source": "csv",
+      "text": "RTGS 10013426 Deshmukh Electricals INVOICE 1098"
+    },
+    {
+      "amount_paise": 1520363,
+      "date": "2026-10-10",
+      "direction": "credit",
+      "id": "S0099",
+      "source": "csv",
+      "text": "RTGS 10013563 Nagpur Steel Co INVOICE 1099"
+    },
+    {
+      "amount_paise": 1533700,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0100",
+      "source": "csv",
+      "text": "RTGS 10013700 Vidarbha Logistics INVOICE 1100"
+    },
+    {
+      "amount_paise": 1547037,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0101",
+      "source": "csv",
+      "text": "RTGS 10013837 Orange City Packaging INVOICE 1101"
+    },
+    {
+      "amount_paise": 1560374,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "S0102",
+      "source": "csv",
+      "text": "RTGS 10013974 Sitabuldi Hardware INVOICE 1102"
+    },
+    {
+      "amount_paise": 1573711,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0103",
+      "source": "csv",
+      "text": "RTGS 10014111 Kamptee Cotton Mills INVOICE 1103"
+    },
+    {
+      "amount_paise": 1587048,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0104",
+      "source": "csv",
+      "text": "RTGS 10014248 Wardha Road Agencies INVOICE 1104"
+    },
+    {
+      "amount_paise": 1600385,
+      "date": "2026-10-18",
+      "direction": "credit",
+      "id": "S0105",
+      "source": "csv",
+      "text": "RTGS 10014385 Dharampeth Stationers INVOICE 1105"
+    },
+    {
+      "amount_paise": 1613722,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "S0106",
+      "source": "csv",
+      "text": "RTGS 10014522 Itwari Wholesale INVOICE 1106"
+    },
+    {
+      "amount_paise": 1627059,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "S0107",
+      "source": "csv",
+      "text": "RTGS 10014659 Amravati Auto Parts INVOICE 1107"
+    },
+    {
+      "amount_paise": 1640396,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "S0108",
+      "source": "csv",
+      "text": "RTGS 10014796 Hingna Industrial Supply INVOICE 1108"
+    },
+    {
+      "amount_paise": 1653733,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "S0109",
+      "source": "csv",
+      "text": "RTGS 10014933 Sharma Traders INVOICE 1109"
+    },
+    {
+      "amount_paise": 1667070,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "S0110",
+      "source": "csv",
+      "text": "RTGS 10015070 Deshmukh Electricals INVOICE 1110"
+    },
+    {
+      "amount_paise": 1680407,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "S0111",
+      "source": "csv",
+      "text": "RTGS 10015207 Nagpur Steel Co INVOICE 1111"
+    },
+    {
+      "amount_paise": 1693744,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "S0112",
+      "source": "csv",
+      "text": "RTGS 10015344 Vidarbha Logistics INVOICE 1112"
+    },
+    {
+      "amount_paise": 1707081,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0113",
+      "source": "csv",
+      "text": "RTGS 10015481 Orange City Packaging INVOICE 1113"
+    },
+    {
+      "amount_paise": 1720418,
+      "date": "2026-10-23",
+      "direction": "credit",
+      "id": "S0114",
+      "source": "csv",
+      "text": "RTGS 10015618 Sitabuldi Hardware INVOICE 1114"
+    },
+    {
+      "amount_paise": 1733755,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "S0115",
+      "source": "csv",
+      "text": "RTGS 10015755 Kamptee Cotton Mills INVOICE 1115"
+    },
+    {
+      "amount_paise": 1747092,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "S0116",
+      "source": "csv",
+      "text": "RTGS 10015892 Wardha Road Agencies INVOICE 1116"
+    },
+    {
+      "amount_paise": 1760429,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "S0117",
+      "source": "csv",
+      "text": "RTGS 10016029 Dharampeth Stationers INVOICE 1117"
+    },
+    {
+      "amount_paise": 1773766,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "S0118",
+      "source": "csv",
+      "text": "RTGS 10016166 Itwari Wholesale INVOICE 1118"
+    },
+    {
+      "amount_paise": 1787103,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0119",
+      "source": "csv",
+      "text": "RTGS 10016303 Amravati Auto Parts INVOICE 1119"
+    },
+    {
+      "amount_paise": 1800440,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "S0120",
+      "source": "csv",
+      "text": "RTGS 10016440 Hingna Industrial Supply INVOICE 1120"
+    },
+    {
+      "amount_paise": 1813777,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "S0121",
+      "source": "csv",
+      "text": "RTGS 10016577 Sharma Traders INVOICE 1121"
+    },
+    {
+      "amount_paise": 1827114,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0122",
+      "source": "csv",
+      "text": "RTGS 10016714 Deshmukh Electricals INVOICE 1122"
+    },
+    {
+      "amount_paise": 1840451,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "S0123",
+      "source": "csv",
+      "text": "RTGS 10016851 Nagpur Steel Co INVOICE 1123"
+    },
+    {
+      "amount_paise": 1853788,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "S0124",
+      "source": "csv",
+      "text": "RTGS 10016988 Vidarbha Logistics INVOICE 1124"
+    },
+    {
+      "amount_paise": 1867125,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0125",
+      "source": "csv",
+      "text": "RTGS 10017125 Orange City Packaging INVOICE 1125"
+    },
+    {
+      "amount_paise": 1880462,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "S0126",
+      "source": "csv",
+      "text": "RTGS 10017262 Sitabuldi Hardware INVOICE 1126"
+    },
+    {
+      "amount_paise": 1893799,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0127",
+      "source": "csv",
+      "text": "RTGS 10017399 Kamptee Cotton Mills INVOICE 1127"
+    },
+    {
+      "amount_paise": 1907136,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "S0128",
+      "source": "csv",
+      "text": "RTGS 10017536 Wardha Road Agencies INVOICE 1128"
+    },
+    {
+      "amount_paise": 1920473,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "S0129",
+      "source": "csv",
+      "text": "RTGS 10017673 Dharampeth Stationers INVOICE 1129"
+    },
+    {
+      "amount_paise": 1933810,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "S0130",
+      "source": "csv",
+      "text": "RTGS 10017810 Itwari Wholesale INVOICE 1130"
+    },
+    {
+      "amount_paise": 1947147,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "S0131",
+      "source": "csv",
+      "text": "RTGS 10017947 Amravati Auto Parts INVOICE 1131"
+    },
+    {
+      "amount_paise": 1960484,
+      "date": "2026-10-08",
+      "direction": "credit",
+      "id": "S0132",
+      "source": "csv",
+      "text": "RTGS 10018084 Hingna Industrial Supply INVOICE 1132"
+    },
+    {
+      "amount_paise": 1973821,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0133",
+      "source": "csv",
+      "text": "RTGS 10018221 Sharma Traders INVOICE 1133"
+    },
+    {
+      "amount_paise": 1987158,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0134",
+      "source": "csv",
+      "text": "RTGS 10018358 Deshmukh Electricals INVOICE 1134"
+    },
+    {
+      "amount_paise": 2000495,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "S0135",
+      "source": "csv",
+      "text": "RTGS 10018495 Nagpur Steel Co INVOICE 1135"
+    },
+    {
+      "amount_paise": 2013832,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "S0136",
+      "source": "csv",
+      "text": "RTGS 10018632 Vidarbha Logistics INVOICE 1136"
+    },
+    {
+      "amount_paise": 2027169,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0137",
+      "source": "csv",
+      "text": "RTGS 10018769 Orange City Packaging INVOICE 1137"
+    },
+    {
+      "amount_paise": 2040506,
+      "date": "2026-10-22",
+      "direction": "credit",
+      "id": "S0138",
+      "source": "csv",
+      "text": "RTGS 10018906 Sitabuldi Hardware INVOICE 1138"
+    },
+    {
+      "amount_paise": 2053843,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0139",
+      "source": "csv",
+      "text": "RTGS 10019043 Kamptee Cotton Mills INVOICE 1139"
+    },
+    {
+      "amount_paise": 2067180,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0140",
+      "source": "csv",
+      "text": "RTGS 10019180 Wardha Road Agencies INVOICE 1140"
+    },
+    {
+      "amount_paise": 2080517,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "S0141",
+      "source": "csv",
+      "text": "RTGS 10019317 Dharampeth Stationers INVOICE 1141"
+    },
+    {
+      "amount_paise": 2093854,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0142",
+      "source": "csv",
+      "text": "RTGS 10019454 Itwari Wholesale INVOICE 1142"
+    },
+    {
+      "amount_paise": 2107191,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0143",
+      "source": "csv",
+      "text": "RTGS 10019591 Amravati Auto Parts INVOICE 1143"
+    },
+    {
+      "amount_paise": 2120528,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "S0144",
+      "source": "csv",
+      "text": "RTGS 10019728 Hingna Industrial Supply INVOICE 1144"
+    },
+    {
+      "amount_paise": 2133865,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "S0145",
+      "source": "csv",
+      "text": "RTGS 10019865 Sharma Traders INVOICE 1145"
+    },
+    {
+      "amount_paise": 2147202,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "S0146",
+      "source": "csv",
+      "text": "RTGS 10020002 Deshmukh Electricals INVOICE 1146"
+    },
+    {
+      "amount_paise": 2160539,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "S0147",
+      "source": "csv",
+      "text": "RTGS 10020139 Nagpur Steel Co INVOICE 1147"
+    },
+    {
+      "amount_paise": 2173876,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0148",
+      "source": "csv",
+      "text": "RTGS 10020276 Vidarbha Logistics INVOICE 1148"
+    },
+    {
+      "amount_paise": 2187213,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0149",
+      "source": "csv",
+      "text": "RTGS 10020413 Orange City Packaging INVOICE 1149"
+    },
+    {
+      "amount_paise": 2200550,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "S0150",
+      "source": "csv",
+      "text": "RTGS 10020550 Sitabuldi Hardware INVOICE 1150"
+    },
+    {
+      "amount_paise": 2213887,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0151",
+      "source": "csv",
+      "text": "RTGS 10020687 Kamptee Cotton Mills INVOICE 1151"
+    },
+    {
+      "amount_paise": 2227224,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0152",
+      "source": "csv",
+      "text": "RTGS 10020824 Wardha Road Agencies INVOICE 1152"
+    },
+    {
+      "amount_paise": 2240561,
+      "date": "2026-10-21",
+      "direction": "credit",
+      "id": "S0153",
+      "source": "csv",
+      "text": "RTGS 10020961 Dharampeth Stationers INVOICE 1153"
+    },
+    {
+      "amount_paise": 2253898,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "S0154",
+      "source": "csv",
+      "text": "RTGS 10021098 Itwari Wholesale INVOICE 1154"
+    },
+    {
+      "amount_paise": 2267235,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0155",
+      "source": "csv",
+      "text": "RTGS 10021235 Amravati Auto Parts INVOICE 1155"
+    },
+    {
+      "amount_paise": 2280572,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "S0156",
+      "source": "csv",
+      "text": "RTGS 10021372 Hingna Industrial Supply INVOICE 1156"
+    },
+    {
+      "amount_paise": 2293909,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0157",
+      "source": "csv",
+      "text": "RTGS 10021509 Sharma Traders INVOICE 1157"
+    },
+    {
+      "amount_paise": 2307246,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0158",
+      "source": "csv",
+      "text": "RTGS 10021646 Deshmukh Electricals INVOICE 1158"
+    },
+    {
+      "amount_paise": 2320583,
+      "date": "2026-10-23",
+      "direction": "credit",
+      "id": "S0159",
+      "source": "csv",
+      "text": "RTGS 10021783 Nagpur Steel Co INVOICE 1159"
+    },
+    {
+      "amount_paise": 2333920,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0160",
+      "source": "csv",
+      "text": "RTGS 10021920 Vidarbha Logistics INVOICE 1160"
+    },
+    {
+      "amount_paise": 2347257,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0161",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INVOICE 1161 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2360594,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "S0162",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INVOICE 1162 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2373931,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "S0163",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INVOICE 1163 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2387268,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0164",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INVOICE 1164 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2400605,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "S0165",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INVOICE 1165 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2413942,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0166",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INVOICE 1166 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2427279,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0167",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INVOICE 1167 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2440616,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "S0168",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INVOICE 1168 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2453953,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0169",
+      "source": "csv",
+      "text": "UPI Sharma Traders INVOICE 1169 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2467290,
+      "date": "2026-10-16",
+      "direction": "debit",
+      "id": "S0170",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INVOICE 1170 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2480627,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "S0171",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INVOICE 1171 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2493964,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "S0172",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INVOICE 1172 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2507301,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0173",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INVOICE 1173 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2520638,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "S0174",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INVOICE 1174 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2533975,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "S0175",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INVOICE 1175 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2547312,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0176",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INVOICE 1176 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2560649,
+      "date": "2026-10-08",
+      "direction": "credit",
+      "id": "S0177",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INVOICE 1177 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2573986,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0178",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INVOICE 1178 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2587323,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "S0179",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INVOICE 1179 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2600660,
+      "date": "2026-10-22",
+      "direction": "credit",
+      "id": "S0180",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INVOICE 1180 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2613997,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0181",
+      "source": "csv",
+      "text": "UPI Sharma Traders INVOICE 1181 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2627334,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0182",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INVOICE 1182 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2640671,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "S0183",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INVOICE 1183 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2654008,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0184",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INVOICE 1184 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2667345,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "S0185",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INVOICE 1185 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2680682,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "S0186",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INVOICE 1186 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2694019,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0187",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INVOICE 1187 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2707356,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0188",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INVOICE 1188 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2720693,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "S0189",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INVOICE 1189 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2734030,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0190",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INVOICE 1190 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2747367,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0191",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INVOICE 1191 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2760704,
+      "date": "2026-10-18",
+      "direction": "credit",
+      "id": "S0192",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INVOICE 1192 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2774041,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "S0193",
+      "source": "csv",
+      "text": "UPI Sharma Traders INVOICE 1193 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2787378,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0194",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INVOICE 1194 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2800715,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "S0195",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INVOICE 1195 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2814052,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0196",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INVOICE 1196 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2827389,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0197",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INVOICE 1197 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2840726,
+      "date": "2026-10-09",
+      "direction": "credit",
+      "id": "S0198",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INVOICE 1198 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2854063,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "S0199",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INVOICE 1199 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2867400,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "S0200",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INVOICE 1200 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2880737,
+      "date": "2026-10-06",
+      "direction": "credit",
+      "id": "S0201",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INVOICE 1201 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2894074,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0202",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INVOICE 1202 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2907411,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0203",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INVOICE 1203 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2920748,
+      "date": "2026-10-08",
+      "direction": "credit",
+      "id": "S0204",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INVOICE 1204 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2934085,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0205",
+      "source": "csv",
+      "text": "UPI Sharma Traders INVOICE 1205 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2947422,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "S0206",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INVOICE 1206 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2960759,
+      "date": "2026-10-10",
+      "direction": "credit",
+      "id": "S0207",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INVOICE 1207 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2974096,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0208",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INVOICE 1208 SETTLEMENT"
+    },
+    {
+      "amount_paise": 2987433,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "S0209",
+      "source": "csv",
+      "text": "UPI Orange City Packaging INVOICE 1209 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3000770,
+      "date": "2026-10-15",
+      "direction": "credit",
+      "id": "S0210",
+      "source": "csv",
+      "text": "UPI Sitabuldi Hardware INVOICE 1210 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3014107,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0211",
+      "source": "csv",
+      "text": "UPI Kamptee Cotton Mills INVOICE 1211 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3027444,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "S0212",
+      "source": "csv",
+      "text": "UPI Wardha Road Agencies INVOICE 1212 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3040781,
+      "date": "2026-10-08",
+      "direction": "credit",
+      "id": "S0213",
+      "source": "csv",
+      "text": "UPI Dharampeth Stationers INVOICE 1213 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3054118,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0214",
+      "source": "csv",
+      "text": "UPI Itwari Wholesale INVOICE 1214 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3067455,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0215",
+      "source": "csv",
+      "text": "UPI Amravati Auto Parts INVOICE 1215 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3080792,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "S0216",
+      "source": "csv",
+      "text": "UPI Hingna Industrial Supply INVOICE 1216 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3094129,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "S0217",
+      "source": "csv",
+      "text": "UPI Sharma Traders INVOICE 1217 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3107466,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0218",
+      "source": "csv",
+      "text": "UPI Deshmukh Electricals INVOICE 1218 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3120803,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "S0219",
+      "source": "csv",
+      "text": "UPI Nagpur Steel Co INVOICE 1219 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3134140,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0220",
+      "source": "csv",
+      "text": "UPI Vidarbha Logistics INVOICE 1220 SETTLEMENT"
+    },
+    {
+      "amount_paise": 3147477,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0221",
+      "source": "csv",
+      "text": "IMPS BATCH Orange City Packaging INVOICE 1221"
+    },
+    {
+      "amount_paise": 3160814,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "S0222",
+      "source": "csv",
+      "text": "IMPS BATCH Sitabuldi Hardware INVOICE 1222"
+    },
+    {
+      "amount_paise": 3174151,
+      "date": "2026-10-13",
+      "direction": "debit",
+      "id": "S0223",
+      "source": "csv",
+      "text": "IMPS BATCH Kamptee Cotton Mills INVOICE 1223"
+    },
+    {
+      "amount_paise": 3187488,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0224",
+      "source": "csv",
+      "text": "IMPS BATCH Wardha Road Agencies INVOICE 1224"
+    },
+    {
+      "amount_paise": 3200825,
+      "date": "2026-10-16",
+      "direction": "credit",
+      "id": "S0225",
+      "source": "csv",
+      "text": "IMPS BATCH Dharampeth Stationers INVOICE 1225"
+    },
+    {
+      "amount_paise": 3214162,
+      "date": "2026-10-08",
+      "direction": "debit",
+      "id": "S0226",
+      "source": "csv",
+      "text": "IMPS BATCH Itwari Wholesale INVOICE 1226"
+    },
+    {
+      "amount_paise": 3227499,
+      "date": "2026-10-06",
+      "direction": "debit",
+      "id": "S0227",
+      "source": "csv",
+      "text": "IMPS BATCH Amravati Auto Parts INVOICE 1227"
+    },
+    {
+      "amount_paise": 3240836,
+      "date": "2026-10-11",
+      "direction": "credit",
+      "id": "S0228",
+      "source": "csv",
+      "text": "IMPS BATCH Hingna Industrial Supply INVOICE 1228"
+    },
+    {
+      "amount_paise": 3254173,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0229",
+      "source": "csv",
+      "text": "IMPS BATCH Sharma Traders INVOICE 1229"
+    },
+    {
+      "amount_paise": 3267510,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "S0230",
+      "source": "csv",
+      "text": "IMPS BATCH Deshmukh Electricals INVOICE 1230"
+    },
+    {
+      "amount_paise": 3280847,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "S0231",
+      "source": "csv",
+      "text": "IMPS BATCH Nagpur Steel Co INVOICE 1231"
+    },
+    {
+      "amount_paise": 3294184,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0232",
+      "source": "csv",
+      "text": "IMPS BATCH Vidarbha Logistics INVOICE 1232"
+    },
+    {
+      "amount_paise": 3307521,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0233",
+      "source": "csv",
+      "text": "IMPS BATCH Orange City Packaging INVOICE 1233"
+    },
+    {
+      "amount_paise": 3320858,
+      "date": "2026-10-14",
+      "direction": "credit",
+      "id": "S0234",
+      "source": "csv",
+      "text": "IMPS BATCH Sitabuldi Hardware INVOICE 1234"
+    },
+    {
+      "amount_paise": 3334195,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0235",
+      "source": "csv",
+      "text": "IMPS BATCH Kamptee Cotton Mills INVOICE 1235"
+    },
+    {
+      "amount_paise": 3347532,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0236",
+      "source": "csv",
+      "text": "IMPS BATCH Wardha Road Agencies INVOICE 1236"
+    },
+    {
+      "amount_paise": 3360869,
+      "date": "2026-10-07",
+      "direction": "credit",
+      "id": "S0237",
+      "source": "csv",
+      "text": "IMPS BATCH Dharampeth Stationers INVOICE 1237"
+    },
+    {
+      "amount_paise": 3374206,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0238",
+      "source": "csv",
+      "text": "IMPS BATCH Itwari Wholesale INVOICE 1238"
+    },
+    {
+      "amount_paise": 3387543,
+      "date": "2026-10-14",
+      "direction": "debit",
+      "id": "S0239",
+      "source": "csv",
+      "text": "IMPS BATCH Amravati Auto Parts INVOICE 1239"
+    },
+    {
+      "amount_paise": 3400880,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "S0240",
+      "source": "csv",
+      "text": "IMPS BATCH Hingna Industrial Supply INVOICE 1240"
+    },
+    {
+      "amount_paise": 3414217,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0241",
+      "source": "csv",
+      "text": "IMPS BATCH Sharma Traders INVOICE 1241"
+    },
+    {
+      "amount_paise": 3427554,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0242",
+      "source": "csv",
+      "text": "IMPS BATCH Deshmukh Electricals INVOICE 1242"
+    },
+    {
+      "amount_paise": 3440891,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "S0243",
+      "source": "csv",
+      "text": "IMPS BATCH Nagpur Steel Co INVOICE 1243"
+    },
+    {
+      "amount_paise": 3454228,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "S0244",
+      "source": "csv",
+      "text": "IMPS BATCH Vidarbha Logistics INVOICE 1244"
+    },
+    {
+      "amount_paise": 3467565,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "S0245",
+      "source": "csv",
+      "text": "IMPS BATCH Orange City Packaging INVOICE 1245"
+    },
+    {
+      "amount_paise": 3480902,
+      "date": "2026-10-12",
+      "direction": "credit",
+      "id": "S0246",
+      "source": "csv",
+      "text": "IMPS BATCH Sitabuldi Hardware INVOICE 1246"
+    },
+    {
+      "amount_paise": 3494239,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0247",
+      "source": "csv",
+      "text": "IMPS BATCH Kamptee Cotton Mills INVOICE 1247"
+    },
+    {
+      "amount_paise": 3507576,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0248",
+      "source": "csv",
+      "text": "IMPS BATCH Wardha Road Agencies INVOICE 1248"
+    },
+    {
+      "amount_paise": 3520913,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "S0249",
+      "source": "csv",
+      "text": "IMPS BATCH Dharampeth Stationers INVOICE 1249"
+    },
+    {
+      "amount_paise": 3534250,
+      "date": "2026-10-19",
+      "direction": "debit",
+      "id": "S0250",
+      "source": "csv",
+      "text": "IMPS BATCH Itwari Wholesale INVOICE 1250"
+    },
+    {
+      "amount_paise": 3547587,
+      "date": "2026-10-21",
+      "direction": "debit",
+      "id": "S0251",
+      "source": "csv",
+      "text": "IMPS BATCH Amravati Auto Parts INVOICE 1251"
+    },
+    {
+      "amount_paise": 3560924,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "S0252",
+      "source": "csv",
+      "text": "IMPS BATCH Hingna Industrial Supply INVOICE 1252"
+    },
+    {
+      "amount_paise": 3574261,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0253",
+      "source": "csv",
+      "text": "IMPS BATCH Sharma Traders INVOICE 1253"
+    },
+    {
+      "amount_paise": 3587598,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0254",
+      "source": "csv",
+      "text": "IMPS BATCH Deshmukh Electricals INVOICE 1254"
+    },
+    {
+      "amount_paise": 3600935,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "S0255",
+      "source": "csv",
+      "text": "IMPS BATCH Nagpur Steel Co INVOICE 1255"
+    },
+    {
+      "amount_paise": 3614272,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0256",
+      "source": "csv",
+      "text": "IMPS BATCH Vidarbha Logistics INVOICE 1256"
+    },
+    {
+      "amount_paise": 3627609,
+      "date": "2026-10-18",
+      "direction": "debit",
+      "id": "S0257",
+      "source": "csv",
+      "text": "IMPS BATCH Orange City Packaging INVOICE 1257"
+    },
+    {
+      "amount_paise": 3640946,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "S0258",
+      "source": "csv",
+      "text": "IMPS BATCH Sitabuldi Hardware INVOICE 1258"
+    },
+    {
+      "amount_paise": 3654283,
+      "date": "2026-10-20",
+      "direction": "debit",
+      "id": "S0259",
+      "source": "csv",
+      "text": "IMPS BATCH Kamptee Cotton Mills INVOICE 1259"
+    },
+    {
+      "amount_paise": 3667620,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "S0260",
+      "source": "csv",
+      "text": "IMPS BATCH Wardha Road Agencies INVOICE 1260"
+    },
+    {
+      "amount_paise": 3680957,
+      "date": "22/10/2026",
+      "direction": "credit",
+      "id": "S0261",
+      "source": "ocr",
+      "text": "NEFT/10O35757 Dharampeth Stationers INVOICE 1261"
+    },
+    {
+      "amount_paise": 3694294,
+      "date": "12/10/2026",
+      "direction": "debit",
+      "id": "S0262",
+      "source": "csv",
+      "text": "NEFT 10035894 Itwari Wholesale INVOICE 1262"
+    },
+    {
+      "amount_paise": 3707631,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0263",
+      "source": "csv",
+      "text": "NEFT/5000001263/10036031 Amravati Auto Parts INVOICE 1263"
+    },
+    {
+      "amount_paise": 3720968,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "S0264",
+      "source": "csv",
+      "text": "NEFT/10036168 Hingna Industrial Supply INVOICE 1264"
+    },
+    {
+      "amount_paise": 3734305,
+      "date": "18/10/2026",
+      "direction": "debit",
+      "id": "S0265",
+      "source": "ocr",
+      "text": "NEFT/10O36305 Sharma Traders INVOICE 1265"
+    },
+    {
+      "amount_paise": 3747642,
+      "date": "20/10/2026",
+      "direction": "debit",
+      "id": "S0266",
+      "source": "csv",
+      "text": "NEFT 10036442 Deshmukh Electricals INVOICE 1266"
+    },
+    {
+      "amount_paise": 3760979,
+      "date": "2026-10-17",
+      "direction": "credit",
+      "id": "S0267",
+      "source": "csv",
+      "text": "NEFT/5000001267/10036579 Nagpur Steel Co INVOICE 1267"
+    },
+    {
+      "amount_paise": 3774316,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0268",
+      "source": "csv",
+      "text": "NEFT/10036716 Vidarbha Logistics INVOICE 1268"
+    },
+    {
+      "amount_paise": 3787653,
+      "date": "17/10/2026",
+      "direction": "debit",
+      "id": "S0269",
+      "source": "ocr",
+      "text": "NEFT/10O36B53 Orange City Packaging INVOICE 1269"
+    },
+    {
+      "amount_paise": 3800990,
+      "date": "10/10/2026",
+      "direction": "credit",
+      "id": "S0270",
+      "source": "csv",
+      "text": "NEFT 10036990 Sitabuldi Hardware INVOICE 1270"
+    },
+    {
+      "amount_paise": 3814327,
+      "date": "2026-10-09",
+      "direction": "debit",
+      "id": "S0271",
+      "source": "csv",
+      "text": "NEFT/5000001271/10037127 Kamptee Cotton Mills INVOICE 1271"
+    },
+    {
+      "amount_paise": 3827664,
+      "date": "2026-10-22",
+      "direction": "debit",
+      "id": "S0272",
+      "source": "csv",
+      "text": "NEFT/10037264 Wardha Road Agencies INVOICE 1272"
+    },
+    {
+      "amount_paise": 3841001,
+      "date": "05/10/2026",
+      "direction": "credit",
+      "id": "S0273",
+      "source": "ocr",
+      "text": "NEFT/10O37401 Dharampeth Stationers INVOICE 1273"
+    },
+    {
+      "amount_paise": 3854338,
+      "date": "17/10/2026",
+      "direction": "debit",
+      "id": "S0274",
+      "source": "csv",
+      "text": "NEFT 10037538 Itwari Wholesale INVOICE 1274"
+    },
+    {
+      "amount_paise": 3867675,
+      "date": "2026-10-23",
+      "direction": "debit",
+      "id": "S0275",
+      "source": "csv",
+      "text": "NEFT/5000001275/10037675 Amravati Auto Parts INVOICE 1275"
+    },
+    {
+      "amount_paise": 3881012,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "S0276",
+      "source": "csv",
+      "text": "NEFT/10037812 Hingna Industrial Supply INVOICE 1276"
+    },
+    {
+      "amount_paise": 3894349,
+      "date": "07/10/2026",
+      "direction": "debit",
+      "id": "S0277",
+      "source": "ocr",
+      "text": "NEFT/10O37949 Sharma Traders INVOICE 1277"
+    },
+    {
+      "amount_paise": 3907686,
+      "date": "18/10/2026",
+      "direction": "debit",
+      "id": "S0278",
+      "source": "csv",
+      "text": "NEFT 10038086 Deshmukh Electricals INVOICE 1278"
+    },
+    {
+      "amount_paise": 3921023,
+      "date": "2026-10-19",
+      "direction": "credit",
+      "id": "S0279",
+      "source": "csv",
+      "text": "NEFT/5000001279/10038223 Nagpur Steel Co INVOICE 1279"
+    },
+    {
+      "amount_paise": 3934360,
+      "date": "2026-10-10",
+      "direction": "debit",
+      "id": "S0280",
+      "source": "csv",
+      "text": "NEFT/10038360 Vidarbha Logistics INVOICE 1280"
+    },
+    {
+      "amount_paise": 3947697,
+      "date": "06/10/2026",
+      "direction": "debit",
+      "id": "S0281",
+      "source": "ocr",
+      "text": "NEFT/10O38497 Orange City Packaging INVOICE 1281"
+    },
+    {
+      "amount_paise": 3961034,
+      "date": "13/10/2026",
+      "direction": "credit",
+      "id": "S0282",
+      "source": "csv",
+      "text": "NEFT 10038634 Sitabuldi Hardware INVOICE 1282"
+    },
+    {
+      "amount_paise": 3974371,
+      "date": "2026-10-15",
+      "direction": "debit",
+      "id": "S0283",
+      "source": "csv",
+      "text": "NEFT/5000001283/10038771 Kamptee Cotton Mills INVOICE 1283"
+    },
+    {
+      "amount_paise": 3987708,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0284",
+      "source": "csv",
+      "text": "NEFT/10038908 Wardha Road Agencies INVOICE 1284"
+    },
+    {
+      "amount_paise": 4001045,
+      "date": "19/10/2026",
+      "direction": "credit",
+      "id": "S0285",
+      "source": "ocr",
+      "text": "NEFT/10O39O45 Dharampeth Stationers INVOICE 1285"
+    },
+    {
+      "amount_paise": 4014382,
+      "date": "15/10/2026",
+      "direction": "debit",
+      "id": "S0286",
+      "source": "csv",
+      "text": "NEFT 10039182 Itwari Wholesale INVOICE 1286"
+    },
+    {
+      "amount_paise": 4027719,
+      "date": "2026-10-17",
+      "direction": "debit",
+      "id": "S0287",
+      "source": "csv",
+      "text": "NEFT/5000001287/10039319 Amravati Auto Parts INVOICE 1287"
+    },
+    {
+      "amount_paise": 4041056,
+      "date": "2026-10-13",
+      "direction": "credit",
+      "id": "S0288",
+      "source": "csv",
+      "text": "NEFT/10039456 Hingna Industrial Supply INVOICE 1288"
+    },
+    {
+      "amount_paise": 4054393,
+      "date": "18/10/2026",
+      "direction": "debit",
+      "id": "S0289",
+      "source": "ocr",
+      "text": "NEFT/10O39S93 Sharma Traders INVOICE 1289"
+    },
+    {
+      "amount_paise": 4067730,
+      "date": "13/10/2026",
+      "direction": "debit",
+      "id": "S0290",
+      "source": "csv",
+      "text": "NEFT 10039730 Deshmukh Electricals INVOICE 1290"
+    },
+    {
+      "amount_paise": 4081067,
+      "date": "2026-10-20",
+      "direction": "credit",
+      "id": "S0291",
+      "source": "csv",
+      "text": "NEFT/5000001291/10039867 Nagpur Steel Co INVOICE 1291"
+    },
+    {
+      "amount_paise": 4094404,
+      "date": "2026-10-05",
+      "direction": "debit",
+      "id": "S0292",
+      "source": "csv",
+      "text": "NEFT/10040004 Vidarbha Logistics INVOICE 1292"
+    },
+    {
+      "amount_paise": 4107741,
+      "date": "22/10/2026",
+      "direction": "debit",
+      "id": "S0293",
+      "source": "ocr",
+      "text": "NEFT/10O40l41 Orange City Packaging INVOICE 1293"
+    },
+    {
+      "amount_paise": 4121078,
+      "date": "06/10/2026",
+      "direction": "credit",
+      "id": "S0294",
+      "source": "csv",
+      "text": "NEFT 10040278 Sitabuldi Hardware INVOICE 1294"
+    },
+    {
+      "amount_paise": 4134415,
+      "date": "2026-10-12",
+      "direction": "debit",
+      "id": "S0295",
+      "source": "csv",
+      "text": "NEFT/5000001295/10040415 Kamptee Cotton Mills INVOICE 1295"
+    },
+    {
+      "amount_paise": 4147752,
+      "date": "2026-10-07",
+      "direction": "debit",
+      "id": "S0296",
+      "source": "csv",
+      "text": "NEFT/10040552 Wardha Road Agencies INVOICE 1296"
+    },
+    {
+      "amount_paise": 4161089,
+      "date": "06/10/2026",
+      "direction": "credit",
+      "id": "S0297",
+      "source": "ocr",
+      "text": "NEFT/10O40G89 Dharampeth Stationers INVOICE 1297"
+    },
+    {
+      "amount_paise": 4174426,
+      "date": "05/10/2026",
+      "direction": "debit",
+      "id": "S0298",
+      "source": "csv",
+      "text": "NEFT 10040826 Itwari Wholesale INVOICE 1298"
+    },
+    {
+      "amount_paise": 4187763,
+      "date": "2026-10-11",
+      "direction": "debit",
+      "id": "S0299",
+      "source": "csv",
+      "text": "NEFT/5000001299/10040963 Amravati Auto Parts INVOICE 1299"
+    },
+    {
+      "amount_paise": 4201100,
+      "date": "2026-10-05",
+      "direction": "credit",
+      "id": "S0300",
+      "source": "csv",
+      "text": "NEFT/10041100 Hingna Industrial Supply INVOICE 1300"
+    }
+  ],
+  "version": "golden_v1"
+}

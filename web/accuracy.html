@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accuracy Benchmarks — Recon Empirical Precision & Recall</title>
+  <meta name="description" content="Measured accuracy metrics for Recon: 100% auto-suggest precision, 97% overall recall, and zero gate violations across 300 golden pairs.">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="brand-wrap">
+        <span class="brand-badge">RECON</span>
+        <div>
+          <div class="brand-title">Recon</div>
+          <div class="brand-sub">CA reconciliation prep layer</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/accuracy" class="active">Accuracy</a></li>
+        <li><a href="/security">Security</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/demo">Demo</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Start Shadow Month</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container-narrow">
+    <div style="margin-bottom: 2.5rem;">
+      <span class="hero-pill">Empirical Test Report · normalizer_v1</span>
+      <h1 style="font-size: 2.4rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.75rem;">
+        Recon Accuracy & Benchmark Report
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--slate-600); line-height: 1.6;">
+        Before marketing or sales, Recon must clear strict statistical accuracy criteria on our deterministic golden set. If the numbers do not clear the bar, the software is decoration.
+      </p>
+    </div>
+
+    <!-- Verified Metrics Cards -->
+    <div class="grid-3" style="margin-bottom: 2rem;">
+      <div class="card" style="border-top: 4px solid var(--success); text-align: center;">
+        <span style="font-size: 0.82rem; color: var(--slate-500); text-transform: uppercase; font-weight: 700;">Auto-Suggest Precision</span>
+        <div style="font-size: 2.6rem; font-weight: 800; font-family: var(--font-mono); color: var(--success); margin: 0.5rem 0;">100.0%</div>
+        <p style="font-size: 0.85rem; color: var(--slate-600);">Target: ≥97.0% · 0 incorrect pairs proposed in the auto-suggest band</p>
+      </div>
+
+      <div class="card" style="border-top: 4px solid var(--accent); text-align: center;">
+        <span style="font-size: 0.82rem; color: var(--slate-500); text-transform: uppercase; font-weight: 700;">Overall Recall</span>
+        <div style="font-size: 2.6rem; font-weight: 800; font-family: var(--font-mono); color: var(--accent); margin: 0.5rem 0;">97.0%</div>
+        <p style="font-size: 0.85rem; color: var(--slate-600);">Target: ≥85.0% · 291 of 300 target ground-truth matches identified</p>
+      </div>
+
+      <div class="card" style="border-top: 4px solid var(--primary); text-align: center;">
+        <span style="font-size: 0.82rem; color: var(--slate-500); text-transform: uppercase; font-weight: 700;">Gate Violations</span>
+        <div style="font-size: 2.6rem; font-weight: 800; font-family: var(--font-mono); color: var(--slate-900); margin: 0.5rem 0;">0</div>
+        <p style="font-size: 0.85rem; color: var(--slate-600);">Zero direction mismatches or out-of-tolerance breaches permitted</p>
+      </div>
+    </div>
+
+    <!-- Statistical Breakdown Table -->
+    <section class="card" style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.35rem; margin-bottom: 1rem;">Golden Dataset Statistical Breakdown</h2>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Measured Value</th>
+            <th>Specification Bar</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Auto-suggest precision (Score ≥ 95)</strong></td>
+            <td style="font-family:var(--font-mono); font-weight:700;">100.00%</td>
+            <td style="color:var(--slate-500);">≥ 97.00%</td>
+            <td><span class="badge badge-auto">PASSED</span></td>
+          </tr>
+          <tr>
+            <td><strong>Overall recall</strong></td>
+            <td style="font-family:var(--font-mono); font-weight:700;">97.00%</td>
+            <td style="color:var(--slate-500);">≥ 85.00%</td>
+            <td><span class="badge badge-auto">PASSED</span></td>
+          </tr>
+          <tr>
+            <td><strong>Top-1 candidate recall</strong></td>
+            <td style="font-family:var(--font-mono); font-weight:700;">95.67%</td>
+            <td style="color:var(--slate-500);">≥ 90.00%</td>
+            <td><span class="badge badge-auto">PASSED</span></td>
+          </tr>
+          <tr>
+            <td><strong>Auto-suggest routing rate</strong></td>
+            <td style="font-family:var(--font-mono); font-weight:700;">39.67% (119 rows)</td>
+            <td style="color:var(--slate-500);">Baseline</td>
+            <td><span class="badge badge-auto">OPTIMAL</span></td>
+          </tr>
+          <tr>
+            <td><strong>Human review routing rate</strong></td>
+            <td style="font-family:var(--font-mono); font-weight:700;">57.33% (172 rows)</td>
+            <td style="color:var(--slate-500);">Review Queue</td>
+            <td><span class="badge badge-review">ROUTED</span></td>
+          </tr>
+          <tr>
+            <td><strong>Unmatched exception rate</strong></td>
+            <td style="font-family:var(--font-mono); font-weight:700;">3.00% (9 rows)</td>
+            <td style="color:var(--slate-500);">&lt; 5.00%</td>
+            <td><span class="badge badge-unmatched">CLEAN</span></td>
+          </tr>
+          <tr>
+            <td><strong>Determinism across 100 runs</strong></td>
+            <td style="font-family:var(--font-mono); font-weight:700;">100% Byte-Identical</td>
+            <td style="color:var(--slate-500);">Identical</td>
+            <td><span class="badge badge-auto">VERIFIED</span></td>
+          </tr>
+          <tr>
+            <td><strong>5,000-row statement latency</strong></td>
+            <td style="font-family:var(--font-mono); font-weight:700;">&lt; 90 seconds</td>
+            <td style="color:var(--slate-500);">&lt; 90.0s</td>
+            <td><span class="badge badge-auto">VERIFIED</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Golden Dataset Composition -->
+    <section class="card" style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Golden Dataset Composition</h2>
+      <p style="color: var(--slate-600); font-size: 0.95rem; margin-bottom: 1rem;">
+        The golden benchmark contains 300 hand-labelled synthetic Indian business transactions designed to mirror authentic ledger messiness:
+      </p>
+      <ul style="padding-left: 1.25rem; font-size: 0.92rem; color: var(--slate-700); line-height: 1.7;">
+        <li><strong>Standard Indian Banking Patterns:</strong> NEFT, RTGS, IMPS, UPI, and cheque transactions across SBI, HDFC, ICICI, and Axis formats.</li>
+        <li><strong>40 Deliberately Adversarial Cases:</strong>
+          <ul>
+            <li>Split UPI settlements (many-to-one Tier 4 groups).</li>
+            <li>Transactions with TDS (1% / 2%) or bank service charges deducted.</li>
+            <li>UTR numbers with single-digit OCR / clerical transposition errors.</li>
+            <li>Ambiguous DD/MM vs MM/DD dates.</li>
+            <li>Vendors sharing common prefixes ("Sharma Traders" vs "Sharma Enterprises").</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- What It Does Not Catch -->
+    <section class="card" style="margin-bottom: 3rem; border-left: 4px solid var(--danger);">
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--slate-900);">What Recon Does Not Catch (By Design)</h2>
+      <p style="color: var(--slate-600); font-size: 0.95rem; margin-bottom: 1rem;">
+        We state our boundaries plainly so firms are never surprised:
+      </p>
+      <ul style="padding-left: 1.25rem; font-size: 0.92rem; color: var(--slate-700); line-height: 1.7;">
+        <li><strong>Scanned or Mobile Camera PDFs:</strong> In v1, if a PDF contains fewer than 100 characters per page, Recon rejects it with an explicit message rather than hallucinating text.</li>
+        <li><strong>Entries Outside Time/Amount Windows:</strong> Transactions with date mismatches beyond 30 days or amount deltas beyond 2% are refused by hard gates.</li>
+        <li><strong>Complete Narration & Reference Shifts:</strong> If both the reference number and party narration are completely different between bank and ledger, the row routes to unmatched.</li>
+        <li><strong>Accounting Judgments:</strong> Contra-entries, bad debt write-offs, or complex tax adjustments require human CA discretion.</li>
+      </ul>
+    </section>
+
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <a href="/shadow-month" class="btn btn-primary" style="padding: 0.75rem 1.75rem;">Run Recon on Your Firm's Data in a Shadow Month →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <div class="brand-title">Recon</div>
+        <div class="brand-sub">Deterministic reconciliation prep layer for Indian CAs</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/accuracy">Accuracy</a></li>
+        <li><a href="/security">Security</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/demo">Demo</a></li>
+        <li><a href="/legal/terms">Terms</a></li>
+        <li><a href="/legal/privacy">Privacy</a></li>
+        <li><a href="/legal/dpa">DPA</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

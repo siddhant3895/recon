@@ -199,11 +199,14 @@ def export_workbook() -> Response:
 def export_csv_zip() -> Response:
     with _lock:
         decisions = [dict(row) for row in _decisions]
+    tables = build_tables(DEMO_RESULT, decisions=decisions)
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as archive:
-        csv_paths = export_csv(DEMO_RESULT, BASE_DIR / "out" / "web_export", decisions=decisions)
-        for name, path in csv_paths.items():
-            archive.write(path, arcname=f"{name}.csv")
+        for name, rows in tables.items():
+            member = io.StringIO()
+            writer = csv.writer(member)
+            writer.writerows(rows)
+            archive.writestr(f"{name}.csv", member.getvalue())
     return Response(
         content=buffer.getvalue(),
         media_type="application/zip",

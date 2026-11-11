@@ -93,12 +93,20 @@ def test_exports_include_all_required_sheets(golden, tmp_path):
     stmt_lines, ledger_lines = lines_from_golden(golden)
     result = run_matching(stmt_lines[:10], ledger_lines)
     csv_paths = export_csv(result, tmp_path)
-    assert set(csv_paths) == {"matched_pairs", "unmatched", "unparsed", "decisions", "summary"}
+    expected_sheets = {
+        "matched_pairs",
+        "proposed_unreviewed",
+        "unmatched",
+        "unparsed",
+        "decisions",
+        "summary",
+    }
+    assert set(csv_paths) == expected_sheets
     xlsx_path = export_xlsx(result, tmp_path / "export.xlsx")
     from openpyxl import load_workbook
 
     workbook = load_workbook(xlsx_path, read_only=True)
-    assert set(workbook.sheetnames) == {"matched_pairs", "unmatched", "unparsed", "decisions", "summary"}
+    assert set(workbook.sheetnames) == expected_sheets
     workbook.close()
 
 

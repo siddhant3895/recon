@@ -14,6 +14,23 @@ def compute_run_id(result: RunResult) -> str:
     return hashlib.sha256(payload).hexdigest()[:16]
 
 
+def _resolve_decisions(decisions: Iterable[dict[str, Any]] | None) -> dict[str, dict[str, Any]]:
+    rows = list(decisions or [])
+    undone_ids = {
+        row.get("target_decision_id")
+        for row in rows
+        if row.get("action") == "undo" and row.get("target_decision_id") is not None
+    }
+    active: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        if row.get("action") == "undo":
+            continue
+        if row.get("id") is not None and row["id"] in undone_ids:
+            continue
+        active[row["stmt_line_id"]] = row
+    return active
+
+
 def build_tables(
     result: RunResult,
     decisions: Iterable[dict[str, Any]] | None = None,
@@ -22,9 +39,21 @@ def build_tables(
 ) -> dict[str, list[list[Any]]]:
     run_id = run_id or compute_run_id(result)
     line_by_id = {line.id: line for line in result.lines}
-    referenced_ledger = {ledger_id for candidate in result.candidates for ledger_id in candidate.ledger_line_ids}
+    active_decisions = _resolve_decisions(decisions)
+    accepted_keys = {
+        (row["stmt_line_id"], tuple(sorted(row.get("ledger_line_ids", []))))
+        for row in active_decisions.values()
+        if row.get("action") == "accept"
+    }
+    accepted_ledger = {
+        ledger_id
+        for row in active_decisions.values()
+        if row.get("action") == "accept"
+        for ledger_id in row.get("ledger_line_ids", [])
+    }
+    proposed_ledger = {ledger_id for candidate in result.candidates for ledger_id in candidate.ledger_line_ids}
 
-    matched: list[list[Any]] = [[
+    pair_header: list[Any] = [
         "stmt_line_id",
         "ledger_line_ids",
         "score",
@@ -37,11 +66,13 @@ def build_tables(
         "ledger_dates",
         "stmt_text",
         "ledger_text",
-    ]]
+    ]
+    matched: list[list[Any]] = [pair_header]
+    proposed: list[list[Any]] = [pair_header]
     for candidate in sorted(result.candidates, key=lambda c: (-c.score, c.stmt_line_id)):
         stmt = line_by_id[candidate.stmt_line_id]
         ledger_lines = [line_by_id[ledger_id] for ledger_id in candidate.ledger_line_ids]
-        matched.append([
+        row: list[Any] = [
             stmt.id,
             " | ".join(candidate.ledger_line_ids),
             candidate.score,
@@ -54,14 +85,36 @@ def build_tables(
             " | ".join(line.date.isoformat() for line in ledger_lines),
             stmt.text_norm,
             " | ".join(line.text_norm for line in ledger_lines),
-        ])
+        ]
+        key = (candidate.stmt_line_id, tuple(sorted(candidate.ledger_line_ids)))
+        if key in accepted_keys:
+            matched.append(row)
+        elif candidate.stmt_line_id not in active_decisions:
+            proposed.append(row)
 
+    candidate_by_key = {
+        (candidate.stmt_line_id, tuple(sorted(candidate.ledger_line_ids))): candidate
+        for candidate in result.candidates
+    }
     unmatched: list[list[Any]] = [["line_id", "side", "amount_paise", "date", "direction", "text", "state"]]
     for line in sorted(result.lines, key=lambda item: (item.side, item.id)):
-        if line.side == "stmt" and line.match_state == "unmatched":
-            unmatched.append(_line_row(line))
-        elif line.side == "ledger" and line.id not in referenced_ledger:
-            unmatched.append(_line_row(line))
+        if line.side == "stmt":
+            decision = active_decisions.get(line.id)
+            if decision is None:
+                if line.match_state == "unmatched":
+                    unmatched.append(_line_row(line, "unmatched"))
+            elif decision.get("action") == "reject":
+                unmatched.append(_line_row(line, f"rejected: {decision.get('reason') or 'unspecified'}"))
+            elif decision.get("action") == "unmatch":
+                unmatched.append(_line_row(line, "unmatched by reviewer"))
+            elif decision.get("action") == "accept":
+                key = (line.id, tuple(sorted(decision.get("ledger_line_ids", []))))
+                if key not in candidate_by_key:
+                    unmatched.append(_line_row(line, "accepted pair missing from run"))
+        elif line.side == "ledger":
+            if line.id not in accepted_ledger:
+                state = "proposed, not accepted" if line.id in proposed_ledger else "unmatched"
+                unmatched.append(_line_row(line, state))
 
     unparsed_rows: list[list[Any]] = [["line_id", "side", "reason", "raw"]]
     for row in unparsed or []:
@@ -91,9 +144,13 @@ def build_tables(
     for tier, count in sorted(result.tiers.items()):
         summary.append([f"tier_{tier}_candidates", count])
     summary.append(["unparsed_rows", len(unparsed_rows) - 1])
+    summary.append(["accepted_pairs", len(matched) - 1])
+    summary.append(["proposed_unreviewed_candidates", len(proposed) - 1])
+    summary.append(["unmatched_rows", len(unmatched) - 1])
 
     return {
         "matched_pairs": matched,
+        "proposed_unreviewed": proposed,
         "unmatched": unmatched,
         "unparsed": unparsed_rows,
         "decisions": decision_rows,
@@ -152,7 +209,7 @@ def export_xlsx(
     return target
 
 
-def _line_row(line) -> list[Any]:
+def _line_row(line, state: str | None = None) -> list[Any]:
     return [
         line.id,
         line.side,
@@ -160,5 +217,5 @@ def _line_row(line) -> list[Any]:
         line.date.isoformat(),
         line.direction,
         line.text_norm,
-        line.match_state,
+        state if state is not None else line.match_state,
     ]

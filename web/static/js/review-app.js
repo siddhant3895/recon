@@ -28,14 +28,26 @@
     return demoData.statement[activeIndex];
   }
 
+  function undoneDecisionIds() {
+    const undone = new Set();
+    decisionsHistory.forEach(dec => {
+      if (dec.action === "undo" && dec.target_decision_id != null) {
+        undone.add(dec.target_decision_id);
+      }
+    });
+    return undone;
+  }
+
   function getStatementDecision(stmtId) {
-    // Find the latest decision for this statement line
+    // Find the latest still-active decision for this statement line.
+    // Undo rows are markers, not decisions; rows they target are void.
+    const undone = undoneDecisionIds();
     for (let i = decisionsHistory.length - 1; i >= 0; i--) {
       const dec = decisionsHistory[i];
-      if (dec.stmt_line_id === stmtId) {
-        if (dec.action === "undo") continue;
-        return dec;
-      }
+      if (dec.stmt_line_id !== stmtId) continue;
+      if (dec.action === "undo") continue;
+      if (dec.id != null && undone.has(dec.id)) continue;
+      return dec;
     }
     return null;
   }
@@ -46,21 +58,18 @@
     let rejected = 0;
     let unmatched = 0;
 
-    const decidedSet = new Set();
-    decisionsHistory.forEach(d => {
-      if (d.action === "accept") {
-        accepted++;
-        decidedSet.add(d.stmt_line_id);
-      } else if (d.action === "reject") {
-        rejected++;
-        decidedSet.add(d.stmt_line_id);
-      } else if (d.action === "unmatch") {
-        unmatched++;
-        decidedSet.add(d.stmt_line_id);
-      }
-    });
+    let completed = 0;
+    if (demoData && demoData.statement) {
+      demoData.statement.forEach(stmt => {
+        const decision = getStatementDecision(stmt.id);
+        if (!decision) return;
+        completed++;
+        if (decision.action === "accept") accepted++;
+        else if (decision.action === "reject") rejected++;
+        else if (decision.action === "unmatch") unmatched++;
+      });
+    }
 
-    const completed = decidedSet.size;
     const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
 
     const progressFill = document.getElementById("app-progress-fill");
@@ -234,19 +243,19 @@
             <div class="candidate-components">
               <div class="comp-item">
                 <span style="color:var(--slate-500);">Amount (45)</span>
-                <strong>${comp.amount_score ?? 0} pts</strong>
+                <strong>${Number(comp.amount ?? 0).toFixed(1)} pts</strong>
               </div>
               <div class="comp-item">
                 <span style="color:var(--slate-500);">Date (25)</span>
-                <strong>${comp.date_score ?? 0} pts</strong>
+                <strong>${Number(comp.date ?? 0).toFixed(1)} pts</strong>
               </div>
               <div class="comp-item">
                 <span style="color:var(--slate-500);">Ref (20)</span>
-                <strong>${comp.ref_score ?? 0} pts</strong>
+                <strong>${Number(comp.reference ?? 0).toFixed(1)} pts</strong>
               </div>
               <div class="comp-item">
                 <span style="color:var(--slate-500);">Narration (10)</span>
-                <strong>${comp.narr_score ?? 0} pts</strong>
+                <strong>${Number(comp.narration ?? 0).toFixed(1)} pts</strong>
               </div>
             </div>
 
@@ -459,23 +468,32 @@
   }
 
   async function undoLastDecision() {
-    if (decisionsHistory.length === 0) return;
-    const lastDec = decisionsHistory[decisionsHistory.length - 1];
-    if (lastDec.action === "undo") return;
+    // Undo the latest still-active decision (skipping undo rows and
+    // decisions already undone by a prior undo).
+    const undone = undoneDecisionIds();
+    let target = null;
+    for (let i = decisionsHistory.length - 1; i >= 0; i--) {
+      const dec = decisionsHistory[i];
+      if (dec.action === "undo") continue;
+      if (dec.id != null && undone.has(dec.id)) continue;
+      target = dec;
+      break;
+    }
+    if (!target) return;
 
     try {
       const res = await fetch("/api/demo/decisions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          stmt_line_id: lastDec.stmt_line_id,
-          ledger_line_ids: lastDec.ledger_line_ids,
+          stmt_line_id: target.stmt_line_id,
+          ledger_line_ids: target.ledger_line_ids || [],
           action: "undo",
-          target_decision_id: lastDec.id
+          target_decision_id: target.id
         })
       });
       if (res.ok) {
-        decisionsHistory.pop(); // remove undone
+        decisionsHistory.push(await res.json()); // keep the undo row so history stays append-only
         renderAll();
       }
     } catch (err) {
@@ -485,26 +503,24 @@
 
   // Keyboard navigation & shortcuts
   function handleKeyDown(e) {
-    // If a modal is open
+    // If a modal is open, only modal shortcuts apply.
     const rejectModal = document.getElementById("reject-modal");
     if (rejectModal && rejectModal.classList.contains("open")) {
       if (e.key === "Escape") {
         closeRejectModal();
-        return;
-      }
-      if (e.key >= "1" && e.key <= "5") {
+      } else if (e.key >= "1" && e.key <= "5") {
         const reasons = ["wrong amount", "wrong party", "wrong period", "duplicate", "other"];
         submitReject(reasons[parseInt(e.key, 10) - 1]);
-        return;
       }
+      return;
     }
 
     const shortcutsModal = document.getElementById("shortcuts-modal");
     if (shortcutsModal && shortcutsModal.classList.contains("open")) {
       if (e.key === "Escape" || e.key === "?") {
         shortcutsModal.classList.remove("open");
-        return;
       }
+      return;
     }
 
     // Ignore if typing in input
@@ -517,21 +533,27 @@
       return;
     }
 
-    if (e.key === "j" || e.key === "ArrowDown") {
+    // Leave browser/OS combos alone (Ctrl+R, Ctrl+J, Alt+<letter>, ...)
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+    // Normalize so Caps Lock (uppercase J/K) still works.
+    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+
+    if (key === "j" || key === "ArrowDown") {
       e.preventDefault();
       if (demoData && activeIndex < demoData.statement.length - 1) {
         activeIndex++;
         activeCandidateIndex = 0;
         renderAll();
       }
-    } else if (e.key === "k" || e.key === "ArrowUp") {
+    } else if (key === "k" || key === "ArrowUp") {
       e.preventDefault();
       if (activeIndex > 0) {
         activeIndex--;
         activeCandidateIndex = 0;
         renderAll();
       }
-    } else if (e.key === "Tab") {
+    } else if (key === "Tab") {
       e.preventDefault();
       const stmt = getActiveStatement();
       if (stmt && stmt.candidates && stmt.candidates.length > 0) {
@@ -543,16 +565,16 @@
         renderWorklist();
         renderLedgerList();
       }
-    } else if (e.key === "Enter") {
+    } else if (key === "Enter") {
       e.preventDefault();
       acceptCandidate(activeCandidateIndex);
-    } else if (e.key === "r" || e.key === "R") {
+    } else if (key === "r") {
       e.preventDefault();
       openRejectModal(activeCandidateIndex);
-    } else if (e.key === "u" || e.key === "U") {
+    } else if (key === "u") {
       e.preventDefault();
       markUnmatched();
-    } else if (e.key === "?") {
+    } else if (key === "?") {
       e.preventDefault();
       if (shortcutsModal) shortcutsModal.classList.toggle("open");
     }

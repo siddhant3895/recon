@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accuracy Benchmarks — Recon Empirical Precision & Recall</title>
-  <meta name="description" content="Measured accuracy metrics for Recon: 100% auto-suggest precision, 97% overall recall, and zero gate violations across 300 golden pairs.">
+  <meta name="description" content="Measured accuracy metrics for Recon on its 300-pair synthetic golden set: 100% auto-suggest precision, 97% overall recall, zero gate violations.">
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/demo">Demo</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Start Shadow Month</a></li>
+        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Register Interest</a></li>
       </ul>
     </div>
   </header>
@@ -111,16 +111,16 @@
             <td><span class="badge badge-unmatched">CLEAN</span></td>
           </tr>
           <tr>
-            <td><strong>Determinism across 100 runs</strong></td>
+            <td><strong>Determinism across repeated runs</strong></td>
             <td style="font-family:var(--font-mono); font-weight:700;">100% Byte-Identical</td>
             <td style="color:var(--slate-500);">Identical</td>
             <td><span class="badge badge-auto">VERIFIED</span></td>
           </tr>
           <tr>
-            <td><strong>5,000-row statement latency</strong></td>
-            <td style="font-family:var(--font-mono); font-weight:700;">&lt; 90 seconds</td>
-            <td style="color:var(--slate-500);">&lt; 90.0s</td>
-            <td><span class="badge badge-auto">VERIFIED</span></td>
+            <td><strong>Tier-4 search node cap</strong></td>
+            <td style="font-family:var(--font-mono); font-weight:700;">5,000 nodes / group</td>
+            <td style="color:var(--slate-500);">Bounded</td>
+            <td><span class="badge badge-review">BOUNDED</span></td>
           </tr>
         </tbody>
       </table>
@@ -130,17 +130,16 @@
     <section class="card" style="margin-bottom: 2rem;">
       <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">Golden Dataset Composition</h2>
       <p style="color: var(--slate-600); font-size: 0.95rem; margin-bottom: 1rem;">
-        The golden benchmark contains 300 hand-labelled synthetic Indian business transactions designed to mirror authentic ledger messiness:
+        The golden benchmark is a <strong>synthetic, seeded dataset of 300 labelled pairs</strong> (449 ledger lines) built to exercise realistic ledger messiness. It is not a sample of real bank data, and results on your firm's files will differ:
       </p>
       <ul style="padding-left: 1.25rem; font-size: 0.92rem; color: var(--slate-700); line-height: 1.7;">
-        <li><strong>Standard Indian Banking Patterns:</strong> NEFT, RTGS, IMPS, UPI, and cheque transactions across SBI, HDFC, ICICI, and Axis formats.</li>
-        <li><strong>40 Deliberately Adversarial Cases:</strong>
+        <li><strong>Indian Payment Rails:</strong> NEFT, RTGS, IMPS, and UPI narration patterns with invoice references.</li>
+        <li><strong>40 Deliberately Adversarial Cases</strong> in four labelled categories:
           <ul>
-            <li>Split UPI settlements (many-to-one Tier 4 groups).</li>
-            <li>Transactions with TDS (1% / 2%) or bank service charges deducted.</li>
-            <li>UTR numbers with single-digit OCR / clerical transposition errors.</li>
-            <li>Ambiguous DD/MM vs MM/DD dates.</li>
-            <li>Vendors sharing common prefixes ("Sharma Traders" vs "Sharma Enterprises").</li>
+            <li>Split UPI settlements — many-to-one Tier 4 groups (40 groups in total).</li>
+            <li>Decoy entries — near-identical amounts and dates from the wrong party.</li>
+            <li>OCR/typo noise — reference numbers with digit-level corruption.</li>
+            <li>Ambiguous multi-reference narrations and multi-account statement lines.</li>
           </ul>
         </li>
       </ul>

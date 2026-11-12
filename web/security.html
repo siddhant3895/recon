@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Security & Data Residency — Recon</title>
-  <meta name="description" content="Recon security architecture: Indian data residency (AWS ap-south-1 Mumbai), AES-256 encryption, 30-day purge policy, append-only audit logs. Zero JS required.">
+  <title>Security & Data Handling — Recon</title>
+  <meta name="description" content="What Recon's prototype actually does with data today: in-memory processing, no cloud services, no LLM in the matching loop, append-only decision audit. Including an honest list of what is not built yet.">
   <link rel="stylesheet" href="/static/css/style.css">
   <!-- Note: This page contains ZERO JavaScript to ensure complete readability and auditability -->
 </head>
@@ -25,54 +25,51 @@
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/demo">Demo</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Start Shadow Month</a></li>
+        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Register Interest</a></li>
       </ul>
     </div>
   </header>
 
   <main class="container-narrow">
     <div style="margin-bottom: 2.5rem;">
-      <span class="hero-pill" style="background:#e0f2fe; color:#0369a1;">Zero-JS Audited Architecture</span>
+      <span class="hero-pill" style="background:#e0f2fe; color:#0369a1;">Zero-JS Page · Honest Security Posture</span>
       <h1 style="font-size: 2.4rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.75rem;">
-        Security, Data Residency & Retention
+        Security & Data Handling
       </h1>
       <p style="font-size: 1.15rem; color: var(--slate-600); line-height: 1.6;">
-        CA firms handle confidential client financial ledgers and bank accounts. Our security model is designed to withstand strict partner audit and compliance scrutiny.
+        Recon is currently a working prototype, not a hosted service. This page describes exactly
+        what the software does with data today, and clearly lists the protections it does not yet have.
       </p>
     </div>
 
     <!-- Quick Facts Table -->
     <section class="card" style="margin-bottom: 2rem;">
-      <h2 style="font-size: 1.35rem; margin-bottom: 1rem;">Security Overview at a Glance</h2>
+      <h2 style="font-size: 1.35rem; margin-bottom: 1rem;">What Is True Today</h2>
       <table class="comp-table">
         <tbody>
           <tr>
-            <td style="width: 35%;"><strong>Geographic Location</strong></td>
-            <td><strong>AWS ap-south-1 (Mumbai, India).</strong> Financial data never leaves the Republic of India. No US or European transit.</td>
+            <td style="width: 35%;"><strong>Data Location</strong></td>
+            <td><strong>Wherever you run it.</strong> Recon is a single-process Python application. It calls no external APIs and stores nothing in any cloud. Data exists only in the memory and disk of the machine running it.</td>
           </tr>
           <tr>
-            <td><strong>Encryption at Rest</strong></td>
-            <td><strong>AES-256.</strong> Every storage object encrypted with per-firm KMS keys.</td>
+            <td><strong>No LLM in the Match Loop</strong></td>
+            <td><strong>None, ever.</strong> Parsing and match scoring are deterministic Python code running locally. Documents are never forwarded to third-party AI services.</td>
           </tr>
           <tr>
-            <td><strong>Encryption in Transit</strong></td>
-            <td><strong>TLS 1.3 everywhere.</strong> Plain HTTP and weak cipher suites are strictly prohibited and dropped.</td>
+            <td><strong>Demo Data</strong></td>
+            <td><strong>Synthetic.</strong> The public demo runs on generated sample data (a seeded generator in the repository). No real bank statements or client ledgers are included.</td>
           </tr>
           <tr>
-            <td><strong>Tenant Isolation</strong></td>
-            <td><strong>PostgreSQL Row-Level Security (RLS).</strong> Firm ID is the root boundary on all tables. Cross-firm ID queries return 404.</td>
+            <td><strong>Decision Audit Trail</strong></td>
+            <td><strong>Append-only.</strong> Every accept/reject/unmatch/undo decision writes an immutable audit record (who, what, when, reason). Resetting the demo clears decisions but preserves the audit history.</td>
           </tr>
           <tr>
-            <td><strong>Retention & Purge</strong></td>
-            <td><strong>30-Day Hard Purge.</strong> Raw bank PDFs and CSV uploads are destroyed automatically 30 days after run completion.</td>
+            <td><strong>Exports</strong></td>
+            <td><strong>Built in memory, streamed to you.</strong> XLSX/CSV exports are generated in memory and sent directly to your browser; the server does not retain a copy.</td>
           </tr>
           <tr>
-            <td><strong>Audit Logging</strong></td>
-            <td><strong>Append-Only.</strong> Every match decision, export, login, and purge event writes an immutable audit record with actor ID and timestamp.</td>
-          </tr>
-          <tr>
-            <td><strong>Contractual Protection</strong></td>
-            <td><strong>DPA & NDA.</strong> Co-signed by legal guardian. DPDP Act (India) compliant data processing terms.</td>
+            <td><strong>Retention Job</strong></td>
+            <td><strong>Included, operator-run.</strong> The codebase ships a purge job that deletes raw upload files past a <code class="kbd">purge_after</code> timestamp and writes an audit event for each outcome (purged / skipped / failed). It is designed to be scheduled by whoever operates the software; it is not wired to a live service yet.</td>
           </tr>
         </tbody>
       </table>
@@ -80,51 +77,54 @@
 
     <!-- Deep Dive: Data Handling -->
     <section class="card" style="margin-bottom: 2rem;">
-      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">1. Indian Data Residency (AWS ap-south-1)</h2>
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">1. How Data Actually Flows</h2>
       <p style="color: var(--slate-700); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
-        Many generic SaaS tools route client documents through foreign inference APIs or US-based cloud regions. Recon is built with strict regional containment:
+        In the current prototype, the only data entered through the web interface is the
+        "shadow month" interest form (firm name, contact details, volume estimates). That
+        submission is held in the running process's memory and written to its in-memory audit
+        log; it is not persisted to a database, not emailed anywhere, and is lost when the
+        process stops. Reconciliation runs are performed via the command line on files you
+        supply, and results are written to your local disk under your control.
       </p>
-      <ul style="padding-left: 1.25rem; font-size: 0.92rem; color: var(--slate-700); line-height: 1.7;">
-        <li>Object storage is hosted exclusively in AWS Mumbai (<code class="kbd">ap-south-1</code>).</li>
-        <li>PostgreSQL databases run in Supabase Mumbai / RDS Mumbai.</li>
-        <li>Matching workers run on isolated Indian compute nodes.</li>
-        <li>No LLM in the matching loop: documents are parsed and scored using local, deterministic Python mathematics, not forwarded to third-party AI APIs.</li>
-      </ul>
     </section>
 
     <!-- Deep Dive: Purge & Retention -->
     <section class="card" style="margin-bottom: 2rem;">
-      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">2. Automated 30-Day Raw File Purge</h2>
-      <p style="color: var(--slate-700); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
-        Firms frequently ask: <em>"Why do you need to keep my bank statement after the reconciliation is finished?"</em> We don't.
-      </p>
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">2. Raw File Retention & Purge</h2>
       <ul style="padding-left: 1.25rem; font-size: 0.92rem; color: var(--slate-700); line-height: 1.7;">
-        <li>Upon upload, a <code class="kbd">purge_after</code> timestamp is attached (exactly 30 days from processing).</li>
-        <li>A daily scheduled retention worker unlinks and permanently shreds raw PDF and CSV file objects.</li>
-        <li>The purge operation generates an immutable audit entry recording the bytes freed, the firm ID, and the timestamp.</li>
-        <li>Only normalized metadata and human match decisions remain for your reconciliation history.</li>
+        <li>Upload records carry a <code class="kbd">purge_after</code> timestamp; the purge job removes files whose timestamp has elapsed.</li>
+        <li>Every purge outcome writes an audit event: file purged (with bytes freed), skipped (record unparseable or key escapes the storage root), or failed (file could not be deleted — the record is never falsely marked purged).</li>
+        <li>Records with invalid timestamps or suspicious storage paths are never deleted and never marked purged; they are surfaced so the registry can be repaired.</li>
+        <li>Running the job and its scheduling (e.g. daily) is the operator's responsibility — it is a documented command, not a hosted automation.</li>
       </ul>
     </section>
 
-    <!-- Deep Dive: Access Control & RLS -->
+    <!-- Deep Dive: What is NOT built -->
     <section class="card" style="margin-bottom: 2rem;">
-      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">3. Tenant Boundary & Postgres RLS</h2>
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">3. What We Do NOT Have Yet</h2>
       <p style="color: var(--slate-700); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
-        Every database query runs under PostgreSQL Row-Level Security. There is no shared cross-tenant workspace. If a user or malicious script attempts to access another firm's upload ID or statement line, the database engine returns 0 rows (404 Not Found), verified by continuous automated regression tests.
-      </p>
-    </section>
-
-    <!-- Deep Dive: Incident Path & Contracts -->
-    <section class="card" style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">4. Incident Disclosure & Legal Protection</h2>
-      <p style="color: var(--slate-700); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
-        In the unlikely event of any security anomaly:
+        Honesty matters more than a reassuring table. The following protections do not exist in
+        this prototype and must be built before any real client data is processed:
       </p>
       <ul style="padding-left: 1.25rem; font-size: 0.92rem; color: var(--slate-700); line-height: 1.7;">
-        <li><strong>72-Hour Disclosure:</strong> All affected account owners receive direct email notification within 72 hours of verification.</li>
-        <li><strong>Named Point of Contact:</strong> Dedicated security email and emergency phone escalation for subscribed firms.</li>
-        <li><strong>Guardian Co-Signature:</strong> Because the principal software architect is a minor, all Data Processing Agreements (DPAs) and Non-Disclosure Agreements (NDAs) are co-signed by an adult legal guardian, ensuring 100% legal enforceability under Indian contract law.</li>
+        <li><strong>No authentication or user accounts.</strong> The web demo has no login; anyone with access to the port can use it.</li>
+        <li><strong>No multi-tenancy or row-level security.</strong> There is a single shared in-memory workspace, not per-firm isolation.</li>
+        <li><strong>No encryption at rest or in transit.</strong> The dev server speaks plain HTTP; data on disk is not encrypted by Recon.</li>
+        <li><strong>No cloud residency guarantees.</strong> Because nothing is hosted, "Indian data residency" depends entirely on where you run it.</li>
+        <li><strong>No automated incident response.</strong> There is no monitoring, alerting, or breach-notification pipeline.</li>
       </ul>
+    </section>
+
+    <!-- Deep Dive: Contracts -->
+    <section class="card" style="margin-bottom: 3rem;">
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.75rem;">4. Contracts & Legal Documents</h2>
+      <p style="color: var(--slate-700); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+        The Terms, Privacy Policy, and Data Processing Agreement on this site are
+        <strong>draft templates for review by a qualified lawyer</strong>. They have not been
+        executed and are not legal advice. Because the developer is a minor, any future
+        agreement would be co-signed by a parent or legal guardian to be enforceable under
+        Indian contract law.
+      </p>
       <div style="margin-top: 1.5rem;">
         <a href="/legal/dpa" class="btn btn-outline btn-sm">Inspect Data Processing Agreement (DPA) Template →</a>
       </div>

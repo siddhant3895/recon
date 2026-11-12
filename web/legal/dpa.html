@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Processing Agreement (DPA) — Recon</title>
-  <meta name="description" content="Recon Data Processing Agreement and NDA for Indian CA firms. Guardian co-signed, DPDP Act compliant.">
+  <meta name="description" content="Unexecuted draft DPA template for Recon, written for lawyer review. Not a signed agreement and not legal advice.">
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -24,64 +24,80 @@
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/demo">Demo</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Start Shadow Month</a></li>
+        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Register Interest</a></li>
       </ul>
     </div>
   </header>
 
   <main class="container-narrow">
     <div style="margin-bottom: 2rem;">
-      <span class="hero-pill">Legal Agreement · Standard DPA Template</span>
+      <span class="hero-pill">Unexecuted Draft Template · For Lawyer Review</span>
       <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem;">
-        Data Processing Agreement (DPA) & Confidentiality
+        Data Processing Agreement (DPA) &amp; Confidentiality
       </h1>
       <p style="color: var(--slate-600); font-size: 0.95rem;">
-        Effective Date: 10 November 2026 · Compliant with the Digital Personal Data Protection Act (DPDP Act, India)
+        Draft v0.1 · 11 November 2026 · <strong>Never executed with anyone. Not legal advice.</strong>
       </p>
     </div>
 
     <div class="card" style="font-size: 0.92rem; line-height: 1.7; color: var(--slate-700);">
-      <h3 style="margin-bottom: 0.5rem;">1. Purpose & Parties</h3>
+      <h3 style="margin-bottom: 0.5rem;">1. Purpose &amp; Parties</h3>
       <p style="margin-bottom: 1rem;">
-        This Data Processing Agreement ("Agreement") governs the processing of financial records, bank statements, and accounting ledgers provided by the Chartered Accountancy firm ("Data Controller") to Recon ("Data Processor").
+        This template governs how a Chartered Accountancy firm ("Data Controller") would provide
+        financial records, bank statements, and accounting ledgers to a future hosted Recon
+        service ("Data Processor"). It is written to align with the Digital Personal Data
+        Protection Act (DPDP Act, India) and must be reviewed by a qualified lawyer before use.
       </p>
 
-      <h3 style="margin-bottom: 0.5rem;">2. Scope of Processing & Non-Disclosure</h3>
+      <h3 style="margin-bottom: 0.5rem;">2. Scope of Processing &amp; Non-Disclosure</h3>
       <p style="margin-bottom: 1rem;">
-        The Data Processor shall process uploaded records strictly and exclusively for the purpose of executing the deterministic reconciliation prep engine and generating reconciliation schedules. Data shall not be shared with, sold to, or processed by any third party, nor utilized for generalized artificial intelligence model training.
+        Records would be processed strictly and exclusively for running the deterministic
+        reconciliation engine and generating schedules — never shared with or sold to third
+        parties, and never used to train generative AI models.
       </p>
 
-      <h3 style="margin-bottom: 0.5rem;">3. Data Residency within India</h3>
+      <h3 style="margin-bottom: 0.5rem;">3. Data Residency</h3>
       <p style="margin-bottom: 1rem;">
-        All uploaded files, databases, cached tokens, and audit events shall reside and remain strictly within the geographical boundaries of the Republic of India (Amazon Web Services Region: <code class="kbd">ap-south-1</code>, Mumbai). At no time shall client financial records transit through foreign cloud regions.
+        <em>[To be negotiated.]</em> A hosted deployment would commit to processing and storing
+        controller records exclusively within India. Today Recon is software you run yourself, so
+        residency is determined by where you operate it.
       </p>
 
-      <h3 style="margin-bottom: 0.5rem;">4. Mandatory 30-Day Purge Policy</h3>
+      <h3 style="margin-bottom: 0.5rem;">4. Retention &amp; Purge</h3>
       <p style="margin-bottom: 1rem;">
-        All raw PDF bank statements and CSV ledger files uploaded by the Data Controller shall be permanently unlinked and wiped from storage within thirty (30) calendar days of processing via an automated purge job. An immutable record of each purge event shall be logged in the Data Controller's audit log.
+        <em>[To be negotiated.]</em> The draft intent: raw uploaded statements and ledgers are
+        purged within an agreed window (e.g. 30 days) using the retention job built into Recon,
+        with an audit record of each purge outcome (purged / skipped / failed).
       </p>
 
       <h3 style="margin-bottom: 0.5rem;">5. Security Safeguards</h3>
       <p style="margin-bottom: 1rem;">
-        The Data Processor implements AES-256 encryption at rest, TLS 1.3 encryption in transit, per-firm database Row-Level Security (RLS), and short-lived pre-signed storage URLs with a maximum validity of 15 minutes.
+        <em>[To be negotiated.]</em> A hosted deployment would need to commit to specific
+        safeguards — encryption in transit and at rest, tenant isolation, and access controls.
+        The current prototype has none of these (see the <a href="/security">Security page</a>),
+        so no such representation is made here.
       </p>
 
-      <h3 style="margin-bottom: 0.5rem;">6. Incident Notification SLA</h3>
+      <h3 style="margin-bottom: 0.5rem;">6. Incident Notification</h3>
       <p style="margin-bottom: 1rem;">
-        In the event of a verified or suspected security breach affecting Controller data, the Data Processor shall notify the designated managing partner via email and telephone within seventy-two (72) hours of verification.
+        <em>[To be negotiated.]</em> The draft intent: notify the designated managing partner of
+        any verified breach within an agreed SLA. No monitoring or notification pipeline exists
+        today.
       </p>
 
-      <h3 style="margin-bottom: 0.5rem;">7. Guardian Co-Signature & Legal Capacity</h3>
+      <h3 style="margin-bottom: 0.5rem;">7. Guardian Co-Signature &amp; Legal Capacity</h3>
       <p style="margin-bottom: 1.5rem;">
-        To ensure total commercial and legal enforceability under the Indian Contract Act, 1872, all formal agreements entered into with CA firms are formally co-signed and guaranteed by an adult legal guardian representing Recon.
+        Because the developer is a minor, any agreement actually entered into would be co-signed
+        by an adult parent or legal guardian, as required for enforceability under the Indian
+        Contract Act, 1872.
       </p>
 
       <div style="border-top: 1px solid var(--slate-200); padding-top: 1.5rem; margin-top: 1.5rem;">
-        <h4 style="margin-bottom: 0.5rem;">Ready to execute with your firm?</h4>
-        <p style="font-size: 0.88rem; color: var(--slate-600); margin-bottom: 1rem;">
-          We provide custom executed bilateral DPAs for all shadow-month and subscribed firms.
+        <h4 style="margin-bottom: 0.5rem;">Status</h4>
+        <p style="font-size: 0.88rem; color: var(--slate-600);">
+          This document is a starting point for a future agreement. No firm is currently bound by
+          it, and no hosted Recon service exists to be a party to it.
         </p>
-        <a href="/shadow-month" class="btn btn-primary btn-sm">Request Executed DPA & Shadow Month →</a>
       </div>
     </div>
   </main>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start Free Shadow Month — Recon CA Prep Layer</title>
-  <meta name="description" content="Test Recon with your CA firm's actual data for 30 days beside your existing workflow. Get a measured accuracy and time savings report.">
+  <title>Register Pilot Interest — Recon CA Prep Layer</title>
+  <meta name="description" content="Register your CA firm's interest in a future Recon pilot month. Honest note: this prototype records your request locally; no automated follow-up exists yet.">
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -24,27 +24,33 @@
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/demo">Demo</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Start Shadow Month</a></li>
+        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Register Interest</a></li>
       </ul>
     </div>
   </header>
 
   <main class="container-narrow">
     <div style="text-align: center; margin-bottom: 2.5rem;">
-      <span class="hero-pill">No Disruption · Zero Upfront Cost</span>
+      <span class="hero-pill">Register Interest · Pilot Not Yet Running</span>
       <h1 style="font-size: 2.4rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.75rem;">
-        The 30-Day Shadow Month Offer
+        The Shadow Month Idea
       </h1>
       <p style="font-size: 1.15rem; color: var(--slate-600); line-height: 1.6;">
-        Do not change your firm's process on blind faith. Run Recon alongside your manual reconciliation for one complete monthly GST cycle.
+        Before asking any firm to change its process, Recon should prove itself running alongside
+        manual reconciliation for one monthly cycle. The pilot described below is
+        <strong>a plan, not a running program</strong> — today you can register interest and try the
+        <a href="/demo">public demo</a> on synthetic data.
       </p>
     </div>
 
     <!-- Intake Card -->
     <div class="card" style="padding: 2.5rem; border: 2px solid var(--primary); margin-bottom: 2.5rem;">
-      <h2 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Request Your Firm's Shadow Sandbox</h2>
+      <h2 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Register Your Firm's Interest</h2>
       <p style="color: var(--slate-600); font-size: 0.92rem; margin-bottom: 1.5rem;">
-        Fill out these three fields. We will set up your isolated India-region instance and contact you to map your firm's most common bank statement formats.
+        Fill out these three fields. <strong>What actually happens today:</strong> the running
+        server records your submission in memory and in its audit log. This prototype sends no
+        email and stores nothing in a database — if the process restarts, the record is gone.
+        Your details are used only to gauge pilot interest, never sold or shared.
       </p>
 
       <form id="shadow-month-form">
@@ -69,27 +75,30 @@
 
     <!-- How the Shadow Month Works Step by Step -->
     <section class="card" style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.35rem; margin-bottom: 1.25rem;">How the Shadow Month Works</h2>
+      <h2 style="font-size: 1.35rem; margin-bottom: 0.25rem;">Planned Pilot Design (Not Yet Built)</h2>
+      <p style="font-size: 0.85rem; color: var(--slate-500); margin-bottom: 1.25rem;">
+        How a pilot would work if/when Recon becomes a hosted, secured service:
+      </p>
       <div style="display:flex; flex-direction:column; gap:1.25rem;">
         <div style="display:flex; gap:1rem; align-items:flex-start;">
           <div style="width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; flex-shrink:0;">1</div>
           <div>
-            <h4 style="font-size:1rem; margin-bottom:0.25rem;">Dedicated Sandbox & NDA Co-Signature</h4>
-            <p style="font-size:0.88rem; color:var(--slate-600);">We execute a bilateral Non-Disclosure Agreement (NDA) and DPA. We spin up an isolated PostgreSQL database in AWS ap-south-1 (Mumbai).</p>
+            <h4 style="font-size:1rem; margin-bottom:0.25rem;">Agreements & Isolated Environment</h4>
+            <p style="font-size:0.88rem; color:var(--slate-600);">A bilateral NDA and DPA would be executed (co-signed by the developer's legal guardian, since the developer is a minor), and a dedicated, isolated instance provisioned with real authentication and encryption — none of that infrastructure exists yet.</p>
           </div>
         </div>
         <div style="display:flex; gap:1rem; align-items:flex-start;">
           <div style="width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; flex-shrink:0;">2</div>
           <div>
-            <h4 style="font-size:1rem; margin-bottom:0.25rem;">Parallel Runs with Your Junior Team</h4>
-            <p style="font-size:0.88rem; color:var(--slate-600);">During the month, feed your statements and Tally ledgers into Recon while your articles perform their standard manual work. Test the keyboard review flow.</p>
+            <h4 style="font-size:1rem; margin-bottom:0.25rem;">Parallel Runs with Your Team</h4>
+            <p style="font-size:0.88rem; color:var(--slate-600);">During the month, your statements and ledgers would be processed by Recon while your team performs its standard manual work, using the same keyboard-first review flow you can try in the <a href="/demo">demo</a>.</p>
           </div>
         </div>
         <div style="display:flex; gap:1rem; align-items:flex-start;">
           <div style="width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; flex-shrink:0;">3</div>
           <div>
             <h4 style="font-size:1rem; margin-bottom:0.25rem;">Measured Accuracy & Throughput Report</h4>
-            <p style="font-size:0.88rem; color:var(--slate-600);">At the end of 30 days, we run an automated audit comparing the decisions. You receive an empirical report documenting exact precision, false-positive rate, and billable hours saved.</p>
+            <p style="font-size:0.88rem; color:var(--slate-600);">At the end of the cycle, a comparison report of Recon's proposals vs. your team's decisions would document precision, false positives, and time saved. This reporting tooling is not built yet — it is part of the pilot plan.</p>
           </div>
         </div>
       </div>

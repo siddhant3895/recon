@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Recon</title>
-  <meta name="description" content="Privacy Policy for Recon reconciliation prep layer. Details on data minimization and DPDP Act compliance.">
+  <meta name="description" content="Draft privacy policy for the Recon prototype, describing what its demo server actually collects (in-memory interest records) and what it does not.">
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -24,39 +24,54 @@
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/demo">Demo</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Start Shadow Month</a></li>
+        <li><a href="/shadow-month" class="btn btn-primary btn-sm">Register Interest</a></li>
       </ul>
     </div>
   </header>
 
   <main class="container-narrow">
     <div style="margin-bottom: 2rem;">
-      <span class="hero-pill">Privacy Commitment</span>
+      <span class="hero-pill">Draft Template · Not Legal Advice</span>
       <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem;">
         Privacy Policy
       </h1>
-      <p style="color: var(--slate-600); font-size: 0.95rem;">Last Updated: 10 November 2026 · DPDP Act Compliant</p>
+      <p style="color: var(--slate-600); font-size: 0.95rem;">Last Updated: 11 November 2026 · DRAFT for lawyer review</p>
     </div>
 
     <div class="card" style="font-size: 0.92rem; line-height: 1.7; color: var(--slate-700);">
-      <h3 style="margin-bottom: 0.5rem;">1. Data Minimization Principle</h3>
+      <h3 style="margin-bottom: 0.5rem;">1. What This Prototype Actually Collects</h3>
       <p style="margin-bottom: 1rem;">
-        We collect only the minimal information required to deliver the reconciliation preparation service: contact details of the subscribing CA firm (name, firm name, business email) and the transaction records uploaded for reconciliation.
+        The only personal data the demo server accepts is the optional interest form on the
+        "Shadow Month" page (your name, firm name, and email address). That submission is held
+        in the memory of the running process and written to its in-memory audit log. It is not
+        saved to a database, not emailed to anyone, and is lost when the process restarts.
       </p>
 
-      <h3 style="margin-bottom: 0.5rem;">2. No Sale or Third-Party Monitization</h3>
+      <h3 style="margin-bottom: 0.5rem;">2. Transaction Data</h3>
       <p style="margin-bottom: 1rem;">
-        Recon does not sell, rent, or monetize firm or client transaction data. We do not use financial transaction details or ledger records to train generative AI foundation models.
+        Reconciliation runs happen on your own machine, via the command line, on files you
+        supply. The demo on this site uses synthetic sample data only. Wherever Recon is run,
+        output files are written to that machine's local disk under your control.
       </p>
 
-      <h3 style="margin-bottom: 0.5rem;">3. Regional Storage & Purge</h3>
+      <h3 style="margin-bottom: 0.5rem;">3. No Sale, No Trackers, No AI Training</h3>
       <p style="margin-bottom: 1rem;">
-        All uploaded financial records are hosted exclusively within the AWS ap-south-1 Mumbai region. Raw statement files are permanently deleted 30 days after upload completion.
+        We do not sell, rent, or monetize data, run advertising trackers, or use financial
+        records to train generative AI models. The site's pages use no third-party scripts or
+        analytics.
       </p>
 
-      <h3 style="margin-bottom: 0.5rem;">4. Contacting the Privacy Officer</h3>
+      <h3 style="margin-bottom: 0.5rem;">4. Contact</h3>
       <p>
-        For inquiries regarding data deletion, access rights, or audit exports under the Digital Personal Data Protection Act, please contact our privacy compliance desk at <code class="kbd">privacy@recon-prep.in</code>.
+        There is no formal privacy desk yet. For any data question about a deployment you run,
+        contact the developer via the details on the <a href="/about">About page</a>.
+      </p>
+
+      <h3 style="margin-bottom: 0.5rem;">5. Status of This Document</h3>
+      <p>
+        This is a draft written to align with the principles of India's Digital Personal Data
+        Protection Act. It has not been reviewed by a lawyer and does not constitute legal
+        advice or a compliance certification.
       </p>
     </div>
   </main>

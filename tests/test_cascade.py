@@ -1,5 +1,7 @@
 from datetime import date, timedelta
 
+import pytest
+
 from recon.engine import run_matching
 from recon.normalizer import normalize_record
 from recon.scoring import gate_failures
@@ -91,3 +93,38 @@ def test_tier4_node_cap_abandons_instead_of_hanging():
     result = run_matching([stmt], ledgers, node_cap=1)
     assert result.candidates_for(stmt.id) == []
     assert result.counts["tier4_abandoned"] == 1
+
+
+def test_duplicate_ids_are_rejected():
+    day = date(2026, 10, 8)
+    stmt = make_line("X1", "stmt", 500_000, day, "debit", "NEFT/12345678 Sharma Traders")
+    ledger = make_line("X1", "ledger", 500_000, day, "debit", "NEFT 12345678 Sharma Traders")
+    with pytest.raises(ValueError, match="duplicate record id"):
+        run_matching([stmt], [ledger])
+
+
+def test_tier4_finds_the_four_line_split():
+    day = date(2026, 10, 8)
+    stmt = make_line("S1", "stmt", 1_000_000, day, "debit", "IMPS BATCH Sharma Traders INVOICE 1001")
+    splits = [130_000, 210_000, 270_000, 390_000]
+    ledgers = [
+        make_line(f"L{i + 1}", "ledger", split, day, "debit", f"Sharma Traders INVOICE 1001 PART {i + 1}")
+        for i, split in enumerate(splits)
+    ]
+    _, candidates = run_one(stmt, *ledgers)
+    assert candidates[0].tier == 4
+    assert candidates[0].ledger_line_ids == ["L1", "L2", "L3", "L4"]
+    assert candidates[0].comp["delta_amount_paise"] == 0
+
+
+def test_candidates_are_deterministically_ordered_on_ties():
+    day = date(2026, 10, 8)
+    stmt = make_line("S1", "stmt", 500_000, day, "debit", "NEFT/12345678 Sharma Traders INVOICE 1")
+    ledgers = [
+        make_line("LB", "ledger", 500_000, day, "debit", "NEFT 12345678 Sharma Traders INV 1"),
+        make_line("LA", "ledger", 500_000, day, "debit", "NEFT 12345678 Sharma Traders INV 1"),
+    ]
+    _, candidates = run_one(stmt, *ledgers)
+    assert len(candidates) == 2
+    assert candidates[0].ledger_line_ids == ["LA"]
+    assert candidates[1].ledger_line_ids == ["LB"]

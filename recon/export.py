@@ -14,7 +14,23 @@ def compute_run_id(result: RunResult) -> str:
     return hashlib.sha256(payload).hexdigest()[:16]
 
 
-def _resolve_decisions(decisions: Iterable[dict[str, Any]] | None) -> dict[str, dict[str, Any]]:
+_FORMULA_PREFIXES = ("=", "+", "-", "@", "\t", "\r")
+
+
+def _safe_cell(value: Any) -> Any:
+    if isinstance(value, str) and value[:1] in _FORMULA_PREFIXES:
+        return f"'{value}"
+    return value
+
+
+def _sanitize_tables(tables: dict[str, list[list[Any]]]) -> dict[str, list[list[Any]]]:
+    return {
+        name: [[_safe_cell(cell) for cell in row] for row in rows]
+        for name, rows in tables.items()
+    }
+
+
+def resolve_decisions(decisions: Iterable[dict[str, Any]] | None) -> dict[str, dict[str, Any]]:
     rows = list(decisions or [])
     undone_ids = {
         row.get("target_decision_id")
@@ -39,7 +55,7 @@ def build_tables(
 ) -> dict[str, list[list[Any]]]:
     run_id = run_id or compute_run_id(result)
     line_by_id = {line.id: line for line in result.lines}
-    active_decisions = _resolve_decisions(decisions)
+    active_decisions = resolve_decisions(decisions)
     accepted_keys = {
         (row["stmt_line_id"], tuple(sorted(row.get("ledger_line_ids", []))))
         for row in active_decisions.values()
@@ -148,14 +164,16 @@ def build_tables(
     summary.append(["proposed_unreviewed_candidates", len(proposed) - 1])
     summary.append(["unmatched_rows", len(unmatched) - 1])
 
-    return {
-        "matched_pairs": matched,
-        "proposed_unreviewed": proposed,
-        "unmatched": unmatched,
-        "unparsed": unparsed_rows,
-        "decisions": decision_rows,
-        "summary": summary,
-    }
+    return _sanitize_tables(
+        {
+            "matched_pairs": matched,
+            "proposed_unreviewed": proposed,
+            "unmatched": unmatched,
+            "unparsed": unparsed_rows,
+            "decisions": decision_rows,
+            "summary": summary,
+        }
+    )
 
 
 def export_csv(

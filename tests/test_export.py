@@ -124,3 +124,45 @@ def test_summary_counts_match_sheet_rows(run):
     assert summary["accepted_pairs"] == len(tables["matched_pairs"]) - 1
     assert summary["proposed_unreviewed_candidates"] == len(tables["proposed_unreviewed"]) - 1
     assert summary["unmatched_rows"] == len(tables["unmatched"]) - 1
+
+
+def test_formula_injection_in_decision_reason_is_neutralised(run):
+    candidate = _first_candidate(run)
+    decisions = [
+        {
+            "id": 1,
+            "stmt_line_id": candidate.stmt_line_id,
+            "ledger_line_ids": list(candidate.ledger_line_ids),
+            "action": "reject",
+            "reason": "=SUM(A1:A9)",
+        }
+    ]
+    tables = build_tables(run, decisions=decisions)
+    assert tables["decisions"][1][4] == "'=SUM(A1:A9)"
+
+
+def test_dash_prefixed_reason_is_neutralised(run):
+    candidate = _first_candidate(run)
+    decisions = [
+        {
+            "id": 1,
+            "stmt_line_id": candidate.stmt_line_id,
+            "ledger_line_ids": [],
+            "action": "unmatch",
+            "reason": "-1+1|calc",
+        }
+    ]
+    tables = build_tables(run, decisions=decisions)
+    assert tables["decisions"][1][4] == "'-1+1|calc"
+
+
+def test_plain_cells_are_left_untouched(run):
+    tables = build_tables(run)
+    proposed = tables["proposed_unreviewed"]
+    assert proposed[0][2] == "score"
+    assert isinstance(proposed[1][2], (int, float)) and not isinstance(proposed[1][2], bool)
+    assert proposed[1][3] == "auto_suggest"
+    assert isinstance(proposed[1][4], int)
+    assert isinstance(proposed[1][6], int)
+    assert tables["unmatched"][1][0][0] != "'"
+    assert tables["summary"][1][0] == "run_id"

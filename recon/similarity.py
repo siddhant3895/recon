@@ -1,3 +1,18 @@
+"""String similarity primitives used by the scoring engine.
+
+Formulas:
+
+- ``jaro_winkler`` implements the standard Jaro-Winkler similarity: the Jaro
+  similarity with a bonus of 0.1 per matching prefix character over the first
+  four characters, capped at 1.0. Identical strings score 1.0; a string
+  compared against an empty string scores 0.0.
+- ``token_set_ratio`` computes the Dice coefficient over the whitespace token
+  sets of the two texts: ``2 * |A ∩ B| / (|A| + |B|)``. Stopwords are removed
+  from both token sets unless a text consists entirely of stopwords, in which
+  case the raw tokens are kept. Two texts that both reduce to no tokens score
+  0.0, because empty narrations carry no evidence of a match.
+"""
+
 from __future__ import annotations
 
 _STOPWORDS = {
@@ -93,10 +108,9 @@ def _tokens(text: str) -> set[str]:
 
 
 def token_set_ratio(left: str, right: str) -> float:
+    """Dice coefficient over the two token sets; 0.0 when neither text has tokens."""
     left_tokens = _tokens(left)
     right_tokens = _tokens(right)
-    if not left_tokens and not right_tokens:
-        return 1.0
     if not left_tokens or not right_tokens:
         return 0.0
     intersection = len(left_tokens & right_tokens)

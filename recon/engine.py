@@ -12,6 +12,11 @@ def run_matching(
     ledger_lines: list[Line],
     node_cap: int = TIER4_NODE_CAP,
 ) -> RunResult:
+    seen_ids: set[str] = set()
+    for line in (*stmt_lines, *ledger_lines):
+        if line.id in seen_ids:
+            raise ValueError(f"duplicate record id across inputs: {line.id}")
+        seen_ids.add(line.id)
     cascade = Cascade(stmt_lines, ledger_lines, node_cap=node_cap)
     by_stmt = cascade.run()
 

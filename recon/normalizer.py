@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 import unicodedata
 from datetime import date
-from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+from decimal import Decimal, InvalidOperation
 from typing import Any
 
 from .models import Direction, Line, Side
@@ -16,8 +16,8 @@ _PREFIX_RE = re.compile(
 )
 _LONG_DIGITS_RE = re.compile(r"\d{8,}")
 _OCR_DIGITS_RE = re.compile(r"(?=[0-9OolISsBZzGg]*[0-9])[0-9OolISsBZzGg]{8,}")
-_PUNCT_RE = re.compile(r"[^0-9a-z.]+")
 _WS_RE = re.compile(r"\s+")
+_ACCOUNT_CONTEXT_RE = re.compile(r"(?i)\b(?:a/c|a\.c\.?|acct|account|ifsc|ac)[\s./#:*-]*(?:no\.?\s*)?\d{6,}")
 
 _OCR_TRANSLATION = str.maketrans(
     {
@@ -67,8 +67,10 @@ def normalize_record(record: dict[str, Any], side: Side) -> Line:
     text = _normalise_text(raw_text, source)
     ref_token = _extract_ref_token(raw_text, source)
 
-    amount_paise, negative = _parse_amount_paise(record)
-    direction = _parse_direction(record.get("direction"), negative)
+    amount_paise, negative, direction_hint = _parse_amount_paise(record)
+    if amount_paise == 0:
+        raise NormalizationError("amount is zero")
+    direction = _parse_direction(record.get("direction"), negative, direction_hint)
 
     date_value, ambiguous = _parse_date(record.get("date") or record.get("date_iso") or record.get("value_date"))
 
@@ -108,11 +110,19 @@ def _normalise_text(raw_text: str, source: str) -> str:
         text = _OCR_DIGITS_RE.sub(" ", text)
     else:
         text = _LONG_DIGITS_RE.sub(" ", text)
-    text = _PUNCT_RE.sub(" ", text)
+    text = _strip_punctuation(text)
     if source == "ocr":
         text = _repair_ocr_numeric(text)
     text = _WS_RE.sub(" ", text).strip()
     return text
+
+
+def _keep_char(char: str) -> bool:
+    return char.isalnum() or char == "." or unicodedata.category(char).startswith("M")
+
+
+def _strip_punctuation(text: str) -> str:
+    return "".join(char if _keep_char(char) else " " for char in text)
 
 
 def _extract_ref_token(raw_text: str, source: str) -> str:
@@ -122,12 +132,17 @@ def _extract_ref_token(raw_text: str, source: str) -> str:
         if stripped == text:
             break
         text = stripped
+    text = _mask_account_numbers(text)
     if source == "ocr":
         runs = _OCR_DIGITS_RE.findall(text)
         runs = [_repair_ocr_numeric(run) for run in runs]
     else:
         runs = _LONG_DIGITS_RE.findall(text)
     return " ".join(sorted(set(runs)))
+
+
+def _mask_account_numbers(text: str) -> str:
+    return _ACCOUNT_CONTEXT_RE.sub(lambda match: re.sub(r"\d+", "", match.group(0)), text)
 
 
 def _repair_ocr_numeric(text: str) -> str:
@@ -140,18 +155,19 @@ def _repair_ocr_numeric(text: str) -> str:
     return " ".join(repaired)
 
 
-def _parse_amount_paise(record: dict[str, Any]) -> tuple[int, bool]:
+def _parse_amount_paise(record: dict[str, Any]) -> tuple[int, bool, str | None]:
     direct = record.get("amount_paise")
     if direct is not None:
         try:
             paise = int(direct)
         except (TypeError, ValueError) as exc:
             raise NormalizationError(f"invalid amount_paise: {direct!r}") from exc
-        return abs(paise), paise < 0
+        return abs(paise), paise < 0, None
 
     value = record.get("amount")
     if value is None:
         raise NormalizationError("record is missing amount")
+    hint: str | None = None
     if isinstance(value, (int, float, Decimal)) and not isinstance(value, bool):
         decimal_value = Decimal(str(value))
     else:
@@ -167,7 +183,8 @@ def _parse_amount_paise(record: dict[str, Any]) -> tuple[int, bool]:
             cleaned = cleaned[1:]
         lowered = cleaned.lower()
         if lowered.endswith(("dr", "cr")):
-            negative = negative or lowered.endswith("dr")
+            hint = "debit" if lowered.endswith("dr") else "credit"
+            negative = negative or hint == "debit"
             cleaned = cleaned[:-2]
         if cleaned.endswith("-"):
             negative = True
@@ -181,20 +198,32 @@ def _parse_amount_paise(record: dict[str, Any]) -> tuple[int, bool]:
         if negative:
             decimal_value = -abs(decimal_value)
 
-    try:
-        paise = int((decimal_value * 100).quantize(Decimal("1"), rounding=ROUND_HALF_UP))
-    except (InvalidOperation, ValueError) as exc:
-        raise NormalizationError(f"invalid amount: {value!r}") from exc
-    return abs(paise), paise < 0
+    scaled = decimal_value * 100
+    if not scaled.is_finite():
+        raise NormalizationError(f"invalid amount: {value!r}")
+    if scaled != scaled.to_integral_value():
+        raise NormalizationError(f"amount has sub-paise precision: {value!r}")
+    paise = int(scaled)
+    return abs(paise), paise < 0, hint
 
 
-def _parse_direction(value: Any, negative: bool) -> Direction:
+def _parse_direction(value: Any, negative: bool, hint: str | None) -> Direction:
     if value is not None and str(value).strip():
         normalised = _DIRECTION_MAP.get(str(value).strip().lower())
         if normalised is None:
             raise NormalizationError(f"invalid direction: {value!r}")
+        if hint is not None and hint != normalised:
+            raise NormalizationError(f"direction {value!r} contradicts the amount suffix")
+        if negative and normalised == "credit":
+            raise NormalizationError("direction 'credit' contradicts a negative amount")
         return normalised  # type: ignore[return-value]
-    return "debit" if negative else "credit"
+    if hint is not None:
+        if negative and hint == "credit":
+            raise NormalizationError("amount suffix 'cr' contradicts a negative amount")
+        return hint  # type: ignore[return-value]
+    if negative:
+        return "debit"
+    raise NormalizationError("record is missing a direction for a positive amount")
 
 
 def _parse_date(value: Any) -> tuple[date, bool]:
@@ -204,14 +233,14 @@ def _parse_date(value: Any) -> tuple[date, bool]:
         return value, False
 
     text = str(value).strip()
-    iso = re.match(r"^(\d{4})-(\d{2})-(\d{2})", text)
+    iso = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", text)
     if iso:
         try:
             return date(int(iso.group(1)), int(iso.group(2)), int(iso.group(3))), False
         except ValueError as exc:
             raise NormalizationError(f"invalid date: {value!r}") from exc
 
-    dmy = re.match(r"^(\d{1,2})[/\-.](\d{1,2})[/\-.](\d{2,4})", text)
+    dmy = re.fullmatch(r"(\d{1,2})[/\-.](\d{1,2})[/\-.](\d{2,4})", text)
     if not dmy:
         raise NormalizationError(f"invalid date: {value!r}")
 

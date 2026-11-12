@@ -13,7 +13,7 @@ from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel, Field
 
 from .engine import run_matching
-from .export import build_tables, compute_run_id, export_xlsx
+from .export import build_tables, compute_run_id, export_xlsx, resolve_decisions
 from .golden import build_demo, build_golden
 from .metrics import category_breakdown, evaluate, lines_from_golden
 
@@ -123,35 +123,68 @@ def demo() -> dict:
 @app.post("/api/demo/decisions")
 def decide(payload: DecisionIn) -> dict:
     global _next_id
-    if payload.stmt_line_id not in DEMO_BY_ID:
-        raise HTTPException(status_code=404, detail="statement line not found")
-
-    candidate_keys = {
-        (
-            candidate.stmt_line_id,
-            tuple(sorted(candidate.ledger_line_ids)),
-        )
-        for candidate in DEMO_RESULT.candidates
-    }
-    key = (payload.stmt_line_id, tuple(sorted(payload.ledger_line_ids)))
-    if payload.action in {"accept", "reject"} and key not in candidate_keys:
-        raise HTTPException(status_code=422, detail="candidate not in this run")
-    if payload.action == "reject" and payload.reason not in {
-        "wrong amount",
-        "wrong party",
-        "wrong period",
-        "duplicate",
-        "other",
-    }:
-        raise HTTPException(status_code=422, detail="reject requires a listed reason")
-    if payload.action == "undo":
-        with _lock:
-            if payload.target_decision_id is None or not any(
-                row["id"] == payload.target_decision_id for row in _decisions
-            ):
-                raise HTTPException(status_code=404, detail="decision to undo not found")
-
     with _lock:
+        if payload.stmt_line_id not in DEMO_BY_ID:
+            raise HTTPException(status_code=404, detail="statement line not found")
+
+        candidate_keys = {
+            (
+                candidate.stmt_line_id,
+                tuple(sorted(candidate.ledger_line_ids)),
+            )
+            for candidate in DEMO_RESULT.candidates
+        }
+        key = (payload.stmt_line_id, tuple(sorted(payload.ledger_line_ids)))
+        if payload.action in {"accept", "reject"} and key not in candidate_keys:
+            raise HTTPException(status_code=422, detail="candidate not in this run")
+        if payload.action == "reject" and payload.reason not in {
+            "wrong amount",
+            "wrong party",
+            "wrong period",
+            "duplicate",
+            "other",
+        }:
+            raise HTTPException(status_code=422, detail="reject requires a listed reason")
+
+        active = resolve_decisions(_decisions)
+        if payload.action == "undo":
+            target = next(
+                (row for row in _decisions if row["id"] == payload.target_decision_id), None
+            )
+            if payload.target_decision_id is None or target is None:
+                raise HTTPException(status_code=404, detail="decision to undo not found")
+            if target["action"] == "undo":
+                raise HTTPException(status_code=422, detail="cannot undo an undo entry")
+            undone_ids = {
+                row.get("target_decision_id") for row in _decisions if row.get("action") == "undo"
+            }
+            if target["id"] in undone_ids:
+                raise HTTPException(status_code=409, detail="decision already undone")
+            if target["stmt_line_id"] != payload.stmt_line_id:
+                raise HTTPException(
+                    status_code=409, detail="stmt_line_id does not match the decision being undone"
+                )
+        else:
+            if payload.stmt_line_id in active:
+                raise HTTPException(
+                    status_code=409,
+                    detail="statement line already has an active decision; undo it first",
+                )
+            if payload.action == "accept":
+                conflicts = sorted(
+                    ledger_id
+                    for row in active.values()
+                    if row.get("action") == "accept"
+                    for ledger_id in row.get("ledger_line_ids", [])
+                    if ledger_id in payload.ledger_line_ids
+                )
+                if conflicts:
+                    raise HTTPException(
+                        status_code=409,
+                        detail="ledger lines already allocated to another statement: "
+                        + ", ".join(conflicts),
+                    )
+
         row = {
             "id": _next_id,
             "stmt_line_id": payload.stmt_line_id,
@@ -171,9 +204,10 @@ def decide(payload: DecisionIn) -> dict:
 @app.post("/api/demo/reset")
 def reset() -> dict:
     with _lock:
+        cleared = len(_decisions)
         _decisions.clear()
-        _audit.clear()
-    return {"ok": True}
+        _append_audit("reset", "reviewer", "demo_decisions", {"cleared_decisions": cleared})
+    return {"ok": True, "cleared_decisions": cleared}
 
 
 @app.get("/api/demo/audit")
@@ -228,7 +262,11 @@ def shadow_month(payload: LeadIn) -> dict:
         }
         _leads.append(entry)
         _append_audit("shadow_month_request", "visitor", f"lead:{entry['id']}", {"firm": entry["firm"]})
-    return {"ok": True, "id": entry["id"], "message": "Received. We will reply within one working day."}
+    return {
+        "ok": True,
+        "id": entry["id"],
+        "message": "Received. This prototype stores your request in memory; no automated follow-up exists yet.",
+    }
 
 
 def _page(name: str) -> FileResponse:
@@ -287,7 +325,12 @@ def legal_page(doc: str):
 
 @app.get("/static/{name:path}")
 def static_file(name: str):
-    path = WEB_DIR / "static" / name
-    if not path.exists() or not path.is_file():
+    static_root = (WEB_DIR / "static").resolve()
+    try:
+        path = (WEB_DIR / "static" / name).resolve()
+        inside_root = path.is_relative_to(static_root)
+    except (OSError, RuntimeError, ValueError):
+        raise HTTPException(status_code=404, detail="not found")
+    if not inside_root or not path.is_file():
         raise HTTPException(status_code=404, detail="not found")
     return FileResponse(path)

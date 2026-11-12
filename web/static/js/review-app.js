@@ -6,6 +6,17 @@
   let decisionsHistory = [];
   let decisionTimestamps = [];
   let rejectTarget = null;
+  let lastFocusedElement = null;
+
+  function esc(value) {
+    return String(value ?? "").replace(/[&<>"']/g, ch => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[ch]);
+  }
 
   async function loadDemo() {
     try {
@@ -18,7 +29,7 @@
       console.error(err);
       const center = document.getElementById("worklist-container");
       if (center) {
-        center.innerHTML = `<div class="card"><p style="color:var(--danger)">Error loading demo data: ${err.message}</p></div>`;
+        center.innerHTML = `<div class="card"><p style="color:var(--danger)">Error loading demo data: ${esc(err.message)}</p></div>`;
       }
     }
   }
@@ -79,24 +90,34 @@
     const countUnmatched = document.getElementById("stat-unmatched");
     const paceElem = document.getElementById("stat-pace");
     const etaElem = document.getElementById("stat-eta");
+    const stmtCountElem = document.getElementById("stmt-count");
+    const ledgerCountElem = document.getElementById("ledger-count");
 
     if (progressFill) progressFill.style.width = `${pct}%`;
     if (progressText) progressText.textContent = `${completed}/${total} (${pct}%)`;
     if (countAccepted) countAccepted.textContent = accepted;
     if (countRejected) countRejected.textContent = rejected;
     if (countUnmatched) countUnmatched.textContent = unmatched;
+    if (stmtCountElem) stmtCountElem.textContent = `${total} Rows`;
+    if (ledgerCountElem) {
+      const ledgerTotal = demoData && demoData.ledger ? demoData.ledger.length : 0;
+      ledgerCountElem.textContent = `${ledgerTotal} Rows`;
+    }
 
     // Rolling decisions per minute
     const now = Date.now();
     decisionTimestamps = decisionTimestamps.filter(t => now - t <= 60000);
     const pace = decisionTimestamps.length; // decisions in past minute
-    const effectivePace = pace > 0 ? pace : 40; // fallback to benchmark target pace
 
     const remainingRows = Math.max(0, total - completed);
-    const estMinutes = (remainingRows / effectivePace).toFixed(1);
+    let etaText = "Done";
+    if (remainingRows > 0) {
+      // No fabricated pace: only estimate once we have measured decisions.
+      etaText = pace > 0 ? `~${(remainingRows / pace).toFixed(1)}m left` : "—";
+    }
 
     if (paceElem) paceElem.textContent = `${pace} /min`;
-    if (etaElem) etaElem.textContent = remainingRows > 0 ? `~${estMinutes}m left` : "Done";
+    if (etaElem) etaElem.textContent = etaText;
   }
 
   function renderStatementList() {
@@ -122,9 +143,9 @@
       let bandBadge = "";
       if (topCand) {
         if (topCand.band === "auto_suggest") {
-          bandBadge = `<span class="badge badge-auto" style="font-size:0.65rem;">Auto ${topCand.score}%</span>`;
+          bandBadge = `<span class="badge badge-auto" style="font-size:0.65rem;">Auto ${esc(topCand.score)}%</span>`;
         } else if (topCand.band === "review") {
-          bandBadge = `<span class="badge badge-review" style="font-size:0.65rem;">Review ${topCand.score}%</span>`;
+          bandBadge = `<span class="badge badge-review" style="font-size:0.65rem;">Review ${esc(topCand.score)}%</span>`;
         }
       } else {
         bandBadge = `<span class="badge badge-unmatched" style="font-size:0.65rem;">Unmatched</span>`;
@@ -132,12 +153,12 @@
 
       div.innerHTML = `
         <div class="stmt-item-header">
-          <span class="stmt-amount ${dirClass}">₹${rupees}</span>
-          <span class="stmt-date">${stmt.date_iso || ""}</span>
+          <span class="stmt-amount ${esc(dirClass)}">₹${esc(rupees)}</span>
+          <span class="stmt-date">${esc(stmt.date_iso || "")}</span>
         </div>
-        <div class="stmt-narration">${stmt.text_norm || ""}</div>
+        <div class="stmt-narration">${esc(stmt.text_norm || "")}</div>
         <div style="margin-top:0.35rem; display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--slate-500);">${stmt.id}</span>
+          <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--slate-500);">${esc(stmt.id)}</span>
           ${bandBadge}
         </div>
       `;
@@ -179,8 +200,8 @@
       decisionNotice = `
         <div style="background:#fff; border:2px solid ${actColor}; border-radius:var(--radius); padding:0.75rem 1rem; display:flex; justify-content:space-between; align-items:center;">
           <div>
-            <strong>Decided:</strong> <span style="text-transform:uppercase; font-weight:700; color:${actColor}">${decision.action}</span>
-            ${decision.reason ? ` · <span style="color:var(--slate-600);">${decision.reason}</span>` : ""}
+            <strong>Decided:</strong> <span style="text-transform:uppercase; font-weight:700; color:${actColor}">${esc(decision.action)}</span>
+            ${decision.reason ? ` · <span style="color:var(--slate-600);">${esc(decision.reason)}</span>` : ""}
           </div>
           <button class="btn btn-outline btn-sm" id="btn-undo-decision"><span class="kbd">Ctrl+Z</span> Undo</button>
         </div>
@@ -210,12 +231,12 @@
 
         const ledgerItems = cand.ledger_line_ids.map(lid => {
           const lObj = demoData.ledger.find(l => l.id === lid);
-          if (!lObj) return `<span>${lid}</span>`;
+          if (!lObj) return `<span>${esc(lid)}</span>`;
           const lRupees = ((lObj.amount_paise || 0) / 100).toLocaleString("en-IN", { minimumFractionDigits: 2 });
           return `
             <div style="background:#fff; border:1px solid var(--slate-200); padding:0.5rem 0.75rem; border-radius:4px; margin-top:0.35rem; display:flex; justify-content:space-between;">
-              <div><strong>${lObj.id}</strong>: ${lObj.text_norm || ""}</div>
-              <div style="font-family:var(--font-mono); font-weight:600;">₹${lRupees} (${lObj.date_iso})</div>
+              <div><strong>${esc(lObj.id)}</strong>: ${esc(lObj.text_norm || "")}</div>
+              <div style="font-family:var(--font-mono); font-weight:600;">₹${esc(lRupees)} (${esc(lObj.date_iso)})</div>
             </div>
           `;
         }).join("");
@@ -224,12 +245,12 @@
           <div class="candidate-card${isAuto ? " auto-band" : ""}${isSelected ? " selected" : ""}" data-cand-idx="${idx}">
             <div class="score-banner">
               <div class="score-display">
-                <span class="score-number ${scoreClass}">${cand.score}</span>
+                <span class="score-number ${scoreClass}">${esc(cand.score)}</span>
                 <span style="font-size:0.85rem; color:var(--slate-500); font-family:var(--font-mono);">/ 100</span>
                 <span class="badge badge-${scoreClass === "auto" ? "auto" : "review"}">
                   ${isAuto ? "★ Auto-Suggest" : "Review"}
                 </span>
-                <span class="badge" style="background:var(--slate-200); color:var(--slate-800);">Tier ${cand.tier}</span>
+                <span class="badge" style="background:var(--slate-200); color:var(--slate-800);">Tier ${esc(cand.tier)}</span>
               </div>
               <div style="font-size:0.8rem; color:var(--slate-500);">
                 Candidate ${idx + 1} of ${candidates.length} <span class="kbd">Tab</span>
@@ -237,7 +258,7 @@
             </div>
 
             <div class="reason-box">
-              <strong>Match explanation:</strong> ${cand.reason || "Score calculated based on amount, date, and reference."}
+              <strong>Match explanation:</strong> ${esc(cand.reason || "Score calculated based on amount, date, and reference.")}
             </div>
 
             <div class="candidate-components">
@@ -286,14 +307,14 @@
       ${decisionNotice}
       <div class="card" style="border-left:4px solid var(--accent);">
         <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.5rem;">
-          <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--slate-500);">Statement Line: ${stmt.id}</span>
-          <span style="font-family:var(--font-mono); font-weight:700; font-size:1.25rem;" class="${dirClass}">₹${rupees}</span>
+          <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--slate-500);">Statement Line: ${esc(stmt.id)}</span>
+          <span style="font-family:var(--font-mono); font-weight:700; font-size:1.25rem;" class="${esc(dirClass)}">₹${esc(rupees)}</span>
         </div>
-        <div style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">${stmt.text_norm || ""}</div>
+        <div style="font-size:0.95rem; font-weight:500; margin-bottom:0.5rem;">${esc(stmt.text_norm || "")}</div>
         <div style="display:flex; gap:1.5rem; font-size:0.8rem; color:var(--slate-500); font-family:var(--font-mono);">
-          <span>Date: ${stmt.date_iso}</span>
-          <span>Direction: ${stmt.direction}</span>
-          <span>Ref: ${stmt.ref_token || "None"}</span>
+          <span>Date: ${esc(stmt.date_iso)}</span>
+          <span>Direction: ${esc(stmt.direction)}</span>
+          <span>Ref: ${esc(stmt.ref_token || "None")}</span>
         </div>
       </div>
 
@@ -361,12 +382,12 @@
 
       div.innerHTML = `
         <div class="stmt-item-header">
-          <span class="stmt-amount ${dirClass}">₹${rupees}</span>
-          <span class="stmt-date">${line.date_iso || ""}</span>
+          <span class="stmt-amount ${esc(dirClass)}">₹${esc(rupees)}</span>
+          <span class="stmt-date">${esc(line.date_iso || "")}</span>
         </div>
-        <div class="stmt-narration">${line.text_norm || ""}</div>
+        <div class="stmt-narration">${esc(line.text_norm || "")}</div>
         <div style="margin-top:0.35rem; display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--slate-500);">${line.id}</span>
+          <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--slate-500);">${esc(line.id)}</span>
           ${isHighlighted ? '<span class="badge badge-auto" style="font-size:0.65rem;">Active Target</span>' : ""}
         </div>
       `;
@@ -438,15 +459,60 @@
     });
   }
 
+  function focusablesIn(modal) {
+    return Array.from(
+      modal.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])")
+    ).filter(el => !el.disabled && el.offsetParent !== null);
+  }
+
+  function openModal(modal) {
+    lastFocusedElement = document.activeElement;
+    modal.classList.add("open");
+    const focusables = focusablesIn(modal);
+    if (focusables.length) focusables[0].focus();
+  }
+
+  function closeModal(modal) {
+    modal.classList.remove("open");
+    if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+      lastFocusedElement.focus();
+    }
+    lastFocusedElement = null;
+  }
+
+  // Returns true if the Tab press was consumed by the trap.
+  function trapFocus(e, modal) {
+    if (e.key !== "Tab") return false;
+    const focusables = focusablesIn(modal);
+    if (!focusables.length) return false;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+      return true;
+    }
+    if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+      return true;
+    }
+    return false;
+  }
+
   function openRejectModal(candIdx) {
     rejectTarget = candIdx;
     const modal = document.getElementById("reject-modal");
-    if (modal) modal.classList.add("open");
+    if (modal) openModal(modal);
   }
 
   function closeRejectModal() {
     const modal = document.getElementById("reject-modal");
-    if (modal) modal.classList.remove("open");
+    if (modal && modal.classList.contains("open")) {
+      closeModal(modal);
+    } else if (modal) {
+      modal.classList.remove("open");
+    }
     rejectTarget = null;
   }
 
@@ -506,6 +572,7 @@
     // If a modal is open, only modal shortcuts apply.
     const rejectModal = document.getElementById("reject-modal");
     if (rejectModal && rejectModal.classList.contains("open")) {
+      if (trapFocus(e, rejectModal)) return;
       if (e.key === "Escape") {
         closeRejectModal();
       } else if (e.key >= "1" && e.key <= "5") {
@@ -517,8 +584,9 @@
 
     const shortcutsModal = document.getElementById("shortcuts-modal");
     if (shortcutsModal && shortcutsModal.classList.contains("open")) {
+      if (trapFocus(e, shortcutsModal)) return;
       if (e.key === "Escape" || e.key === "?") {
-        shortcutsModal.classList.remove("open");
+        closeModal(shortcutsModal);
       }
       return;
     }
@@ -576,7 +644,11 @@
       markUnmatched();
     } else if (key === "?") {
       e.preventDefault();
-      if (shortcutsModal) shortcutsModal.classList.toggle("open");
+      const modal = document.getElementById("shortcuts-modal");
+      if (modal) {
+        if (modal.classList.contains("open")) closeModal(modal);
+        else openModal(modal);
+      }
     }
   }
 
@@ -613,7 +685,7 @@
     if (closeShortcuts) {
       closeShortcuts.addEventListener("click", () => {
         const modal = document.getElementById("shortcuts-modal");
-        if (modal) modal.classList.remove("open");
+        if (modal) closeModal(modal);
       });
     }
 
@@ -621,7 +693,7 @@
     if (openShortcuts) {
       openShortcuts.addEventListener("click", () => {
         const modal = document.getElementById("shortcuts-modal");
-        if (modal) modal.classList.add("open");
+        if (modal) openModal(modal);
       });
     }
 

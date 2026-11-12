@@ -29,7 +29,7 @@
     const manualCostMonth = manualHoursMonth * inputs.hourlyCost;
     const manualCostYear = manualCostMonth * 12;
 
-    const assistRate = 0.70; // 70% assist rate benchmark
+      const assistRate = 0.70; // assumed assist rate — an adjustable assumption, not a measured figure
     const hoursSavedMonth = manualHoursMonth * assistRate;
     const moneySavedMonth = hoursSavedMonth * inputs.hourlyCost;
     const moneySavedYear = moneySavedMonth * 12;
@@ -92,7 +92,7 @@
 
       const noteElem = document.getElementById("calc-formula-display");
       if (noteElem) {
-        noteElem.textContent = `Formula: (${inputs.reconsPerMonth} recons × ${inputs.rowsPerRecon} rows × ${inputs.minsPerRow}m ÷ 60) × 70% assist × ₹${inputs.hourlyCost}/hr`;
+        noteElem.textContent = `Formula: (${inputs.reconsPerMonth} recons × ${inputs.rowsPerRecon} rows × ${inputs.minsPerRow}m ÷ 60) × 70% assist (assumption) × ₹${inputs.hourlyCost}/hr`;
       }
     }
 

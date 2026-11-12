@@ -32,7 +32,7 @@
 
         const data = await res.json();
         if (res.ok) {
-          showFeedback("Thank you. We have received your shadow-month request. We will contact you within one business day.", "success");
+          showFeedback("Thank you. Your interest has been recorded by this server. Note: this is a prototype — no automated email is sent, and the record lives only in the running process. The developer reviews submissions where the demo is hosted.", "success");
           form.reset();
         } else {
           showFeedback(data.detail || "Error submitting form. Please try again.", "error");
@@ -42,7 +42,7 @@
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = "Start Free Shadow Month";
+          submitBtn.textContent = "Register Interest";
         }
       }
     });
